@@ -3,7 +3,7 @@ import CTABanner from "@/components/CTABanner";
 import ClientLogos from "@/components/ClientLogos";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
-import ModernHero from "@/components/ModernHero";
+import CosmicHero from "@/components/CosmicHero";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-        <ModernHero />
+        <CosmicHero />
         <Services />
         <Process />
         <PortfolioClient />
