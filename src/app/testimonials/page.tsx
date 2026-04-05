@@ -1,4 +1,11 @@
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Client Testimonials",
+  description: "Read what our clients have to say about working with ESystemLk and the impact our software solutions have had on their businesses.",
+};
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { StarRating } from "@/components/StarRating";

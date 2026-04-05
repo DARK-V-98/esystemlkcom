@@ -1,4 +1,11 @@
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description: "Comprehensive software and web development services including E-commerce, Healthcare solutions, Personal Branding, and custom corporate systems by ESystemLk.",
+};
+
 import {
     ShoppingCart,
     Building,

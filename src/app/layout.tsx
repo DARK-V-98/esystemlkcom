@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 const siteConfig = {
   name: "esystemlk",
-  url: "https://www.esystemlk.xyz",
-  ogImage: "https://www.esystemlk.xyz/logo.png",
+  url: "https://esystemlk.com",
+  ogImage: "https://esystemlk.com/logo.png",
   description: "ESystemLk is a leading software company in Sri Lanka, specializing in custom web development, web applications, and software systems with lifetime free maintenance.",
   keywords: ["software company sri lanka", "web development sri lanka", "web application development", "custom software solutions", "esystemlk", "pos system sri lanka", "ecommerce website", "mobile app development"],
 };

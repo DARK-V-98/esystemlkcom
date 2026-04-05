@@ -1,4 +1,11 @@
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Portfolio",
+  description: "Explore our past projects, custom software solutions, and successful digital transformations delivered by ESystemLk.",
+};
+
 import PortfolioClient from './portfolio-client';
 import { getPortfolioItems } from '../admin/portfolio/actions';
 

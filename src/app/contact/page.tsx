@@ -1,4 +1,11 @@
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with ESystemLk. Whether you have a question about our services or want to start a project, our team is ready to help.",
+};
+
 import { ContactForm } from "./contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MessageCircle, Phone } from "lucide-react";

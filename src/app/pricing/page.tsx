@@ -1,4 +1,11 @@
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Pricing Plans",
+  description: "Transparent and competitive pricing for custom software, web development, and digital solutions at ESystemLk.",
+};
+
 import React from 'react';
 import PricingClient from './pricing-client';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
