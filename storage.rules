@@ -1,0 +1,29 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Default deny all reads and writes
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // Allow public read access to demo design images
+    match /demoDesigns/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && exists(/databases/(default)/documents/roles_admin/$(request.auth.uid));
+    }
+    
+    // Allow public read access to blog header images
+    match /blog/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && exists(/databases/(default)/documents/roles_admin/$(request.auth.uid));
+    }
+
+    // Allow public read access to portfolio images
+    match /portfolio/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && exists(/databases/(default)/documents/roles_admin/$(request.auth.uid));
+    }
+  }
+}

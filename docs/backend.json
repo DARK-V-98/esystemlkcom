@@ -1,0 +1,360 @@
+
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the ESystemLk application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The display name of the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address of the user.",
+          "format": "email"
+        },
+        "role": {
+          "type": "string",
+          "description": "The role of the user in the system (e.g., 'admin', 'user')."
+        },
+        "bio": {
+          "type": "string",
+          "description": "A short biography of the user."
+        },
+        "photoURL": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the user's profile picture."
+        },
+        "twitter": {
+            "type": "string",
+            "description": "The user's Twitter profile handle."
+        },
+        "github": {
+            "type": "string",
+            "description": "The user's GitHub profile username."
+        },
+        "linkedin": {
+            "type": "string",
+            "description": "The user's LinkedIn profile URL."
+        }
+      },
+      "required": [
+        "id",
+        "displayName",
+        "email",
+        "role"
+      ]
+    },
+    "Session": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Session",
+      "type": "object",
+      "description": "Represents a user session.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Session entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Session)"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "The date and time the session was created.",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "description": "The date and time the session expires.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "createdAt",
+        "expiresAt"
+      ]
+    },
+    "BlogPost": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Blog Post",
+      "type": "object",
+      "description": "Represents a single blog post.",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "content": { "type": "string" },
+        "headerImageUrl": { "type": "string", "format": "uri" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "content", "authorId", "authorName", "createdAt"]
+    },
+    "BlogComment": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Blog Comment",
+      "type": "object",
+      "description": "A comment on a blog post.",
+      "properties": {
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorPhotoUrl": { "type": "string", "format": "uri" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["authorId", "authorName", "content", "createdAt"]
+    },
+    "BlogLike": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Blog Like",
+      "type": "object",
+      "description": "Represents a user's like on a blog post.",
+      "properties": {
+        "userId": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "Bookmark": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Bookmark",
+      "type": "object",
+      "description": "Represents a user's bookmark on a blog post.",
+      "properties": {
+        "postId": { "type": "string" },
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["postId", "title", "slug", "createdAt"]
+    },
+    "Badge": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Badge",
+        "type": "object",
+        "description": "Represents an achievement or badge awarded to a user.",
+        "properties": {
+            "name": { "type": "string" },
+            "description": { "type": "string" },
+            "icon": { "type": "string" },
+            "awardedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["name", "icon", "awardedAt"]
+    },
+    "Conversation": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Conversation",
+      "type": "object",
+      "description": "A private messaging thread between two users.",
+      "properties": {
+        "participants": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "An array containing the UIDs of the two participants."
+        },
+        "participantInfo": {
+            "type": "object",
+            "patternProperties": {
+                ".*": {
+                    "type": "object",
+                    "properties": {
+                        "displayName": { "type": "string" },
+                        "photoURL": { "type": "string", "format": "uri" }
+                    }
+                }
+            }
+        },
+        "lastMessage": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "senderId": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" }
+          }
+        },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["participants", "participantInfo", "updatedAt"]
+    },
+    "Message": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Message",
+        "type": "object",
+        "description": "A single message within a conversation.",
+        "properties": {
+            "senderId": { "type": "string" },
+            "senderName": { "type": "string" },
+            "text": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["senderId", "senderName", "text", "createdAt"]
+    },
+    "DemoDesign": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Demo Design",
+      "type": "object",
+      "description": "Represents a demo website design for showcasing.",
+      "properties": {
+        "name": { "type": "string" },
+        "demoUrl": { "type": "string", "format": "uri" },
+        "imageUrl": { "type": "string", "format": "uri" },
+        "category": { "type": "string" },
+        "technologies": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "demoUrl", "imageUrl", "category", "technologies", "createdAt"]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/entities/User"
+          },
+          "description": "Stores user profile data. Includes the 'role' field for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/sessions/{sessionId}",
+        "definition": {
+          "entityName": "Session",
+          "schema": {
+            "$ref": "#/entities/Session"
+          },
+          "description": "Stores user session data. Owned by the user identified by {userId}.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "sessionId",
+              "description": "The unique identifier of the session."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/bookmarks/{postId}",
+        "definition": {
+            "entityName": "Bookmark",
+            "schema": { "$ref": "#/entities/Bookmark" },
+            "description": "Stores a user's bookmarked blog posts.",
+            "params": [{"name": "userId"}, {"name": "postId"}]
+        }
+      },
+      {
+        "path": "/users/{userId}/badges/{badgeId}",
+        "definition": {
+            "entityName": "Badge",
+            "schema": { "$ref": "#/entities/Badge" },
+            "description": "Stores badges awarded to a user.",
+            "params": [{"name": "userId"}, {"name": "badgeId"}]
+        }
+      },
+      {
+        "path": "/roles_admin/{userId}",
+        "definition": {
+          "entityName": "roles_admin",
+          "schema": {
+            "$ref": "#/entities/User"
+          },
+          "description": "Indicates admin role. Existence of document grants admin privileges.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+       {
+        "path": "/blog/{postId}",
+        "definition": {
+          "entityName": "BlogPost",
+          "schema": {
+            "$ref": "#/entities/BlogPost"
+          },
+          "description": "Stores individual blog posts. Publicly readable, writable by admins.",
+          "params": [{"name": "postId"}]
+        }
+      },
+      {
+        "path": "/blog/{postId}/comments/{commentId}",
+        "definition": {
+          "entityName": "BlogComment",
+          "schema": {
+            "$ref": "#/entities/BlogComment"
+          },
+          "description": "Stores comments for a specific blog post. Readable by all, writable by signed-in users.",
+          "params": [{"name": "postId"}, {"name": "commentId"}]
+        }
+      },
+      {
+        "path": "/blog/{postId}/likes/{userId}",
+        "definition": {
+          "entityName": "BlogLike",
+          "schema": {
+            "$ref": "#/entities/BlogLike"
+          },
+          "description": "Stores likes for a specific blog post. Used to track which users have liked a post.",
+          "params": [{"name": "postId"}, {"name": "userId"}]
+        }
+      },
+      {
+        "path": "/conversations/{conversationId}",
+        "definition": {
+            "entityName": "Conversation",
+            "schema": { "$ref": "#/entities/Conversation" },
+            "description": "Stores metadata for a private conversation between two users.",
+            "params": [{"name": "conversationId"}]
+        }
+      },
+      {
+        "path": "/conversations/{conversationId}/messages/{messageId}",
+        "definition": {
+            "entityName": "Message",
+            "schema": { "$ref": "#/entities/Message" },
+            "description": "Stores messages within a specific private conversation.",
+            "params": [{"name": "conversationId"}, {"name": "messageId"}]
+        }
+      },
+      {
+        "path": "/demoDesigns/{designId}",
+        "definition": {
+          "entityName": "DemoDesign",
+          "schema": { "$ref": "#/entities/DemoDesign" },
+          "description": "Stores demo website designs for client showcase.",
+          "params": [{"name": "designId"}]
+        }
+      }
+    ],
+    "reasoning": "The data structure is updated to support a full-featured blog. This includes a main 'blog' collection for posts. Each post document can have subcollections for 'comments' and 'likes' to enable social features and keep the data organized and scalable. User profiles are expanded with social links and bios. Bookmarks and Badges are added as subcollections under each user. A 'conversations' collection is added for private messaging. A 'demoDesigns' collection is added to manage the new demo design showcase feature."
+  }
+}
