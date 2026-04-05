@@ -30,7 +30,7 @@ const ModernHero = () => {
 
   const spotlightBackground = useTransform(
     [mouseX, mouseY],
-    ([x, y]: [number, number]) => `radial-gradient(600px circle at ${x}px ${y}px, hsl(var(--primary) / 0.15), transparent 80%)`
+    (latest: number[]) => `radial-gradient(600px circle at ${latest[0]}px ${latest[1]}px, hsl(var(--primary) / 0.15), transparent 80%)`
   );
 
   const containerVariants = {
