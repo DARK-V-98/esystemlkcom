@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Send, Plus, Trash2, Globe, FileCode, History, ShieldAlert, CheckCircle, Info } from 'lucide-react';
+import { Send, Plus, Trash2, Globe, FileCode, History, ShieldAlert, CheckCircle, Info, RefreshCw } from 'lucide-react';
 import { ToolLayout } from '@/components/tools/tool-layout';
 import { toast } from 'sonner';
 
