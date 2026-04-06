@@ -90,10 +90,10 @@ export default function OrdersClient() {
   };
 
   const filteredOrders = orders.filter(order => 
-    order.projectName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.clientName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.accessKey?.toLowerCase().includes(searchTerm.toLowerCase())
+    (order.projectName?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
+    (order.clientName?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
+    (order.email?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
+    (order.accessKey?.toLowerCase() || "").includes(searchTerm.toLowerCase())
   );
 
   const getStatusBadge = (status: Order['status']) => {

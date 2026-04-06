@@ -94,15 +94,17 @@ export default function AdminPage() {
               </CardContent>
             </Card>
         </Link>
-        <Card className="bg-card border border-border rounded-2xl shadow-lg">
-          <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>View Analytics</CardTitle>
-            <BarChart2 className="w-6 h-6 text-primary" />
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">Check website traffic and user engagement.</p>
-          </CardContent>
-        </Card>
+        <Link href="/admin/orders" className="block hover:scale-105 transition-transform duration-300">
+            <Card className="bg-card border border-border rounded-2xl shadow-lg h-full hover:border-primary transition-colors">
+              <CardHeader className="flex flex-row items-center justify-between">
+                <CardTitle>Project Tracking</CardTitle>
+                 <BarChart2 className="w-6 h-6 text-primary" />
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Manage active projects and real-time development progress.</p>
+              </CardContent>
+            </Card>
+        </Link>
       </div>
     </div>
   );
