@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import SEOKeywords from "@/components/SEOKeywords";
 
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -145,6 +146,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        {/* SEO Keywords Section */}
+        <SEOKeywords />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-accent-foreground/10">
