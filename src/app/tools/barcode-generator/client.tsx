@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download, Barcode, Palette, Ruler, Info, RefreshCw, Copy, Check } from 'lucide-react';
+import { Download, Barcode, Palette, Ruler, Info, RefreshCw, Copy, Check, ShieldAlert } from 'lucide-react';
 import { ToolLayout } from '@/components/tools/tool-layout';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
