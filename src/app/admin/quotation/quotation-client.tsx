@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Trash2, Plus, Download, Eye, Calendar as CalendarIcon, ChevronsUpDown, Check } from 'lucide-react';
+import { Trash2, Plus, Download, Eye, Calendar as CalendarIcon, ChevronsUpDown, Check, LayoutDashboard } from 'lucide-react';
 import { format } from 'date-fns';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
@@ -18,9 +18,11 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, addDoc, serverTimestamp } from 'firebase/firestore';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAuthContext } from '@/hooks/use-auth';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 // Types from pricing page
 type Tier = { name: string; price: string };
@@ -71,6 +73,8 @@ export default function QuotationClient() {
   const [pricingData, setPricingData] = useState<(PricingCategory | CommonAddons)[]>([]);
   const [isPricingLoading, setIsPricingLoading] = useState(true);
   const [isCommandPopoverOpen, setIsCommandPopoverOpen] = useState(false);
+  const [isCreatingOrder, setIsCreatingOrder] = useState(false);
+  const router = useRouter();
 
   const { register, control, handleSubmit, watch, setValue } = useForm<IQuotationForm>({
     defaultValues: {
@@ -257,6 +261,60 @@ export default function QuotationClient() {
     }
   };
 
+  const createOrder = async () => {
+    if (!firestore) {
+        toast.error('Connection to database failed. Please try again.');
+        return;
+    }
+
+    const formData = watch();
+    if (!formData.clientName || !formData.emailAddress) {
+        toast.error('Client name and email are required to create an order.');
+        return;
+    }
+
+    setIsCreatingOrder(true);
+    try {
+        const accessKey = `ESL-${Math.random().toString(36).substring(2, 6).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+        
+        const orderData = {
+            clientName: formData.clientName,
+            companyName: formData.companyName || '',
+            email: formData.emailAddress,
+            phone: formData.phoneNumber,
+            orderNumber: formData.quotationNumber,
+            projectName: `${formData.clientName}'s Project`,
+            accessKey: accessKey,
+            status: 'pending',
+            progress: 10,
+            currentStage: 'Planning & Requirements',
+            stages: [
+                { name: 'Planning & Requirements', status: 'active', description: 'Defining project scope and features.' },
+                { name: 'UI/UX Design', status: 'pending', description: 'Creating visual mockups and user flow.' },
+                { name: 'Core Development', status: 'pending', description: 'Building the backend and frontend systems.' },
+                { name: 'Testing & Optimization', status: 'pending', description: 'Quality assurance and performance tuning.' },
+                { name: 'Deployment & Launch', status: 'pending', description: 'Going live on production servers.' }
+            ],
+            devLink: '',
+            images: [],
+            totalAmount: finalTotal,
+            advancePaid: advancePaid,
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp(),
+        };
+
+        const docRef = await addDoc(collection(firestore, 'orders'), orderData);
+        toast.success('Order created successfully!');
+        toast.info(`Access Key: ${accessKey}`, { duration: 10000 });
+        router.push(`/admin/orders/${docRef.id}`);
+    } catch (error) {
+        console.error('Error creating order:', error);
+        toast.error('Failed to create order. Please check console for details.');
+    } finally {
+        setIsCreatingOrder(false);
+    }
+  };
+
   if (!isClient) return null;
 
   return (
@@ -303,6 +361,21 @@ export default function QuotationClient() {
                          <div className="pt-4 space-y-2">
                            <Button type="button" variant="outline" className="w-full" onClick={() => generatePDF('preview')}><Eye className="mr-2 h-4 w-4" /> Preview PDF</Button>
                            <Button type="submit" className="w-full"><Download className="mr-2 h-4 w-4" /> Generate & Download PDF</Button>
+                           <div className="pt-2 border-t border-border mt-2">
+                                <Button 
+                                    type="button" 
+                                    onClick={createOrder} 
+                                    disabled={isCreatingOrder}
+                                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-500/20"
+                                >
+                                    {isCreatingOrder ? 'Creating Order...' : (
+                                        <><LayoutDashboard className="mr-2 h-4 w-4" /> CREATE LIVE ORDER</>
+                                    )}
+                                </Button>
+                                <p className="text-[10px] text-center text-muted-foreground mt-2 italic px-4">
+                                    Converts this quotation into a live project that the client can track in real-time.
+                                </p>
+                           </div>
                         </div>
                     </CardContent>
                 </Card>
