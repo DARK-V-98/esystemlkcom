@@ -48,7 +48,7 @@ interface OrderData {
   stages: ProjectStage[];
   devLink?: string;
   images: string[];
-  lastUpdated: any;
+  updatedAt: any;
   createdAt: any;
 }
 
