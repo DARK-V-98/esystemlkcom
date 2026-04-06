@@ -1,5 +1,7 @@
 'use client';
 
+import React from "react";
+
 const keywordCategories = [
   {
     title: "Development Solutions",
@@ -90,48 +92,39 @@ const longTailKeywords = [
 
 const SEOKeywords = () => {
   return (
-    <div className="border-t border-accent-foreground/5 pt-12 pb-8 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h3 className="text-sm font-black uppercase tracking-[0.3em] text-primary/40 mb-8 text-center italic">
-          Capabilities & Expertise Directory
-        </h3>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
-          {keywordCategories.map((cat) => (
-            <div key={cat.title}>
-              <h4 className="text-[10px] font-black uppercase tracking-widest text-accent-foreground mb-4 opacity-80">
-                {cat.title}
-              </h4>
-              <ul className="space-y-2">
-                {cat.keywords.map((word) => (
-                  <li key={word}>
-                    <span 
-                       className="text-[11px] text-accent-foreground/40 hover:text-primary transition-colors cursor-default"
-                       title={`${word} Services by ESystemLk`}
-                    >
-                      {word}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+    <div 
+      className="sr-only" 
+      aria-hidden="true"
+      style={{ 
+        position: 'absolute', 
+        width: '1px', 
+        height: '1px', 
+        padding: '0', 
+        margin: '-1px', 
+        overflow: 'hidden', 
+        clip: 'rect(0, 0, 0, 0)', 
+        whiteSpace: 'nowrap', 
+        border: '0' 
+      }}
+    >
+        <div className="max-w-7xl mx-auto">
+            <h3>Capabilities & Expertise Directory</h3>
+            {keywordCategories.map((cat) => (
+                <div key={cat.title}>
+                  <h4>{cat.title}</h4>
+                  <ul>
+                    {cat.keywords.map((word) => (
+                      <li key={word}>{word}</li>
+                    ))}
+                  </ul>
+                </div>
+            ))}
+            <div>
+                 {longTailKeywords.map((word) => (
+                   <span key={word}>{word} </span>
+                 ))}
             </div>
-          ))}
         </div>
-
-        {/* Dense keyword cloud for semantic indexing (visually subtle) */}
-        <div className="mt-12 pt-8 border-t border-accent-foreground/5">
-           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 opacity-20 hover:opacity-100 transition-opacity duration-700">
-             {longTailKeywords.map((word) => (
-               <span 
-                 key={word} 
-                 className="text-[9px] uppercase font-bold tracking-tighter text-accent-foreground/30 whitespace-nowrap"
-               >
-                 {word}
-               </span>
-             ))}
-           </div>
-        </div>
-      </div>
     </div>
   );
 };

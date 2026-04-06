@@ -1,5 +1,6 @@
-
 'use client';
+
+import React from "react";
 
 import { 
   Code, 
@@ -146,9 +147,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* SEO Keywords Section */}
-        <SEOKeywords />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-accent-foreground/10">
