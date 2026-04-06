@@ -269,7 +269,7 @@ export default function QuotationClient() {
 
     const formData = watch();
     if (!formData.clientName || !formData.emailAddress) {
-        toast.error('Client name and email are required to create an order.');
+        toast.error('Client name and email are required to create a live order.');
         return;
     }
 
@@ -297,8 +297,8 @@ export default function QuotationClient() {
             ],
             devLink: '',
             images: [],
-            totalAmount: finalTotal,
-            advancePaid: advancePaid,
+            totalAmount: Number(finalTotal) || 0,
+            advancePaid: Number(formData.advancePaid) || 0,
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp(),
         };
@@ -330,7 +330,7 @@ export default function QuotationClient() {
                         <Input placeholder="Client Full Name" {...register('clientName')} required />
                         <Input placeholder="Company Name (Optional)" {...register('companyName')} />
                         <Input placeholder="Phone Number" {...register('phoneNumber')} required />
-                        <Input type="email" placeholder="Email Address (Optional)" {...register('emailAddress')} />
+                        <Input type="email" placeholder="Email Address" {...register('emailAddress')} required />
                         <Textarea placeholder="Client Address (Optional)" {...register('clientAddress')} className="md:col-span-2" />
                     </CardContent>
                 </Card>
@@ -359,10 +359,11 @@ export default function QuotationClient() {
                            <span className="font-bold">Rs. {balanceDue.toFixed(2)}</span>
                         </div>
                          <div className="pt-4 space-y-2">
-                           <Button type="button" variant="outline" className="w-full" onClick={() => generatePDF('preview')}><Eye className="mr-2 h-4 w-4" /> Preview PDF</Button>
-                           <Button type="submit" className="w-full"><Download className="mr-2 h-4 w-4" /> Generate & Download PDF</Button>
+                           <Button id="btn-preview-pdf" type="button" variant="outline" className="w-full" onClick={() => generatePDF('preview')}><Eye className="mr-2 h-4 w-4" /> Preview PDF</Button>
+                           <Button id="btn-download-pdf" type="submit" className="w-full"><Download className="mr-2 h-4 w-4" /> Generate & Download PDF</Button>
                            <div className="pt-2 border-t border-border mt-2">
                                 <Button 
+                                    id="btn-create-live-order"
                                     type="button" 
                                     onClick={createOrder} 
                                     disabled={isCreatingOrder}
