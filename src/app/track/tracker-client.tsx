@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { collection, query, where, onSnapshot } from 'firebase/firestore';
-import { db } from '@/firebase/config';
+import { useAuthContext } from '@/hooks/use-auth';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -53,6 +53,7 @@ interface OrderData {
 }
 
 export default function TrackerClient() {
+  const { firestore } = useAuthContext();
   const [accessKey, setAccessKey] = useState('');
   const [projectData, setProjectData] = useState<OrderData | null>(null);
   const [loading, setLoading] = useState(false);
@@ -66,8 +67,13 @@ export default function TrackerClient() {
     setLoading(true);
     setError('');
 
+    if (!firestore) {
+        setError("Database connection initializing...");
+        return;
+    }
+
     // Access using accessKey
-    const q = query(collection(db, 'orders'), where('accessKey', '==', accessKey.trim()));
+    const q = query(collection(firestore, 'orders'), where('accessKey', '==', accessKey.trim()));
     
     // Using onSnapshot for real-time tracking once the key is validated
     const unsubscribe = onSnapshot(q, (snapshot) => {
