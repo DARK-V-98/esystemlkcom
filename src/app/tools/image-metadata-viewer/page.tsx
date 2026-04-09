@@ -91,9 +91,9 @@ export default function ImageMetadataViewerPage() {
 
     return (
         <div className="container mx-auto py-10 px-4 md:px-6">
-            <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+            <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
                 <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Image Metadata Viewer</h1>
-                <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+                <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
                     Inspect EXIF data from your photos and remove it if needed.
                 </p>
             </div>
@@ -108,7 +108,7 @@ export default function ImageMetadataViewerPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+                <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
                     <CardHeader>
                         <CardTitle>Upload Image</CardTitle>
                         <CardDescription>Select a JPG/JPEG file to inspect its metadata.</CardDescription>
@@ -124,7 +124,7 @@ export default function ImageMetadataViewerPage() {
                     </CardContent>
                 </Card>
 
-                <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+                <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
                     <CardHeader>
                         <CardTitle>Metadata (EXIF)</CardTitle>
                         <CardDescription>Information embedded in the image file.</CardDescription>
@@ -160,3 +160,5 @@ export default function ImageMetadataViewerPage() {
         </div>
     );
 }
+
+

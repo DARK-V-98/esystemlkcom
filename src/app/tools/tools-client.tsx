@@ -241,7 +241,7 @@ export default function ToolsClient() {
                   <Icon name={item.icon} className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-muted-foreground text-sm">{item.description}</p>
+              <p className="text-gray-600 text-sm">{item.description}</p>
             </div>
           ))}
         </div>
@@ -271,7 +271,7 @@ export default function ToolsClient() {
                     <AccordionTrigger className="text-left font-semibold hover:text-primary transition-colors py-6 [&[data-state=open]>svg]:text-primary">
                     {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    <AccordionContent className="text-gray-600 pb-6 leading-relaxed">
                     {faq.answer}
                     </AccordionContent>
                 </AccordionItem>
@@ -283,3 +283,4 @@ export default function ToolsClient() {
     </div>
   );
 }
+

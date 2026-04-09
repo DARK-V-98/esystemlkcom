@@ -15,40 +15,40 @@ interface ToolLayoutProps {
 
 export function ToolLayout({ title, description, children, category }: ToolLayoutProps) {
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 bg-white text-black">
       {/* Background Decorative Elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[120px] rounded-full animate-pulse delay-700" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[hsl(200,100%,50%,0.06)] blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[hsl(200,100%,50%,0.04)] blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 pt-8">
         {/* Breadcrumbs */}
-        <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-8">
-          <Link href="/" className="hover:text-primary transition-colors flex items-center">
+        <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+          <Link href="/" className="hover:text-[hsl(200,100%,40%)] transition-colors flex items-center">
             <Home className="w-4 h-4 mr-1" /> Home
           </Link>
           <ChevronRight className="w-4 h-4" />
-          <Link href="/tools" className="hover:text-primary transition-colors">
+          <Link href="/tools" className="hover:text-[hsl(200,100%,40%)] transition-colors">
             Tools
           </Link>
           <ChevronRight className="w-4 h-4" />
-          <span className="text-foreground font-medium">{title}</span>
+          <span className="text-black font-medium">{title}</span>
         </nav>
 
         {/* Hero Section */}
-        <div className="relative mb-12 group">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 blur-3xl opacity-50 group-hover:opacity-75 transition-opacity rounded-3xl" />
-          <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl rounded-3xl p-8 md:p-12 text-center overflow-hidden">
+        <div className="relative mb-12">
+          <div className="relative bg-white border border-[hsl(200,100%,50%,0.3)] shadow-lg rounded-3xl p-8 md:p-12 text-center overflow-hidden" style={{boxShadow:'0 0 40px hsl(200,100%,50%,0.08)'}}>
+            <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,100%,50%,0.04)] to-transparent rounded-3xl" />
             {category && (
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4 border border-primary/20">
+              <span className="relative inline-block px-3 py-1 rounded-full bg-[hsl(200,100%,50%,0.1)] text-[hsl(200,100%,35%)] text-xs font-bold uppercase tracking-wider mb-4 border border-[hsl(200,100%,50%,0.3)]">
                 {category}
               </span>
             )}
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 mb-6">
+            <h1 className="relative text-4xl md:text-6xl font-bold tracking-tight text-black mb-6">
               {title}
             </h1>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="relative text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               {description}
             </p>
           </div>
@@ -61,7 +61,7 @@ export function ToolLayout({ title, description, children, category }: ToolLayou
 
         {/* Footer Actions */}
         <div className="mt-16 flex justify-center">
-          <Button asChild variant="ghost" className="hover:bg-white/5 text-muted-foreground hover:text-white transition-all group">
+          <Button asChild variant="ghost" className="text-gray-500 hover:text-[hsl(200,100%,40%)] hover:bg-[hsl(200,100%,50%,0.08)] transition-all group">
             <Link href="/tools">
               <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Explore More Tools

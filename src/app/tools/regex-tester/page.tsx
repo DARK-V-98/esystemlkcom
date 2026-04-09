@@ -56,9 +56,9 @@ export default function RegexTesterPage() {
 
   return (
     <div className="container mx-auto py-10 px-4 md:px-6">
-      <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+      <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Regex Tester</h1>
-        <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+        <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
           Test and debug your regular expressions with live matching.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function RegexTesterPage() {
       </div>
 
       <div className="space-y-8">
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Regular Expression</CardTitle>
           </CardHeader>
@@ -97,7 +97,7 @@ export default function RegexTesterPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Test String</CardTitle>
           </CardHeader>
@@ -116,7 +116,7 @@ export default function RegexTesterPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Match Information</CardTitle>
             <CardDescription>{matches.length} match(es) found.</CardDescription>
@@ -152,3 +152,5 @@ export default function RegexTesterPage() {
     </div>
   );
 }
+
+

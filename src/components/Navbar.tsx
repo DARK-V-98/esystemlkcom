@@ -66,9 +66,9 @@ const Navbar = () => {
           <SheetTitle asChild>
             <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsMobileMenuOpen(false)}>
               <Image src="/logo.png" alt="ESystemLk Logo" width={30} height={30} className="rounded-lg" />
-              <span className="text-xl font-bold">
-                <span className="text-foreground">esystem</span>
-                <span className="text-primary">lk</span>
+              <span className="text-xl font-bold tracking-wide">
+                <span className="text-foreground">ESYSTEM</span>
+                <span style={{color:'hsl(200,100%,50%)', textShadow:'0 0 10px hsl(200,100%,50%,0.8)'}}>LK</span>
               </span>
             </Link>
           </SheetTitle>
@@ -154,21 +154,21 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
-            <Image src="/logo.png" alt="ESystemLk Logo" width={40} height={40} className="rounded-lg" />
-            <span className="text-2xl font-bold">
-              <span className="text-foreground">esystem</span>
-              <span className="text-primary">lk</span>
+            <Image src="/logo.png" alt="ESystemLk Logo" width={32} height={32} className="rounded-lg" />
+            <span className="text-xl font-bold tracking-wide">
+              <span className="text-foreground">ESYSTEM</span>
+              <span style={{color:'hsl(200,100%,50%)', textShadow:'0 0 10px hsl(200,100%,50%,0.8)'}}>LK</span>
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group whitespace-nowrap"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -176,10 +176,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-             <Button asChild variant="hero" size="lg" className="gap-2">
+          <div className="hidden md:flex items-center gap-3">
+             <Button asChild variant="hero" size="sm" className="gap-2">
               <Link href="/contact">
-                <Rocket className="w-5 h-5" />
+                <Rocket className="w-4 h-4" />
                 Get Started
               </Link>
             </Button>
@@ -231,9 +231,9 @@ const Navbar = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button asChild variant="outline" size="lg" className="gap-2">
+              <Button asChild variant="outline" size="sm" className="gap-2">
                 <Link href="/login">
-                  <LogIn className="w-5 h-5" />
+                  <LogIn className="w-4 h-4" />
                   Sign In
                 </Link>
               </Button>

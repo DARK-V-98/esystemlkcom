@@ -56,7 +56,7 @@ export default function MetaTagGeneratorClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Editor */}
         <div className="lg:col-span-5 space-y-6">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all flex flex-col">
+           <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all flex flex-col">
              <div className="h-1.5 bg-gradient-to-r from-primary via-primary/50 to-blue-500" />
              <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -74,7 +74,7 @@ export default function MetaTagGeneratorClient() {
                             {title.length} / 60
                          </span>
                       </div>
-                      <Input value={title} onChange={e => setTitle(e.target.value)} className="h-11 bg-black/20 border-white/5" />
+                      <Input value={title} onChange={e => setTitle(e.target.value)} className="h-11 bg-gray-50 border-gray-200" />
                    </div>
 
                    <div className="space-y-2">
@@ -84,17 +84,17 @@ export default function MetaTagGeneratorClient() {
                              {description.length} / 160
                           </span>
                        </div>
-                       <Textarea value={description} onChange={e => setDescription(e.target.value)} rows={3} className="bg-black/20 border-white/5 font-sans" />
+                       <Textarea value={description} onChange={e => setDescription(e.target.value)} rows={3} className="bg-gray-50 border-gray-200 font-sans" />
                    </div>
 
                    <div className="space-y-2">
                       <label className="text-xs font-black uppercase text-muted-foreground tracking-wider px-1">Website URL</label>
-                      <Input value={url} onChange={e => setUrl(e.target.value)} placeholder="https://esystemlk.com" className="h-11 bg-black/20 border-white/5" />
+                      <Input value={url} onChange={e => setUrl(e.target.value)} placeholder="https://esystemlk.com" className="h-11 bg-gray-50 border-gray-200" />
                    </div>
 
                    <div className="space-y-2">
                       <label className="text-xs font-black uppercase text-muted-foreground tracking-wider px-1">OG Image URL</label>
-                      <Input value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeholder="https://example.com/og.png" className="h-11 bg-black/20 border-white/5" />
+                      <Input value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeholder="https://example.com/og.png" className="h-11 bg-gray-50 border-gray-200" />
                    </div>
                 </div>
 
@@ -115,20 +115,20 @@ export default function MetaTagGeneratorClient() {
 
         {/* Previews */}
         <div className="lg:col-span-7 space-y-8">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-8 space-y-12">
+           <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm p-8 space-y-12">
               {/* Google Preview */}
               <div className="space-y-4">
-                 <div className="flex items-center gap-2 text-white/30 text-[10px] font-black uppercase tracking-[0.2em] px-2">
+                 <div className="flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase tracking-[0.2em] px-2">
                     <Search className="w-3 h-3" /> SERP Preview (Google)
                  </div>
-                 <div className="p-6 bg-slate-900 rounded-3xl border border-white/5 shadow-xl max-w-2xl group transition-all">
+                 <div className="p-6 bg-slate-900 rounded-3xl border border-gray-200 shadow-xl max-w-2xl group transition-all">
                     <p className="text-[10px] text-emerald-400 font-bold mb-1 truncate flex items-center gap-1">
                        <Globe className="w-2 h-2" /> {url || 'https://example.com'}
                     </p>
                     <h3 className="text-2xl text-blue-400 hover:underline cursor-pointer font-medium mb-1 truncate">
                        {title || 'Enter your title here'}
                     </h3>
-                    <p className="text-sm text-white/50 leading-snug line-clamp-2">
+                    <p className="text-sm text-gray-400 leading-snug line-clamp-2">
                        {description || 'Enter a description to see how it looks in search engine results...'}
                     </p>
                  </div>
@@ -136,11 +136,11 @@ export default function MetaTagGeneratorClient() {
 
               {/* Social Preview */}
               <div className="space-y-4">
-                 <div className="flex items-center gap-6 text-white/30 text-[10px] font-black uppercase tracking-[0.2em] px-2">
+                 <div className="flex items-center gap-6 text-gray-400 text-[10px] font-black uppercase tracking-[0.2em] px-2">
                     <div className="flex items-center gap-2"><Facebook className="w-3 h-3" /> Facebook</div>
                     <div className="flex items-center gap-2"><Twitter className="w-3 h-3" /> Twitter</div>
                  </div>
-                 <div className="max-w-xl mx-auto md:mx-0 w-full overflow-hidden rounded-[2.5rem] border border-white/5 bg-slate-900 shadow-2xl transition-transform hover:scale-[1.02] duration-500">
+                 <div className="max-w-xl mx-auto md:mx-0 w-full overflow-hidden rounded-[2.5rem] border border-gray-200 bg-slate-900 shadow-sm transition-transform hover:scale-[1.02] duration-500">
                     <div className="aspect-[1.91/1] bg-black/40 relative overflow-hidden group">
                        {imageUrl ? (
                          <img src={imageUrl} alt="preview" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onError={(e) => (e.currentTarget.style.display = 'none')} />
@@ -148,17 +148,17 @@ export default function MetaTagGeneratorClient() {
                          <div className="absolute inset-0 flex items-center justify-center text-white/10 italic">No image preview</div>
                        )}
                     </div>
-                    <div className="p-8 border-t border-white/5">
-                        <p className="text-[10px] uppercase font-black tracking-widest text-white/30 mb-2 truncate">{domain}</p>
+                    <div className="p-8 border-t border-gray-200">
+                        <p className="text-[10px] uppercase font-black tracking-widest text-gray-400 mb-2 truncate">{domain}</p>
                         <h4 className="text-xl font-bold mb-2 truncate text-white/90">{title || 'Dynamic Page Title'}</h4>
-                        <p className="text-sm text-white/50 line-clamp-2 italic leading-relaxed">{description || 'Dynamic Page Description...'}</p>
+                        <p className="text-sm text-gray-400 line-clamp-2 italic leading-relaxed">{description || 'Dynamic Page Description...'}</p>
                     </div>
                  </div>
               </div>
            </Card>
 
            {/* Code Snippet Card */}
-           <Card className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-4 overflow-hidden relative group">
+           <Card className="bg-black/60 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-sm p-4 overflow-hidden relative group">
               <div className="absolute top-4 left-4 flex gap-2">
                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/30" />
                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400/30" />
@@ -173,3 +173,4 @@ export default function MetaTagGeneratorClient() {
     </ToolLayout>
   );
 }
+

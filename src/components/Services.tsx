@@ -20,79 +20,79 @@ const Services = () => {
     {
       icon: Globe,
       title: "Business Websites",
-      description: "Professional, responsive websites designed to elevate your brand and convert visitors into customers.",
+      description: "Clean, fast websites that look great and actually bring in customers — not just pretty pages.",
       features: ["SEO Optimized", "Mobile Responsive", "Fast Loading"],
     },
     {
       icon: Smartphone,
       title: "Web Applications",
-      description: "Powerful web apps with intuitive interfaces that streamline your business operations.",
+      description: "Custom web apps built around how your team works, not the other way around.",
       features: ["Custom Features", "User-Friendly", "Scalable"],
     },
     {
       icon: Code2,
       title: "Software Systems",
-      description: "Enterprise-grade software solutions tailored to your specific business requirements.",
+      description: "Solid software built for your business — no bloat, no shortcuts, just what you need.",
       features: ["Full Integration", "Secure", "Automated"],
     },
     {
       icon: Database,
       title: "Database Solutions",
-      description: "Robust database architecture and management for efficient data handling.",
+      description: "Well-structured databases that keep your data safe, fast, and easy to work with.",
       features: ["Optimized Queries", "Backup Systems", "Data Security"],
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "Beautiful, intuitive designs that enhance user experience and engagement.",
+      description: "Designs people actually enjoy using — simple, clean, and built around real users.",
       features: ["Modern Design", "User Research", "Prototyping"],
     },
     {
       icon: Cloud,
       title: "Cloud Hosting",
-      description: "Reliable cloud hosting solutions with 99.9% uptime guarantee.",
+      description: "Reliable hosting that stays up. We handle the servers so you don't have to think about them.",
       features: ["Fast Servers", "Auto Scaling", "SSL Included"],
     },
     {
       icon: Shield,
       title: "Security Solutions",
-      description: "Comprehensive security measures to protect your digital assets.",
+      description: "We lock things down properly — firewalls, encryption, and ongoing monitoring included.",
       features: ["Firewall", "Encryption", "Monitoring"],
     },
     {
       icon: Settings,
       title: "Maintenance & Support",
-      description: "Ongoing maintenance with lifetime service warranty - absolutely free!",
+      description: "We keep your site running after launch — for free, for life. No catch.",
       features: ["24/7 Support", "Regular Updates", "Bug Fixes"],
     },
     {
       icon: Rocket,
       title: "Performance Optimization",
-      description: "Speed optimization to ensure your website loads blazingly fast.",
+      description: "Slow sites lose customers. We speed things up so yours doesn't.",
       features: ["Code Optimization", "CDN Setup", "Caching"],
     },
     {
       icon: BarChart,
       title: "Analytics & SEO",
-      description: "Data-driven insights and search engine optimization for growth.",
+      description: "Real data, real rankings. We help you show up on Google and understand what's working.",
       features: ["Keyword Research", "Traffic Analysis", "Reporting"],
     },
     {
       icon: Lock,
       title: "API Development",
-      description: "Secure and scalable API development for seamless integrations.",
+      description: "Clean, documented APIs that connect your systems without headaches.",
       features: ["RESTful APIs", "Documentation", "Authentication"],
     },
     {
       icon: Headphones,
       title: "Consulting",
-      description: "Expert guidance to help you make the right technology decisions.",
+      description: "Not sure what you need? We'll sit down with you and figure it out together.",
       features: ["Strategy Planning", "Tech Audit", "Roadmap"],
     },
   ];
 
   return (
-    <section id="services" className="py-24 bg-secondary/30 relative overflow-hidden animate-fade-in opacity-0">
+    <section id="services" className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
@@ -106,8 +106,8 @@ const Services = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Complete <span className="text-gradient">Digital Solutions</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            From small websites to enterprise software systems, we deliver excellence at every scale.
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            From small business sites to full enterprise systems — we get it done right, every time.
           </p>
         </div>
 
@@ -126,7 +126,7 @@ const Services = () => {
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-gray-600 text-sm mb-4">
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -149,3 +149,6 @@ const Services = () => {
 };
 
 export default Services;
+
+
+

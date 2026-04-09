@@ -101,7 +101,7 @@ export default function RobotsTxtGeneratorClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Input Column */}
         <div className="lg:col-span-6 space-y-6">
-          <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all">
+          <Card className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all">
              <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Bot className="w-5 h-5 text-primary" />
@@ -111,7 +111,7 @@ export default function RobotsTxtGeneratorClient() {
              </CardHeader>
              <CardContent className="space-y-6">
                 {rules.map((rule, rIdx) => (
-                  <div key={rIdx} className="p-6 bg-black/20 rounded-2xl border border-white/5 space-y-4">
+                  <div key={rIdx} className="p-6 bg-gray-50 rounded-2xl border border-gray-200 space-y-4">
                      <div className="flex justify-between items-center">
                         <label className="text-sm font-semibold">User Agent</label>
                         {rules.length > 1 && (
@@ -121,7 +121,7 @@ export default function RobotsTxtGeneratorClient() {
                         )}
                      </div>
                      <Select value={rule.userAgent} onValueChange={(val) => updateRule(rIdx, 'userAgent', val)}>
-                        <SelectTrigger className="bg-black/20 border-white/5 h-11">
+                        <SelectTrigger className="bg-gray-50 border-gray-200 h-11">
                            <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -137,7 +137,7 @@ export default function RobotsTxtGeneratorClient() {
 
                      <div className="space-y-4 pt-2">
                         <div className="space-y-2">
-                           <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest flex items-center gap-2">
+                           <label className="text-xs uppercase font-bold text-gray-500 tracking-widest flex items-center gap-2">
                               Disallow Paths <Info className="w-3 h-3" />
                            </label>
                            {rule.disallow.map((path, pIdx) => (
@@ -146,7 +146,7 @@ export default function RobotsTxtGeneratorClient() {
                                   value={path} 
                                   onChange={(e) => updatePath(rIdx, pIdx, 'disallow', e.target.value)}
                                   placeholder="/private-folder"
-                                  className="h-10 bg-black/20 border-white/5"
+                                  className="h-10 bg-gray-50 border-gray-200"
                                 />
                                 <Button variant="ghost" size="icon" onClick={() => removePath(rIdx, pIdx, 'disallow')} className="h-10 w-10 text-destructive/50 hover:text-destructive">
                                    <Trash2 className="w-4 h-4" />
@@ -159,14 +159,14 @@ export default function RobotsTxtGeneratorClient() {
                         </div>
                         
                         <div className="space-y-2">
-                           <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Allow Paths</label>
+                           <label className="text-xs uppercase font-bold text-gray-500 tracking-widest">Allow Paths</label>
                            {rule.allow.map((path, pIdx) => (
                              <div key={pIdx} className="flex gap-2">
                                 <Input 
                                   value={path} 
                                   onChange={(e) => updatePath(rIdx, pIdx, 'allow', e.target.value)}
                                   placeholder="/public-folder"
-                                  className="h-10 bg-black/20 border-white/5"
+                                  className="h-10 bg-gray-50 border-gray-200"
                                 />
                                 <Button variant="ghost" size="icon" onClick={() => removePath(rIdx, pIdx, 'allow')} className="h-10 w-10 text-destructive/50 hover:text-destructive">
                                    <Trash2 className="w-4 h-4" />
@@ -187,7 +187,7 @@ export default function RobotsTxtGeneratorClient() {
                       value={sitemap} 
                       onChange={(e) => setSitemap(e.target.value)}
                       placeholder="https://example.com/sitemap.xml"
-                      className="h-12 bg-black/20 border-white/5"
+                      className="h-12 bg-gray-50 border-gray-200"
                    />
                 </div>
 
@@ -201,7 +201,7 @@ export default function RobotsTxtGeneratorClient() {
 
         {/* Output Column */}
         <div className="lg:col-span-6 space-y-6">
-          <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden min-h-[600px] flex flex-col">
+          <Card className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden min-h-[600px] flex flex-col">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
                 <CardTitle className="flex items-center gap-2">
@@ -222,13 +222,13 @@ export default function RobotsTxtGeneratorClient() {
               </div>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col p-0">
-               <div className="flex-grow bg-black/40 font-mono text-sm p-8 overflow-auto max-h-[620px] border-t border-white/5 whitespace-pre">
+               <div className="flex-grow bg-gray-50 font-mono text-sm p-8 overflow-auto max-h-[620px] border-t border-gray-200 whitespace-pre">
                   {generatedTxt ? (
                     <code className="text-primary/80">
                       {generatedTxt}
                     </code>
                   ) : (
-                    <div className="h-full flex items-center justify-center text-muted-foreground/40 italic">
+                    <div className="h-full flex items-center justify-center text-gray-400 italic">
                       Click generate to view your robots.txt code...
                     </div>
                   )}
@@ -240,3 +240,4 @@ export default function RobotsTxtGeneratorClient() {
     </ToolLayout>
   );
 }
+

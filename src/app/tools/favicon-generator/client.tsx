@@ -113,7 +113,7 @@ export default function FaviconGeneratorClient() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                {/* Controls */}
                <div className="lg:col-span-5 space-y-6">
-                  <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all flex flex-col">
+                  <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all flex flex-col">
                      <div className="h-1.5 bg-gradient-to-r from-primary via-primary/50 to-orange-500" />
                      <CardHeader>
                         <CardTitle className="flex items-center gap-2">
@@ -127,7 +127,7 @@ export default function FaviconGeneratorClient() {
                            {!previewUrl && (
                               <div 
                                  onClick={() => fileInputRef.current?.click()}
-                                 className="h-48 border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-white/5 hover:border-primary/50 transition-all group-hover/upload:border-primary/30"
+                                 className="h-48 border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-white/5 hover:border-primary/50 transition-all group-hover/upload:border-primary/30"
                               >
                                  <Plus className="w-12 h-12 text-primary/50 mb-3" />
                                  <p className="text-sm text-foreground/70 font-semibold tracking-wide uppercase">Select Master Logo</p>
@@ -137,10 +137,10 @@ export default function FaviconGeneratorClient() {
                            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*" />
 
                            {previewUrl && (
-                             <div className="relative rounded-2xl overflow-hidden bg-black/40 border border-white/5 p-8 flex flex-col items-center">
+                             <div className="relative rounded-2xl overflow-hidden bg-black/40 border border-gray-200 p-8 flex flex-col items-center">
                                 <img src={previewUrl} alt="Preview" className="w-32 h-32 rounded-lg shadow-xl" />
                                 <div className="mt-4 flex flex-col items-center gap-1">
-                                   <p className="text-xs font-bold text-white/50 truncate max-w-[200px] uppercase tracking-tighter">{sourceFile?.name}</p>
+                                   <p className="text-xs font-bold text-gray-400 truncate max-w-[200px] uppercase tracking-tighter">{sourceFile?.name}</p>
                                 </div>
                                 <Button variant="ghost" size="icon" onClick={clearInput} className="absolute top-2 right-2 h-8 w-8 text-red-400 hover:text-red-500 hover:bg-black/40 rounded-full">
                                    <Trash2 className="w-4 h-4" />
@@ -149,11 +149,11 @@ export default function FaviconGeneratorClient() {
                            )}
                         </div>
 
-                        <div className="p-6 bg-white/5 rounded-2xl border border-white/5 space-y-4">
+                        <div className="p-6 bg-white/5 rounded-2xl border border-gray-200 space-y-4">
                             <h4 className="text-xs font-black uppercase text-primary tracking-widest flex items-center gap-2">
                                <ShieldCheck className="w-4 h-4" /> Included in Package
                             </h4>
-                            <div className="grid grid-cols-2 gap-y-3 text-[11px] font-bold text-white/60">
+                            <div className="grid grid-cols-2 gap-y-3 text-[11px] font-bold text-gray-500">
                                <div className="flex items-center gap-2"><Layout className="w-3 h-3" /> 16x16 PNG</div>
                                <div className="flex items-center gap-2"><Layout className="w-3 h-3" /> 32x32 PNG</div>
                                <div className="flex items-center gap-2"><Box className="w-3 h-3" /> Android Chrome</div>
@@ -177,7 +177,7 @@ export default function FaviconGeneratorClient() {
 
                {/* Preview */}
                <div className="lg:col-span-7 h-full">
-                  <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden min-h-[600px] flex flex-col items-center justify-center relative p-12">
+                  <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden min-h-[600px] flex flex-col items-center justify-center relative p-12">
                      <div className="absolute top-6 left-6 flex items-center gap-2 text-[10px] font-black uppercase text-white/20 tracking-widest">
                         <Box className="w-3 h-3" /> Real-time Preview
                      </div>
@@ -185,8 +185,8 @@ export default function FaviconGeneratorClient() {
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-xl">
                         {/* Tab preview */}
                         <div className="space-y-4">
-                           <p className="text-[10px] uppercase font-black text-center text-white/30 tracking-widest">Web Browser Tab</p>
-                           <div className="bg-black/60 rounded-xl p-4 border border-white/10 flex items-center gap-3">
+                           <p className="text-[10px] uppercase font-black text-center text-gray-400 tracking-widest">Web Browser Tab</p>
+                           <div className="bg-black/60 rounded-xl p-4 border border-gray-200 flex items-center gap-3">
                               <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center p-1.5">
                                  {previewUrl ? <img src={previewUrl} className="w-full h-full object-contain" /> : <ImageIcon className="w-full h-full opacity-20" />}
                               </div>
@@ -196,9 +196,9 @@ export default function FaviconGeneratorClient() {
 
                         {/* Mobile preview */}
                         <div className="space-y-4">
-                           <p className="text-[10px] uppercase font-black text-center text-white/30 tracking-widest">Home Screen</p>
+                           <p className="text-[10px] uppercase font-black text-center text-gray-400 tracking-widest">Home Screen</p>
                            <div className="flex justify-center">
-                              <div className="w-20 h-20 rounded-2xl bg-white/10 p-4 border-2 border-white/5 flex items-center justify-center relative">
+                              <div className="w-20 h-20 rounded-2xl bg-white/10 p-4 border-2 border-gray-200 flex items-center justify-center relative">
                                  {previewUrl ? <img src={previewUrl} className="w-full h-full object-contain rounded-xl" /> : <ImageIcon className="w-12 h-12 opacity-10" />}
                               </div>
                            </div>
@@ -221,3 +221,5 @@ export default function FaviconGeneratorClient() {
         </ToolLayout>
     );
 }
+
+

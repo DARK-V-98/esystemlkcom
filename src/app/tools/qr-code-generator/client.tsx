@@ -91,7 +91,7 @@ export default function QrCodeGeneratorClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Settings Column */}
         <div className="lg:col-span-5 space-y-6">
-          <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all">
+          <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all">
             <div className="h-1.5 bg-gradient-to-r from-primary via-primary/50 to-purple-500" />
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -107,13 +107,13 @@ export default function QrCodeGeneratorClient() {
                   id="content"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  className="bg-black/20 border-white/5 h-12 focus:ring-primary/50"
+                  className="bg-gray-50 border-gray-200 h-12 focus:ring-primary/50"
                   placeholder="https://example.com"
                 />
               </div>
 
               <Tabs defaultValue="style" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 bg-black/40 border border-white/5 p-1 rounded-xl">
+                <TabsList className="grid w-full grid-cols-2 bg-black/40 border border-gray-200 p-1 rounded-xl">
                   <TabsTrigger value="style" className="rounded-lg data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
                     <Palette className="w-4 h-4 mr-2" />
                     Style
@@ -133,13 +133,13 @@ export default function QrCodeGeneratorClient() {
                           type="color" 
                           value={fgColor} 
                           onChange={(e) => setFgColor(e.target.value)}
-                          className="w-12 h-10 p-1 bg-black/20 border-white/5 rounded-md cursor-pointer"
+                          className="w-12 h-10 p-1 bg-gray-50 border-gray-200 rounded-md cursor-pointer"
                         />
                         <Input 
                           type="text" 
                           value={fgColor} 
                           onChange={(e) => setFgColor(e.target.value)}
-                          className="flex-grow h-10 bg-black/20 border-white/5 font-mono text-xs"
+                          className="flex-grow h-10 bg-gray-50 border-gray-200 font-mono text-xs"
                         />
                       </div>
                     </div>
@@ -150,13 +150,13 @@ export default function QrCodeGeneratorClient() {
                           type="color" 
                           value={bgColor} 
                           onChange={(e) => setBgColor(e.target.value)}
-                          className="w-12 h-10 p-1 bg-black/20 border-white/5 rounded-md cursor-pointer"
+                          className="w-12 h-10 p-1 bg-gray-50 border-gray-200 rounded-md cursor-pointer"
                         />
                         <Input 
                           type="text" 
                           value={bgColor} 
                           onChange={(e) => setBgColor(e.target.value)}
-                          className="flex-grow h-10 bg-black/20 border-white/5 font-mono text-xs"
+                          className="flex-grow h-10 bg-gray-50 border-gray-200 font-mono text-xs"
                         />
                       </div>
                     </div>
@@ -194,7 +194,7 @@ export default function QrCodeGeneratorClient() {
               </Tabs>
 
               <div className="grid grid-cols-2 gap-4">
-                <Button variant="outline" onClick={copyToClipboard} disabled={!qrCodeUrl} className="h-12 border-white/10 hover:bg-white/5 gap-2">
+                <Button variant="outline" onClick={copyToClipboard} disabled={!qrCodeUrl} className="h-12 border-gray-200 hover:bg-white/5 gap-2">
                   {isCopied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
                   Copy Image
                 </Button>
@@ -209,7 +209,7 @@ export default function QrCodeGeneratorClient() {
 
         {/* Preview Column */}
         <div className="lg:col-span-7">
-          <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden min-h-[500px] flex flex-col items-center justify-center relative p-8">
+          <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden min-h-[500px] flex flex-col items-center justify-center relative p-8">
             <div className="absolute top-4 left-4 flex gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-red-400/50" />
               <div className="w-2.5 h-2.5 rounded-full bg-amber-400/50" />
@@ -235,8 +235,8 @@ export default function QrCodeGeneratorClient() {
                   </div>
                 )}
             </div>
-            <div className="mt-8 text-center bg-black/20 px-6 py-3 rounded-full border border-white/5">
-                <p className="text-xs text-white/50 font-mono truncate max-w-[200px] md:max-w-md">
+            <div className="mt-8 text-center bg-black/20 px-6 py-3 rounded-full border border-gray-200">
+                <p className="text-xs text-gray-400 font-mono truncate max-w-[200px] md:max-w-md">
                    {text || 'Enter data to preview...'}
                 </p>
             </div>
@@ -246,3 +246,5 @@ export default function QrCodeGeneratorClient() {
     </ToolLayout>
   );
 }
+
+

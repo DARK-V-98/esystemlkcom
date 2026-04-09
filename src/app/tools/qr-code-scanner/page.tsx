@@ -173,9 +173,9 @@ export default function QrCodeScannerPage() {
     return (
         <div className="container mx-auto py-10 px-4 md:px-6">
             <canvas ref={canvasRef} style={{ display: 'none' }} />
-            <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+            <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
                 <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">QR Code Scanner</h1>
-                <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+                <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
                     Scan QR codes using your camera or by uploading an image.
                 </p>
             </div>
@@ -189,7 +189,7 @@ export default function QrCodeScannerPage() {
                 </Button>
             </div>
 
-            <Card className="max-w-2xl mx-auto bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+            <Card className="max-w-2xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg">
                 <CardHeader>
                     <CardTitle>Scan QR Code</CardTitle>
                     <CardDescription>Use your camera or upload an image file.</CardDescription>
@@ -197,7 +197,7 @@ export default function QrCodeScannerPage() {
                 <CardContent className="space-y-6">
                     <div className="bg-black/20 rounded-lg overflow-hidden relative aspect-video flex items-center justify-center">
                         <video ref={videoRef} className="w-full h-full object-cover" hidden={!isScanning} playsInline/>
-                        {!isScanning && <p className="text-muted-foreground">Camera is off</p>}
+                        {!isScanning && <p className="text-gray-600">Camera is off</p>}
                         <div ref={boundingBoxRef} className="absolute border-2 border-primary bg-primary/20" style={{ display: 'none' }} />
                     </div>
                     
@@ -250,3 +250,5 @@ export default function QrCodeScannerPage() {
         </div>
     );
 }
+
+

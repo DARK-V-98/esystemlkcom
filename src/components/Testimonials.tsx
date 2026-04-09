@@ -12,28 +12,28 @@ const Testimonials = () => {
       id: 1,
       name: "Sarah Johnson",
       role: "CEO, TechStart Inc.",
-      content: "esystemlk transformed our outdated website into a stunning, high-converting platform. The team's attention to detail and commitment to excellence exceeded our expectations.",
+      content: "ESYSTEMLK rebuilt our website from scratch and the difference was night and day. More leads, faster load times, and the team was easy to work with throughout.",
       rating: 5,
     },
     {
       id: 2,
       name: "Michael Chen",
       role: "Founder, GreenLeaf Solutions",
-      content: "The software system they built for us has streamlined our operations completely. Professional team, excellent communication, and outstanding results. Highly recommended!",
+      content: "The software they built cut our admin time in half. Good communication, delivered on time, and they actually fixed a few things we didn't even ask for.",
       rating: 5,
     },
     {
       id: 3,
       name: "Emily Rodriguez",
       role: "Marketing Director, BrightFuture Co.",
-      content: "From concept to launch, the experience was seamless. The lifetime warranty gives us peace of mind, and their support team is always responsive and helpful.",
+      content: "The whole process was smooth. They kept us updated, hit the deadline, and the free maintenance means we're not worrying about things breaking down the road.",
       rating: 5,
     },
     {
       id: 4,
       name: "David Perera",
       role: "Owner, Island Restaurants",
-      content: "Our restaurant website now attracts more customers than ever. The online ordering system works flawlessly. Best investment we've made for our business!",
+      content: "Our online orders went up significantly after the new site launched. The ordering system works without issues and customers keep complimenting how easy it is to use.",
       rating: 5,
     },
   ];
@@ -59,7 +59,7 @@ const Testimonials = () => {
   }, [isAnimating]);
 
   return (
-    <section id="testimonials" className="py-24 bg-secondary/30 relative overflow-hidden animate-fade-in opacity-0">
+    <section id="testimonials" className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
 
@@ -76,7 +76,7 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             What Our <span className="text-gradient">Clients Say</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Real feedback from real clients who trusted us with their digital projects.
           </p>
         </div>
@@ -105,7 +105,7 @@ const Testimonials = () => {
                   </p>
                   <div>
                     <h4 className="text-xl font-semibold">{testimonials[currentIndex].name}</h4>
-                    <p className="text-muted-foreground">{testimonials[currentIndex].role}</p>
+                    <p className="text-gray-600">{testimonials[currentIndex].role}</p>
                   </div>
               </div>
             </div>
@@ -151,3 +151,6 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+
+

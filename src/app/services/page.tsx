@@ -149,8 +149,8 @@ const serviceCategories = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="w-full py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 text-center bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-12">
+      <section className="w-full py-20 md:py-28 bg-white text-black">
+        <div className="container mx-auto px-4 md:px-6 text-center bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl rounded-3xl py-12">
           <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">What We Build</h1>
           <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
             We specialize in creating tailored web solutions across a wide range of industries. Explore our capabilities below.
@@ -158,9 +158,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="w-full pb-20 md:pb-28">
+      <section className="w-full pb-20 md:pb-28 bg-white text-black">
         <ServicesClient serviceCategories={serviceCategories} />
       </section>
     </>
   );
 }
+
+
+

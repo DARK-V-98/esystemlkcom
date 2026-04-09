@@ -58,7 +58,7 @@ export default function UptimeCheckerClient() {
       category="Web Monitoring"
     >
       <div className="max-w-4xl mx-auto space-y-12">
-        <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden group hover:border-primary/20 transition-all p-4 md:p-8">
+        <Card className="bg-white border border-gray-200 rounded-[2rem] shadow-sm overflow-hidden group hover:border-primary/20 transition-all p-4 md:p-8">
            <CardContent className="space-y-10">
               <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4">
                  <div className="relative flex-grow">
@@ -68,7 +68,7 @@ export default function UptimeCheckerClient() {
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}
                       placeholder="example.com"
-                      className="h-16 pl-20 text-xl font-black bg-black/20 border-white/5 rounded-2xl focus:ring-primary/50"
+                      className="h-16 pl-20 text-xl font-black bg-gray-50 border-gray-200 rounded-2xl focus:ring-primary/50"
                       required
                    />
                  </div>
@@ -80,24 +80,24 @@ export default function UptimeCheckerClient() {
 
               {!isLoading && !error && !result && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
-                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-gray-200">
                         <Zap className="w-10 h-10 text-primary" />
                         <div>
-                            <p className="text-[10px] uppercase font-black tracking-widest text-white/50">Speed</p>
+                            <p className="text-[10px] uppercase font-black tracking-widest text-gray-400">Speed</p>
                             <p className="text-sm font-bold">Real-time Check</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-gray-200">
                         <Globe className="w-10 h-10 text-primary" />
                         <div>
-                            <p className="text-[10px] uppercase font-black tracking-widest text-white/50">Global</p>
+                            <p className="text-[10px] uppercase font-black tracking-widest text-gray-400">Global</p>
                             <p className="text-sm font-bold">Worldwide Node</p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+                    <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-gray-200">
                         <ShieldAlert className="w-10 h-10 text-primary" />
                         <div>
-                            <p className="text-[10px] uppercase font-black tracking-widest text-white/50">Privacy</p>
+                            <p className="text-[10px] uppercase font-black tracking-widest text-gray-400">Privacy</p>
                             <p className="text-sm font-bold">Encrypted</p>
                         </div>
                     </div>
@@ -134,21 +134,21 @@ export default function UptimeCheckerClient() {
                            WEBSITE IS {result.status}
                          </h3>
                          <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
-                            <div className="bg-black/40 px-4 py-2 rounded-xl border border-white/5 flex flex-col">
-                               <p className="text-[9px] uppercase font-black text-white/30">Status Code</p>
+                            <div className="bg-black/40 px-4 py-2 rounded-xl border border-gray-200 flex flex-col">
+                               <p className="text-[9px] uppercase font-black text-gray-400">Status Code</p>
                                <p className="text-xl font-bold">{result.statusCode || '???'}</p>
                             </div>
                             {result.responseTime && (
-                               <div className="bg-black/40 px-4 py-2 rounded-xl border border-white/5 flex flex-col">
-                                  <p className="text-[9px] uppercase font-black text-white/30">Response Time</p>
+                               <div className="bg-black/40 px-4 py-2 rounded-xl border border-gray-200 flex flex-col">
+                                  <p className="text-[9px] uppercase font-black text-gray-400">Response Time</p>
                                   <div className="flex items-center gap-2">
                                      <Clock className="w-4 h-4 text-primary" />
                                      <p className="text-xl font-bold">{result.responseTime} ms</p>
                                   </div>
                                </div>
                             )}
-                            <div className="bg-black/40 px-4 py-2 rounded-xl border border-white/5 flex flex-col">
-                               <p className="text-[9px] uppercase font-black text-white/30">Last Checked</p>
+                            <div className="bg-black/40 px-4 py-2 rounded-xl border border-gray-200 flex flex-col">
+                               <p className="text-[9px] uppercase font-black text-gray-400">Last Checked</p>
                                <p className="text-sm font-bold mt-1">Just Now</p>
                             </div>
                          </div>
@@ -161,21 +161,21 @@ export default function UptimeCheckerClient() {
 
         {/* Informational Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 group hover:bg-primary/5 transition-all">
+            <Card className="bg-white border border-gray-200 rounded-2xl p-8 group hover:bg-primary/5 transition-all">
                 <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Server className="w-5 h-5 text-primary" />
                     How it works
                 </h4>
-                <p className="text-sm text-white/60 leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed">
                     Our server sends a lightweight HEAD request to your website to check if it's reachable. We measure the time it takes for the server to reply and verify the HTTP status code (like 200 OK or 404 Not Found).
                 </p>
             </Card>
-            <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 group hover:bg-primary/5 transition-all">
+            <Card className="bg-white border border-gray-200 rounded-2xl p-8 group hover:bg-primary/5 transition-all">
                 <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Globe className="w-5 h-5 text-primary" />
                     Common Issues
                 </h4>
-                <ul className="text-sm text-white/60 list-disc pl-5 space-y-2">
+                <ul className="text-sm text-gray-500 list-disc pl-5 space-y-2">
                     <li><strong>Network Block:</strong> Some firewalls block automated pings.</li>
                     <li><strong>Protocol:</strong> Ensure you use the correct https:// prefix.</li>
                     <li><strong>Timeout:</strong> Slow servers may time out our 5-second check.</li>
@@ -186,3 +186,5 @@ export default function UptimeCheckerClient() {
     </ToolLayout>
   );
 }
+
+

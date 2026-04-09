@@ -8,8 +8,8 @@ export default async function DemoDesignsPage() {
   
   return (
     <>
-      <section className="w-full py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 text-center bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-12">
+      <section className="w-full py-20 md:py-28 bg-white text-black">
+        <div className="container mx-auto px-4 md:px-6 text-center bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl rounded-3xl py-12">
            <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1 text-sm font-medium mb-4">
                 <Layers className="inline-block w-4 h-4 mr-2" />
                 Website Templates
@@ -21,7 +21,7 @@ export default async function DemoDesignsPage() {
         </div>
       </section>
       
-      <section className="w-full pb-20 md:pb-28">
+      <section className="w-full pb-20 md:pb-28 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
           <DemoDesignsClient initialDesigns={designs} />
         </div>
@@ -29,3 +29,7 @@ export default async function DemoDesignsPage() {
     </>
   );
 }
+
+
+
+

@@ -83,7 +83,7 @@ ${urlEntries}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Input Column */}
         <div className="lg:col-span-5 space-y-6">
-          <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all">
+          <Card className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all">
             <div className="h-1 bg-gradient-to-r from-primary via-primary/50 to-purple-500" />
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -96,7 +96,7 @@ ${urlEntries}
               <Textarea
                 value={urls}
                 onChange={(e) => setUrls(e.target.value)}
-                className="min-h-[300px] font-mono text-sm bg-black/20 border-white/5 focus:border-primary/50 transition-all resize-none"
+                className="min-h-[300px] font-mono text-sm bg-gray-50 border-gray-200 focus:border-primary/50 transition-all resize-none"
                 placeholder="https://example.com/&#10;https://example.com/about"
               />
               
@@ -104,7 +104,7 @@ ${urlEntries}
                 <div className="space-y-2">
                   <label className="text-xs font-semibold text-muted-foreground uppercase">Default Priority</label>
                   <Select value={priority} onValueChange={setPriority}>
-                    <SelectTrigger className="bg-black/20 border-white/5 h-10">
+                    <SelectTrigger className="bg-gray-50 border-gray-200 h-10">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -117,7 +117,7 @@ ${urlEntries}
                 <div className="space-y-2">
                   <label className="text-xs font-semibold text-muted-foreground uppercase">Change Freq</label>
                   <Select value={changefreq} onValueChange={setChangefreq}>
-                    <SelectTrigger className="bg-black/20 border-white/5 h-10">
+                    <SelectTrigger className="bg-gray-50 border-gray-200 h-10">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -142,7 +142,7 @@ ${urlEntries}
 
         {/* Output Column */}
         <div className="lg:col-span-7 space-y-6">
-          <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden group hover:border-purple-500/30 transition-all min-h-[500px] flex flex-col">
+          <Card className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden group hover:border-purple-500/30 transition-all min-h-[500px] flex flex-col">
             <div className="h-1 bg-gradient-to-r from-purple-500 via-purple-500/50 to-primary" />
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
@@ -164,13 +164,13 @@ ${urlEntries}
               </div>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col p-0">
-               <div className="flex-grow bg-black/40 font-mono text-[11px] p-6 overflow-auto max-h-[540px] border-t border-white/5 whitespace-pre">
+               <div className="flex-grow bg-gray-50 font-mono text-[11px] p-6 overflow-auto max-h-[540px] border-t border-gray-200 whitespace-pre">
                   {xml ? (
                     <code className="text-purple-300">
                       {xml}
                     </code>
                   ) : (
-                    <div className="h-full flex items-center justify-center text-muted-foreground/40 italic">
+                    <div className="h-full flex items-center justify-center text-gray-400 italic">
                       Click generate to view sitemap code...
                     </div>
                   )}
@@ -182,3 +182,5 @@ ${urlEntries}
     </ToolLayout>
   );
 }
+
+

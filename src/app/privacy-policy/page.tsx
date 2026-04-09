@@ -7,8 +7,8 @@ export default function PrivacyPolicyPage() {
 
   return (
     <>
-      <section className="w-full py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 text-center bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-12">
+      <section className="w-full py-20 md:py-28 bg-white text-black">
+        <div className="container mx-auto px-4 md:px-6 text-center bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl rounded-3xl py-12">
           <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Legal Policies</h1>
           <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
             Last Updated: {lastUpdated}
@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
       
-      <section className="w-full pb-20 md:pb-28">
+      <section className="w-full pb-20 md:pb-28 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
             <Tabs defaultValue="privacy" className="w-full">
                 <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto h-auto">
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
                     <TabsTrigger value="refund" className="py-3">Refund Policy</TabsTrigger>
                 </TabsList>
                 
-                <Card className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl mt-8">
+                <Card className="bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl rounded-3xl mt-8">
                     <CardContent className="p-8 md:p-12 text-muted-foreground prose prose-invert prose-lg max-w-none">
                         <TabsContent value="privacy">
                             <div className="space-y-6">
@@ -167,3 +167,7 @@ export default function PrivacyPolicyPage() {
     </>
   );
 }
+
+
+
+

@@ -96,7 +96,7 @@ export default function BarcodeGeneratorClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Settings */}
         <div className="lg:col-span-5 space-y-6">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all flex flex-col">
+           <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all flex flex-col">
              <div className="h-1.5 bg-gradient-to-r from-primary via-primary/50 to-purple-500" />
              <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -113,14 +113,14 @@ export default function BarcodeGeneratorClient() {
                       value={content} 
                       onChange={(e) => setContent(e.target.value)}
                       placeholder="ABC-12345" 
-                      className="h-12 bg-black/20 border-white/5 text-lg font-bold"
+                      className="h-12 bg-gray-50 border-gray-200 text-lg font-bold"
                    />
                 </div>
 
                 <div className="space-y-2">
                    <Label htmlFor="format">Encoding Format</Label>
                    <Select value={format} onValueChange={setFormat}>
-                      <SelectTrigger className="h-11 bg-black/20 border-white/5">
+                      <SelectTrigger className="h-11 bg-gray-50 border-gray-200">
                          <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -142,7 +142,7 @@ export default function BarcodeGeneratorClient() {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+                <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-gray-200">
                    <div className="flex items-center space-x-2">
                       <Checkbox id="displayValue" checked={displayValue} onCheckedChange={(val) => setDisplayValue(!!val)} />
                       <Label htmlFor="displayValue" className="font-bold text-sm">Show Human-Readable Text</Label>
@@ -169,7 +169,7 @@ export default function BarcodeGeneratorClient() {
 
         {/* Preview */}
         <div className="lg:col-span-7">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden min-h-[500px] flex flex-col items-center justify-center relative p-12">
+           <Card className="bg-white border border-gray-200 rounded-[2rem] shadow-sm overflow-hidden min-h-[500px] flex flex-col items-center justify-center relative p-12">
               <div className="absolute top-6 left-6 flex items-center gap-2 text-[10px] font-black uppercase text-white/20 tracking-widest">
                  <Ruler className="w-3 h-3" /> Scan Preview
               </div>
@@ -186,7 +186,7 @@ export default function BarcodeGeneratorClient() {
                  )}
               </div>
 
-              <div className="mt-12 flex items-center gap-6 text-white/30">
+              <div className="mt-12 flex items-center gap-6 text-gray-400">
                  <div className="flex flex-col items-center gap-1 group transition-all hover:text-white pointer-events-none">
                     <Check className="w-5 h-5 text-emerald-400" />
                     <span className="text-[10px] font-black uppercase tracking-tighter">Standardized</span>
@@ -206,3 +206,5 @@ export default function BarcodeGeneratorClient() {
     </ToolLayout>
   );
 }
+
+

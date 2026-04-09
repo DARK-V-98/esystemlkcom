@@ -36,9 +36,9 @@ export default function SlugGeneratorPage() {
 
   return (
     <div className="container mx-auto py-10 px-4 md:px-6">
-      <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+      <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">URL Slug Generator</h1>
-        <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+        <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
           Create clean, SEO-friendly URL slugs from your page or post titles.
         </p>
       </div>
@@ -53,7 +53,7 @@ export default function SlugGeneratorPage() {
       </div>
 
       <div className="max-w-2xl mx-auto space-y-8">
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Input Title</CardTitle>
             <CardDescription>Enter the text you want to convert into a slug.</CardDescription>
@@ -68,7 +68,7 @@ export default function SlugGeneratorPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
              <div className="flex justify-between items-center">
                 <div>
@@ -82,7 +82,7 @@ export default function SlugGeneratorPage() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-2 p-3 rounded-md bg-black/20">
-                <span className="text-muted-foreground">/</span>
+                <span className="text-gray-600">/</span>
                 <Input
                   readOnly
                   value={slug}
@@ -96,3 +96,5 @@ export default function SlugGeneratorPage() {
     </div>
   );
 }
+
+

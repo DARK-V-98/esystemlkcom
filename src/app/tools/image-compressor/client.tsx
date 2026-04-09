@@ -100,7 +100,7 @@ export default function ImageCompressorClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Controls */}
         <div className="lg:col-span-5 space-y-6">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all flex flex-col">
+           <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all flex flex-col">
              <div className="h-1.5 bg-gradient-to-r from-primary via-primary/50 to-emerald-500" />
              <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -114,7 +114,7 @@ export default function ImageCompressorClient() {
                    {!previewUrl && (
                       <div 
                          onClick={() => fileInputRef.current?.click()}
-                         className="h-48 border-2 border-dashed border-white/10 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-white/5 hover:border-primary/50 transition-all group-hover/upload:border-primary/30"
+                         className="h-48 border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-white/5 hover:border-primary/50 transition-all group-hover/upload:border-primary/30"
                       >
                          <Plus className="w-12 h-12 text-primary/50 mb-3" />
                          <p className="text-sm text-foreground/70 font-semibold tracking-wide uppercase">Select Image to Compress</p>
@@ -130,10 +130,10 @@ export default function ImageCompressorClient() {
                    />
 
                    {previewUrl && (
-                     <div className="relative rounded-2xl overflow-hidden bg-black/40 border border-white/5 p-4 flex flex-col items-center">
+                     <div className="relative rounded-2xl overflow-hidden bg-black/40 border border-gray-200 p-4 flex flex-col items-center">
                         <img src={previewUrl} alt="Preview" className="max-h-40 rounded-lg shadow-xl" />
                         <div className="mt-4 flex flex-col items-center gap-1">
-                           <p className="text-xs font-bold text-white/50 truncate max-w-[200px] uppercase tracking-tighter">{sourceFile?.name}</p>
+                           <p className="text-xs font-bold text-gray-400 truncate max-w-[200px] uppercase tracking-tighter">{sourceFile?.name}</p>
                            <p className="text-[10px] text-primary font-black uppercase">{(sourceFile!.size / 1024).toFixed(2)} KB</p>
                         </div>
                         <Button 
@@ -155,10 +155,10 @@ export default function ImageCompressorClient() {
                           <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-black uppercase tracking-tighter">Recommended: WEBP</span>
                        </div>
                        <Select value={targetFormat} onValueChange={(val) => setTargetFormat(val as any)}>
-                          <SelectTrigger className="h-12 bg-black/20 border-white/5 font-semibold">
+                          <SelectTrigger className="h-12 bg-gray-50 border-gray-200 font-semibold">
                              <SelectValue />
                           </SelectTrigger>
-                          <SelectContent className="bg-slate-900 border-white/10">
+                          <SelectContent className="bg-slate-900 border-gray-200">
                              <SelectItem value="jpeg" className="font-bold">JPEG</SelectItem>
                              <SelectItem value="webp" className="font-bold text-emerald-400">WEBP (Optimized)</SelectItem>
                           </SelectContent>
@@ -200,7 +200,7 @@ export default function ImageCompressorClient() {
 
         {/* Preview Column */}
         <div className="lg:col-span-7 h-full">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden min-h-[600px] flex flex-col items-center justify-center relative p-8">
+           <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden min-h-[600px] flex flex-col items-center justify-center relative p-8">
               {result ? (
                 <div className="w-full h-full flex flex-col items-center animate-in zoom-in-95 duration-500">
                     <div className="relative group/result">
@@ -208,20 +208,20 @@ export default function ImageCompressorClient() {
                         <img 
                           src={result.url} 
                           alt="Compressed" 
-                          className="relative max-h-[400px] rounded-2xl shadow-2xl border border-white/10" 
+                          className="relative max-h-[400px] rounded-2xl shadow-sm border border-gray-200" 
                         />
                     </div>
                     
                     <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
-                        <div className="bg-black/20 p-4 rounded-2xl border border-white/10 flex flex-col items-center text-center">
+                        <div className="bg-black/20 p-4 rounded-2xl border border-gray-200 flex flex-col items-center text-center">
                            <p className="text-[10px] uppercase font-black text-muted-foreground mb-1">Old Size</p>
                            <p className="text-sm font-bold">{(result.originalSize / 1024).toFixed(2)} KB</p>
                         </div>
-                        <div className="bg-black/20 p-4 rounded-2xl border border-white/10 flex flex-col items-center text-center">
+                        <div className="bg-black/20 p-4 rounded-2xl border border-gray-200 flex flex-col items-center text-center">
                            <p className="text-[10px] uppercase font-black text-muted-foreground mb-1">New Size</p>
                            <p className="text-sm font-bold text-emerald-400">{(result.size / 1024).toFixed(2)} KB</p>
                         </div>
-                        <div className="bg-black/20 p-4 rounded-2xl border border-white/10 flex flex-col items-center text-center">
+                        <div className="bg-black/20 p-4 rounded-2xl border border-gray-200 flex flex-col items-center text-center">
                            <p className="text-[10px] uppercase font-black text-muted-foreground mb-1">Format</p>
                            <p className="text-sm font-bold uppercase">{targetFormat}</p>
                         </div>
@@ -264,3 +264,5 @@ export default function ImageCompressorClient() {
     </ToolLayout>
   );
 }
+
+

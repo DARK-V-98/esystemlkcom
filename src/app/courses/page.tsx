@@ -19,8 +19,8 @@ const courses = [
 export default function CoursesPage() {
   return (
     <>
-      <section className="w-full py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 text-center bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-12">
+      <section className="w-full py-20 md:py-28 bg-white text-black">
+        <div className="container mx-auto px-4 md:px-6 text-center bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl rounded-3xl py-12">
           <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Courses</h1>
           <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
             Deepen your knowledge with our free, in-depth courses.
@@ -28,7 +28,7 @@ export default function CoursesPage() {
         </div>
       </section>
       
-      <section className="w-full pb-20 md:pb-28">
+      <section className="w-full pb-20 md:pb-28 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course) => {
@@ -68,3 +68,7 @@ export default function CoursesPage() {
     </>
   );
 }
+
+
+
+

@@ -10,10 +10,10 @@ import { FirebaseClientProvider } from "@/firebase/client-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 const siteConfig = {
-  name: "esystemlk",
+  name: "ESYSTEMLK",
   url: "https://esystemlk.com",
   ogImage: "https://esystemlk.com/logo.png",
-  description: "ESystemLk is a leading software company in Sri Lanka, specializing in custom web development, web applications, and software systems with lifetime free maintenance.",
+  description: "ESYSTEMLK is a leading software company in Sri Lanka, specializing in custom web development, web applications, and software systems with lifetime free maintenance.",
   keywords: [
     "software company sri lanka", "web development sri lanka", "web application development", "custom software solutions", "esystemlk", "pos system sri lanka", "ecommerce website", "mobile app development",
     "software company colombo", "it services sri lanka", "digital transformation colombo", "software developers sri lanka", "web design company kandy", "bespoke software solutions", "enterprise software development",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: "ESystemLk", url: siteConfig.url }],
-  creator: "ESystemLk",
+  authors: [{ name: "ESYSTEMLK", url: siteConfig.url }],
+  creator: "ESYSTEMLK",
   openGraph: {
     type: "website",
     locale: "en_US",

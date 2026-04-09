@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about ESystemLk's mission, values, and the expert team behind our premium software solutions.",
+  description: "Learn about ESYSTEMLK's mission, values, and the expert team behind our premium software solutions.",
 };
 
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,21 +28,21 @@ const teamMembers = [
     role: "Lead Developer",
     avatar: "https://placehold.co/150x150.png",
     hint: "woman developer",
-    bio: "Expert full-stack architect specializing in high-performance, resilient architectures and clean, test-driven development practices.",
+    bio: "Full-stack developer who's been building web systems for years. Writes clean code and doesn't leave messes for others to clean up.",
   },
   {
     name: "Michael Chen",
     role: "Head of Product",
     avatar: "https://placehold.co/150x150.png",
     hint: "man designer",
-    bio: "Data-driven product strategist focused on bridging user needs and business objectives to create impactful, market-leading solutions.",
+    bio: "Keeps projects on track and makes sure what we build actually solves the right problem. Bridges the gap between clients and the dev team.",
   },
   {
     name: "Emily Rodriguez",
     role: "UI/UX Design Lead",
     avatar: "https://placehold.co/150x150.png",
     hint: "creative artist",
-    bio: "Creative designer with a passion for human-centered design, crafting beautiful, intuitive, and accessible user experiences that delight and convert.",
+    bio: "Designs interfaces that people find easy to use. Obsessed with the details that most people don't notice but everyone feels.",
   },
 ];
 
@@ -50,22 +50,22 @@ const values = [
   {
     title: "Innovation",
     description:
-      "We constantly explore new technologies to deliver cutting-edge solutions that provide a competitive edge.",
+      "We keep up with what's new in tech so you don't have to. If there's a better way to build something, we'll find it.",
   },
   {
     title: "Integrity",
     description:
-      "We believe in transparent, honest, and ethical collaboration with our clients, building partnerships based on trust.",
+      "We tell you the truth — about timelines, costs, and what's realistic. No overselling, no hidden fees.",
   },
   {
     title: "Excellence",
     description:
-      "We are committed to the highest standards of quality, precision, and craftsmanship in everything we create.",
+      "We don't cut corners. Every line of code and every design decision gets proper thought.",
   },
   {
     title: "Collaboration",
     description:
-      "We work as a unified team with our clients, fostering open communication to achieve shared goals and exceptional results.",
+      "We work with you, not just for you. You're part of the process from day one.",
   },
 ];
 
@@ -74,74 +74,66 @@ const processSteps = [
     icon: Compass,
     title: "Discovery & Strategy",
     description:
-      "We dive deep into your business goals and audience to create a comprehensive project blueprint and a roadmap for success.",
+      "We sit down and learn about your business, your users, and what you're trying to achieve before writing a single line.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
     description:
-      "Our team crafts intuitive and beautiful user interfaces. We create wireframes and prototypes to perfect the user experience.",
+      "We design screens that make sense to real people. You review and give feedback until it feels right.",
   },
   {
     icon: CodeXml,
     title: "Agile Development",
     description:
-      "Using cutting-edge tech, our developers bring designs to life with clean, scalable code, keeping you in the loop.",
+      "We build in stages and keep you in the loop. No big reveals at the end — you see progress as it happens.",
   },
   {
     icon: ClipboardCheck,
     title: "Quality Assurance",
     description:
-      "We conduct rigorous testing to ensure your application is bug-free, performant, and secure across all devices.",
+      "We test on real devices before anything goes live. If something's broken, we fix it here — not after launch.",
   },
   {
     icon: Rocket,
     title: "Deployment & Launch",
     description:
-      "We handle the entire deployment process, ensuring a smooth launch on a reliable, scalable, and secure cloud infrastructure.",
+      "We handle the go-live from start to finish. Your site or app goes up clean, fast, and without drama.",
   },
   {
     icon: LifeBuoy,
     title: "Ongoing Support",
     description:
-      "Our partnership doesn't end at launch. We offer ongoing maintenance and support to ensure your digital asset evolves with you.",
+      "We don't disappear after launch. We're here for updates, fixes, and whatever comes next.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="w-full py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6 text-center bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-12">
+      <section className="w-full py-20 md:py-28 bg-white text-black">
+        <div className="container mx-auto px-4 md:px-6 text-center bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl rounded-3xl py-12">
           <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
-            About ESystemLk
+            About ESYSTEMLK
           </h1>
-          <p className="max-w-[700px] mx-auto text-white/80 md:text-xl mt-4">
-            We are a collective of passionate developers, designers, and
-            strategists dedicated to architecting the future of digital
-            technology.
+          <p className="max-w-[700px] mx-auto text-gray-700 md:text-xl mt-4">
+            A team of developers, designers, and problem-solvers who care about building things that actually work.
           </p>
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center p-8 md:p-12 rounded-3xl bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center p-8 md:p-12 rounded-3xl bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl">
             <div className="order-2 md:order-1">
               <h2 className="font-headline text-3xl font-bold mb-4">
                 Our Mission
               </h2>
-              <p className="text-white/80 mb-4">
-                Our mission is to empower businesses with transformative
-                technology solutions that drive growth, efficiency, and
-                innovation. We strive to be a trusted partner, turning complex
-                challenges into elegant, scalable, and user-centric digital
-                experiences.
+              <p className="text-gray-700 mb-4">
+                We started ESYSTEMLK because we saw too many businesses stuck with bad software and no one to help them fix it. Our goal is simple — build things that work, keep them running, and be honest about what it costs.
               </p>
-              <p className="text-white/80">
-                We are committed to pushing the boundaries of what's possible,
-                fostering a culture of continuous learning and collaboration to
-                deliver exceptional value to our clients worldwide.
+              <p className="text-gray-700">
+                We work with businesses of all sizes across Sri Lanka and beyond. Whether you need a basic website or a full software system, we treat every project the same way — with care and attention to detail.
               </p>
             </div>
             <div className="order-1 md:order-2 overflow-hidden rounded-2xl">
@@ -158,15 +150,15 @@ export default function AboutPage() {
         </div>
       </section>
       
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
-          <Card className="p-8 md:p-12 rounded-3xl bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl text-center">
+          <Card className="p-8 md:p-12 rounded-3xl bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl text-center">
             <MessageSquareQuote className="w-12 h-12 text-primary mx-auto mb-6" />
             <h2 className="font-headline text-3xl font-bold mb-4">
               A Word From Our Founder
             </h2>
-            <p className="text-white/80 md:text-lg max-w-3xl mx-auto mb-8">
-              "Knowledge is the ladder to growth. The more we learn, the further we can climb." Get to know the vision and driving force behind ESystemLk.
+            <p className="text-gray-600 md:text-lg max-w-3xl mx-auto mb-8">
+              "Knowledge is the ladder to growth. The more we learn, the further we can climb." Get to know the vision and driving force behind ESYSTEMLK.
             </p>
             <Button asChild size="lg">
               <Link href="/founder-message">Read the Founder's Message</Link>
@@ -175,25 +167,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">
               Our Approach to Digital Excellence
             </h2>
             <p className="text-muted-foreground md:text-lg mt-2 max-w-3xl mx-auto">
-              We follow a structured and collaborative process to ensure every
-              project is a masterpiece of strategy, design, and technology.
+              Here's how we work — step by step, with you involved at every stage.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className="p-8 rounded-3xl bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl transition-all duration-300 hover:border-primary hover:-translate-y-2 group text-center"
+                className="p-8 rounded-3xl bg-gray-100 border-gray-200  border border-gray-200 shadow-2xl transition-all duration-300 hover:border-primary hover:-translate-y-2 group text-center"
               >
                 <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 rounded-full bg-black/20 border-2 border-primary/50 flex items-center justify-center transition-all duration-300 group-hover:border-primary group-hover:scale-110">
+                  <div className="w-20 h-20 rounded-full bg-white text-black/20 border-2 border-primary/50 flex items-center justify-center transition-all duration-300 group-hover:border-primary group-hover:scale-110">
                     <step.icon className="w-10 h-10 text-primary transition-transform duration-300 group-hover:rotate-12" />
                   </div>
                 </div>
@@ -209,7 +200,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-white text-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">
@@ -223,7 +214,7 @@ export default function AboutPage() {
             {values.map((value) => (
               <Card
                 key={value.title}
-                className="text-center p-6 rounded-2xl shadow-lg bg-black/30 backdrop-blur-lg border border-white/10"
+                className="text-center p-6 rounded-2xl shadow-lg bg-gray-100 border-gray-200  border border-gray-200"
               >
                 <h3 className="font-headline text-xl font-semibold mb-2">
                   {value.title}
@@ -239,3 +230,9 @@ export default function AboutPage() {
     </>
   );
 }
+
+
+
+
+
+

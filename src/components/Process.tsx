@@ -15,43 +15,43 @@ const steps = [
     icon: MessageSquare,
     number: "01",
     title: "Discovery Call",
-    description: "We discuss your vision, goals, and requirements. Free consultation to understand your needs.",
+    description: "We talk through what you need, what you're trying to solve, and what success looks like for you. No charge.",
   },
   {
     icon: FileSearch,
     number: "02",
     title: "Planning & Proposal",
-    description: "Detailed project plan with timeline, features, and transparent pricing. No hidden costs.",
+    description: "You get a clear plan — what we'll build, how long it takes, and exactly what it costs. No surprises.",
   },
   {
     icon: Palette,
     number: "03",
     title: "Design Phase",
-    description: "Beautiful mockups and prototypes. We iterate until you're 100% satisfied with the design.",
+    description: "We show you mockups and keep tweaking until the design feels right. You call the shots.",
   },
   {
     icon: Code2,
     number: "04",
     title: "Development",
-    description: "Clean, scalable code using modern technologies. Regular updates on progress.",
+    description: "We write clean code and keep you updated as we go. No disappearing acts.",
   },
   {
     icon: TestTube,
     number: "05",
     title: "Testing & QA",
-    description: "Rigorous testing on all devices and browsers. Bug-free delivery guaranteed.",
+    description: "We test everything on real devices and browsers before handing it over. Bugs get caught here, not after launch.",
   },
   {
     icon: Rocket,
     number: "06",
     title: "Launch & Support",
-    description: "Smooth deployment and lifetime free maintenance. We're always here for you.",
+    description: "We handle the go-live and stick around after. Free maintenance for life — that's our promise.",
   },
 ];
 
 const Process = () => {
   return (
-    <section className="py-24 bg-secondary/30 relative overflow-hidden animate-fade-in opacity-0">
+    <section className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
       {/* Background decorations */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
@@ -66,8 +66,8 @@ const Process = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in opacity-0 animation-delay-100">
             How We Build Your Project
           </h2>
-          <p className="text-lg text-muted-foreground animate-fade-in opacity-0 animation-delay-200">
-            A transparent, collaborative process that ensures your project is delivered on time and exceeds expectations.
+          <p className="text-lg text-gray-600 animate-fade-in opacity-0 animation-delay-200">
+            A straightforward process with no guesswork — you always know where things stand.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ const Process = () => {
                   <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -132,3 +132,6 @@ const Process = () => {
 };
 
 export default Process;
+
+
+

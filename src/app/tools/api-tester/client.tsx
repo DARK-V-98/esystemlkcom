@@ -116,7 +116,7 @@ export default function ApiTesterClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Request Side */}
         <div className="lg:col-span-6 space-y-6">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all flex flex-col h-full">
+           <Card className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all flex flex-col h-full">
             <CardHeader className="pb-4">
                <div className="flex items-center gap-2 mb-2">
                   <Globe className="w-5 h-5 text-primary" />
@@ -128,10 +128,10 @@ export default function ApiTesterClient() {
                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="flex gap-2">
                      <Select name="method" onValueChange={(value) => setValue('method', value as any)} defaultValue="GET">
-                        <SelectTrigger className="w-[120px] h-12 bg-black/20 border-white/5 font-bold">
+                        <SelectTrigger className="w-[120px] h-12 bg-gray-50 border-gray-200 font-bold">
                            <SelectValue placeholder="Method" />
                         </SelectTrigger>
-                        <SelectContent className="bg-slate-900 border-white/10">
+                        <SelectContent className="bg-slate-900 border-gray-200">
                            {['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].map(m => (
                              <SelectItem key={m} value={m} className="font-bold">{m}</SelectItem>
                            ))}
@@ -141,12 +141,12 @@ export default function ApiTesterClient() {
                         {...register('url')} 
                         placeholder="https://api.example.com/endpoint" 
                         required 
-                        className="h-12 bg-black/20 border-white/5"
+                        className="h-12 bg-gray-50 border-gray-200"
                      />
                   </div>
 
                   <Tabs defaultValue="headers" className="w-full">
-                     <TabsList className="grid w-full grid-cols-2 bg-black/40 border border-white/5 p-1 rounded-xl">
+                     <TabsList className="grid w-full grid-cols-2 bg-black/40 border border-gray-200 p-1 rounded-xl">
                         <TabsTrigger value="headers" className="rounded-lg data-[state=active]:bg-primary/20 data-[state=active]:text-primary">
                            Headers ({fields.length})
                         </TabsTrigger>
@@ -158,8 +158,8 @@ export default function ApiTesterClient() {
                      <TabsContent value="headers" className="mt-4 space-y-3 p-1">
                         {fields.map((field, index) => (
                            <div key={field.id} className="flex gap-2 items-center animate-in fade-in slide-in-from-left-2 duration-300">
-                              <Input {...register(`headers.${index}.key`)} placeholder="Header Key" className="h-9 bg-black/20 border-white/5 text-xs" />
-                              <Input {...register(`headers.${index}.value`)} placeholder="Value" className="h-9 bg-black/20 border-white/5 text-xs" />
+                              <Input {...register(`headers.${index}.key`)} placeholder="Header Key" className="h-9 bg-gray-50 border-gray-200 text-xs" />
+                              <Input {...register(`headers.${index}.value`)} placeholder="Value" className="h-9 bg-gray-50 border-gray-200 text-xs" />
                               <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="h-9 w-9 text-red-400 hover:text-red-500 hover:bg-black/40">
                                  <Trash2 className="h-4 w-4" />
                               </Button>
@@ -174,7 +174,7 @@ export default function ApiTesterClient() {
                         <Textarea 
                            {...register('body')} 
                            placeholder='{ "key": "value" }' 
-                           className="font-mono text-sm bg-black/20 border-white/5 min-h-[200px]"
+                           className="font-mono text-sm bg-gray-50 border-gray-200 min-h-[200px]"
                         />
                      </TabsContent>
                   </Tabs>
@@ -202,7 +202,7 @@ export default function ApiTesterClient() {
 
         {/* Response Side */}
         <div className="lg:col-span-6 space-y-6">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden min-h-[600px] flex flex-col">
+           <Card className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden min-h-[600px] flex flex-col">
               <CardHeader className="flex flex-row items-center justify-between pb-4">
                  <div>
                     <CardTitle className="flex items-center gap-2">
@@ -212,18 +212,18 @@ export default function ApiTesterClient() {
                     <CardDescription>Live output from your API endpoint.</CardDescription>
                  </div>
                  {response && (
-                    <div className="flex items-center gap-2 bg-black/40 px-3 py-1 rounded-full border border-white/5">
+                    <div className="flex items-center gap-2 bg-black/40 px-3 py-1 rounded-full border border-gray-200">
                         <span className={`w-2 h-2 rounded-full ${response.status >= 200 && response.status < 300 ? 'bg-green-500' : 'bg-red-500'}`} />
                         <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{response.status} {response.statusText}</span>
                     </div>
                  )}
               </CardHeader>
               <CardContent className="flex-grow flex flex-col p-0">
-                 <div className="flex-grow bg-black/40 font-mono text-sm p-8 overflow-auto max-h-[660px] border-t border-white/5">
+                 <div className="flex-grow bg-gray-50 font-mono text-sm p-8 overflow-auto max-h-[660px] border-t border-gray-200">
                     {isLoading ? (
                       <div className="h-full flex flex-col items-center justify-center space-y-4">
                          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-                         <p className="text-muted-foreground animate-pulse">Awaiting Server Response...</p>
+                         <p className="text-gray-600 animate-pulse">Awaiting Server Response...</p>
                       </div>
                     ) : error ? (
                       <div className="h-full flex flex-col items-center justify-center p-8 bg-red-500/5">
@@ -240,7 +240,7 @@ export default function ApiTesterClient() {
                            </div>
                          </div>
                          <Tabs defaultValue="body">
-                           <TabsList className="bg-black/60 border border-white/5 p-1 rounded-lg">
+                           <TabsList className="bg-black/60 border border-gray-200 p-1 rounded-lg">
                               <TabsTrigger value="body" className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-300">Body</TabsTrigger>
                               <TabsTrigger value="headers" className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-300">Headers</TabsTrigger>
                            </TabsList>
@@ -271,3 +271,5 @@ export default function ApiTesterClient() {
     </ToolLayout>
   );
 }
+
+

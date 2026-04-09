@@ -12,8 +12,6 @@ const CosmicHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   
-  const y1 = useTransform(scrollY, [0, 500], [0, 100]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -100]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.9]);
 
@@ -28,48 +26,22 @@ const CosmicHero = () => {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] text-white"
     >
-      {/* Dynamic Background Elements */}
+      {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated Orbs */}
-        <motion.div 
-          style={{ y: y1 }}
-          className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow"
-        />
-        <motion.div 
-          style={{ y: y2 }}
-          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[150px]"
-        />
-        
-        {/* Particle Stars */}
-        <div className="absolute inset-0 opacity-30">
-           {[...Array(50)].map((_, i) => (
-             <motion.div
-               key={i}
-               className="absolute w-1 h-1 bg-white rounded-full"
-               initial={{ 
-                 x: Math.random() * 2000 - 1000, 
-                 y: Math.random() * 2000 - 1000,
-                 opacity: Math.random()
-               }}
-               animate={{ 
-                 opacity: [0.2, 0.8, 0.2],
-                 scale: [1, 1.5, 1],
-               }}
-               transition={{ 
-                 duration: Math.random() * 3 + 2, 
-                 repeat: Infinity,
-                 delay: Math.random() * 5
-               }}
-               style={{
-                 left: `${Math.random() * 100}%`,
-                 top: `${Math.random() * 100}%`,
-               }}
-             />
-           ))}
-        </div>
-
-        {/* Abstract Grid */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] opacity-20" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/bg1.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-black/60" />
+        {/* Neon blue ambient glow */}
+        <div className="absolute top-[-5%] right-[-5%] w-[35%] h-[35%] rounded-full blur-[120px]" style={{background:'hsl(200,100%,50%,0.12)'}} />
+        <div className="absolute bottom-[-5%] left-[-5%] w-[25%] h-[25%] rounded-full blur-[100px]" style={{background:'hsl(200,100%,50%,0.08)'}} />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto">
@@ -82,13 +54,13 @@ const CosmicHero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-10"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[hsl(200,100%,50%,0.5)] bg-[hsl(200,100%,50%,0.08)] backdrop-blur-md mb-10 neon-blue-glow"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[hsl(200,100%,50%)] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[hsl(200,100%,50%)]"></span>
             </span>
-            <span className="text-sm font-medium tracking-wider uppercase">Next Era of Tech</span>
+            <span className="text-sm font-medium tracking-wider uppercase text-[hsl(200,100%,70%)]">Next Era of Tech</span>
           </motion.div>
 
           {/* Main Title */}
@@ -108,10 +80,9 @@ const CosmicHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
           >
-            We transform complex challenges into elegant digital solutions. 
-            From robust backend architectures to mesmerizing user interfaces.
+            We take your toughest problems and turn them into software that actually works — clean backends, fast frontends, and everything in between.
           </motion.p>
 
           {/* Dynamic Buttons */}
@@ -140,16 +111,16 @@ const CosmicHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="mt-24 pt-12 border-t border-white/5 flex flex-wrap justify-center gap-12 text-zinc-500 uppercase tracking-[0.2em] text-[10px] font-bold"
+            className="mt-24 pt-12 border-t border-[hsl(200,100%,50%,0.15)] flex flex-wrap justify-center gap-12 text-[hsl(200,100%,70%)] uppercase tracking-[0.2em] text-[10px] font-bold"
           >
             <div className="flex items-center gap-2">
-              <Cpu className="w-4 h-4" /> Cloud Native
+              <Cpu className="w-4 h-4 text-[hsl(200,100%,50%)]" style={{filter:'drop-shadow(0 0 6px hsl(200,100%,50%))'}} /> Cloud Native
             </div>
             <div className="flex items-center gap-2">
-              <Server className="w-4 h-4" /> Edge Performance
+              <Server className="w-4 h-4 text-[hsl(200,100%,50%)]" style={{filter:'drop-shadow(0 0 6px hsl(200,100%,50%))'}} /> Edge Performance
             </div>
             <div className="flex items-center gap-2">
-              <MousePointer2 className="w-4 h-4" /> AI Driven
+              <MousePointer2 className="w-4 h-4 text-[hsl(200,100%,50%)]" style={{filter:'drop-shadow(0 0 6px hsl(200,100%,50%))'}} /> AI Driven
             </div>
           </motion.div>
         </motion.div>
@@ -160,9 +131,10 @@ const CosmicHero = () => {
         <motion.div 
            animate={{ rotate: 360 }}
            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-           className="w-32 h-32 border border-primary/20 rounded-full flex items-center justify-center"
+           className="w-32 h-32 border border-[hsl(200,100%,50%,0.4)] rounded-full flex items-center justify-center"
+           style={{boxShadow:'0 0 20px hsl(200,100%,50%,0.2)'}}
         >
-           <div className="w-24 h-24 border-dashed border border-white/10 rounded-full" />
+           <div className="w-24 h-24 border-dashed border border-[hsl(200,100%,50%,0.2)] rounded-full" />
         </motion.div>
       </div>
 

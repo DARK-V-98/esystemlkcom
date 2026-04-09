@@ -53,9 +53,9 @@ export default function HashGeneratorPage() {
 
   return (
     <div className="container mx-auto py-10 px-4 md:px-6">
-      <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+      <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Hash Generator</h1>
-        <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+        <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
           Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from text or files.
         </p>
       </div>
@@ -70,7 +70,7 @@ export default function HashGeneratorPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Input Data</CardTitle>
             <CardDescription>Enter text or upload a file to hash.</CardDescription>
@@ -101,7 +101,7 @@ export default function HashGeneratorPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Generated Hashes</CardTitle>
             <CardDescription>The resulting hashes for your input.</CardDescription>
@@ -124,3 +124,5 @@ export default function HashGeneratorPage() {
     </div>
   );
 }
+
+

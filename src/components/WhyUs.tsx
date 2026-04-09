@@ -18,42 +18,42 @@ const features = [
   {
     icon: Shield,
     title: "Lifetime Free Maintenance",
-    description: "We manage and maintain your website for free, forever. No hidden costs, no recurring fees.",
+    description: "We look after your site forever at no extra cost. No surprise bills, no renewal fees.",
   },
   {
     icon: Clock,
     title: "Fast Delivery",
-    description: "Quick turnaround times without compromising on quality. Get your project done on schedule.",
+    description: "We move fast and hit deadlines. You get your project on time, every time.",
   },
   {
     icon: Headphones,
     title: "24/7 Support",
-    description: "Our dedicated support team is always ready to help you with any issues or questions.",
+    description: "Got a problem at 2am? We're here. Our team picks up and sorts it out.",
   },
   {
     icon: Award,
     title: "Quality Guaranteed",
-    description: "We ensure every project meets the highest standards of quality and performance.",
+    description: "We don't ship half-baked work. Every project goes through proper review before it reaches you.",
   },
   {
     icon: Zap,
     title: "Modern Technology",
-    description: "We use the latest technologies and best practices to build fast, secure solutions.",
+    description: "We use tools that are actually current — fast, secure, and built to last.",
   },
   {
     icon: Heart,
     title: "Customer First",
-    description: "Your satisfaction is our priority. We work closely with you to exceed expectations.",
+    description: "We listen, we adjust, and we keep going until you're happy with the result.",
   },
   {
     icon: RefreshCw,
     title: "Free Updates",
-    description: "Regular updates and improvements to keep your website or app running smoothly.",
+    description: "We keep things fresh with regular updates so nothing falls behind.",
   },
   {
     icon: Users,
     title: "Dedicated Team",
-    description: "A team of experienced developers and designers committed to your success.",
+    description: "Real developers and designers who care about your project, not just the invoice.",
   },
 ];
 
@@ -97,8 +97,8 @@ const WhyUs = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in opacity-0 animation-delay-100">
             What Makes Us <span className="text-primary">Different</span>
           </h2>
-          <p className="text-lg text-accent-foreground/70 animate-fade-in opacity-0 animation-delay-200">
-            We're not just another software company. We're your technology partner committed to your long-term success.
+          <p className="text-lg text-accent-foreground/90 animate-fade-in opacity-0 animation-delay-200">
+            We're not just another software company. We're the team you call when you actually need things done right.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ const WhyUs = () => {
               <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-accent-foreground/70 text-sm leading-relaxed">
+              <p className="text-accent-foreground/90 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -128,16 +128,16 @@ const WhyUs = () => {
 
         {/* Uptime Guarantee Section */}
         <div className="mt-20 pt-16 border-t border-accent-foreground/10">
-            <div className="max-w-4xl mx-auto text-center bg-accent-foreground/5 p-8 rounded-3xl border border-accent-foreground/10">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 border-2 border-primary/20 mb-6">
-                    <Server className="w-8 h-8 text-primary" />
+            <div className="max-w-4xl mx-auto text-center bg-accent-foreground/5 p-8 rounded-3xl border border-[hsl(200,100%,50%,0.3)]" style={{boxShadow:'0 0 40px hsl(200,100%,50%,0.08)'}}>
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[hsl(200,100%,50%,0.1)] border-2 border-[hsl(200,100%,50%,0.4)] mb-6" style={{boxShadow:'0 0 20px hsl(200,100%,50%,0.2)'}}>
+                    <Server className="w-8 h-8 text-[hsl(200,100%,60%)]" style={{filter:'drop-shadow(0 0 8px hsl(200,100%,50%))'}} />
                 </div>
-                <h3 className="text-3xl font-bold text-primary mb-3">Uncompromising Reliability</h3>
+                <h3 className="text-3xl font-bold text-[hsl(200,100%,65%)] mb-3" style={{textShadow:'0 0 20px hsl(200,100%,50%,0.5)'}}>Uncompromising Reliability</h3>
                 <p className="text-2xl font-semibold text-accent-foreground mb-4">
                     99% Uptime Guarantee
                 </p>
-                <p className="text-accent-foreground/70 text-lg">
-                    Since 2020, our robust infrastructure has ensured that no websites we manage have experienced downtime. We are committed to providing a stable and reliable online presence for all our clients.
+                <p className="text-accent-foreground/90 text-lg">
+                    Since 2020, every website we've managed has stayed online without a single outage. We take that seriously and plan to keep it that way.
                 </p>
             </div>
         </div>

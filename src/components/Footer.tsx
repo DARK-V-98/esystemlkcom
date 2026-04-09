@@ -54,14 +54,13 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-6 group">
               <Image src="/logo.png" alt="ESystemLk Logo" width={40} height={40} className="rounded-lg" />
-              <span className="text-2xl font-bold">
-                <span className="text-accent-foreground">esystem</span>
-                <span className="text-primary">lk</span>
+              <span className="text-2xl font-bold tracking-wide">
+                <span className="text-accent-foreground">ESYSTEM</span>
+                <span style={{color:'hsl(200,100%,50%)', textShadow:'0 0 10px hsl(200,100%,50%,0.8)'}}>LK</span>
               </span>
             </a>
-            <p className="text-accent-foreground/70 mb-6 max-w-md">
-              We build stunning websites, powerful web applications, and comprehensive software systems 
-              for businesses of all sizes. Your success is our mission.
+            <p className="text-accent-foreground/80 mb-6 max-w-md">
+              We build websites, web apps, and software for businesses of all sizes — and we maintain them for free, for life.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -125,9 +124,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <div className="flex items-center gap-3 text-accent-foreground/70">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  Sri Lanka
+                <div className="flex items-start gap-3 text-accent-foreground/70">
+                  <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>No 618, 6th Floor, Jana Jaya City Mall, Rajagiriya, Sri Lanka</span>
                 </div>
               </li>
             </ul>
@@ -150,8 +149,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-accent-foreground/10">
-          <p className="text-accent-foreground/70 text-sm text-center md:text-left">
-            © 2020 - {new Date().getFullYear()} Developed and Powered by esystemlk
+          <p className="text-accent-foreground/90 text-sm text-center md:text-left">
+            © 2020 - {new Date().getFullYear()} Developed and Powered by ESYSTEMLK
           </p>
           <div className="flex items-center gap-6 text-sm text-accent-foreground/70">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>

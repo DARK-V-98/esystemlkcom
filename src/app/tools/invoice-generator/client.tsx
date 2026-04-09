@@ -44,7 +44,7 @@ export default function InvoiceGeneratorClient() {
   const { register, control, handleSubmit, watch } = useForm<IInvoiceForm>({
     defaultValues: {
       yourCompanyName: 'ESystemLk Solutions',
-      yourCompanyAddress: 'Colombo, Sri Lanka',
+      yourCompanyAddress: 'No 618, 6th Floor, Jana Jaya City Mall, Rajagiriya, Sri Lanka',
       clientName: 'Future Partner',
       clientAddress: '123 Tech Avenue, Silicon Valley',
       invoiceNumber: `INV-${Math.floor(Math.random() * 9000) + 1000}`,
@@ -206,8 +206,8 @@ export default function InvoiceGeneratorClient() {
         {/* Form Column */}
         <div className="lg:col-span-8 space-y-8">
            {/* Section 1: Parties */}
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden group hover:border-primary/20 transition-all">
-              <CardHeader className="border-b border-white/5 py-6">
+           <Card className="bg-white border border-gray-200 rounded-3xl overflow-hidden group hover:border-primary/20 transition-all">
+              <CardHeader className="border-b border-gray-200 py-6">
                  <CardTitle className="flex items-center gap-2 text-xl">
                     <Building className="w-5 h-5 text-primary" />
                     Sender & Recipient
@@ -218,21 +218,21 @@ export default function InvoiceGeneratorClient() {
                  <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-4">
                        <label className="text-[10px] font-black uppercase tracking-widest text-primary px-1">Your Business</label>
-                       <Input placeholder="Company Name" {...register('yourCompanyName')} className="h-12 bg-black/20 border-white/5 font-bold" />
-                       <Textarea placeholder="Company Address / Tax ID" {...register('yourCompanyAddress')} className="bg-black/20 border-white/5 min-h-[100px]" />
+                       <Input placeholder="Company Name" {...register('yourCompanyName')} className="h-12 bg-gray-50 border-gray-200 font-bold" />
+                       <Textarea placeholder="Company Address / Tax ID" {...register('yourCompanyAddress')} className="bg-gray-50 border-gray-200 min-h-[100px]" />
                     </div>
                     <div className="space-y-4">
                        <label className="text-[10px] font-black uppercase tracking-widest text-purple-400 px-1">Bill To (Client)</label>
-                       <Input placeholder="Client Name" {...register('clientName')} className="h-12 bg-black/20 border-white/5 font-bold" />
-                       <Textarea placeholder="Client Address / Contact" {...register('clientAddress')} className="bg-black/20 border-white/5 min-h-[100px]" />
+                       <Input placeholder="Client Name" {...register('clientName')} className="h-12 bg-gray-50 border-gray-200 font-bold" />
+                       <Textarea placeholder="Client Address / Contact" {...register('clientAddress')} className="bg-gray-50 border-gray-200 min-h-[100px]" />
                     </div>
                  </div>
               </CardContent>
            </Card>
 
            {/* Section 2: Line Items */}
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden group hover:border-primary/20 transition-all">
-              <CardHeader className="border-b border-white/5 py-6 flex flex-row items-center justify-between">
+           <Card className="bg-white border border-gray-200 rounded-3xl overflow-hidden group hover:border-primary/20 transition-all">
+              <CardHeader className="border-b border-gray-200 py-6 flex flex-row items-center justify-between">
                  <div>
                     <CardTitle className="flex items-center gap-2 text-xl">
                        <Receipt className="w-5 h-5 text-primary" />
@@ -240,14 +240,14 @@ export default function InvoiceGeneratorClient() {
                     </CardTitle>
                     <CardDescription>List your products or services provided.</CardDescription>
                  </div>
-                 <Button type="button" variant="outline" size="sm" onClick={() => append({ description: '', quantity: 1, unitPrice: 0 })} className="h-10 bg-white/5 border-white/10 hover:bg-white/10 gap-2 font-bold px-4">
+                 <Button type="button" variant="outline" size="sm" onClick={() => append({ description: '', quantity: 1, unitPrice: 0 })} className="h-10 bg-white/5 border-gray-200 hover:bg-white/10 gap-2 font-bold px-4">
                     <Plus className="w-4 h-4" /> Add Line
                  </Button>
               </CardHeader>
               <CardContent className="p-0">
                  <div className="overflow-x-auto">
                     <table className="w-full">
-                       <thead className="bg-white/5 text-[10px] uppercase font-black tracking-widest text-white/50 border-b border-white/5">
+                       <thead className="bg-white/5 text-[10px] uppercase font-black tracking-widest text-gray-400 border-b border-gray-200">
                           <tr>
                              <th className="px-8 py-4 text-left">Description</th>
                              <th className="px-4 py-4 text-center w-24">Qty</th>
@@ -262,10 +262,10 @@ export default function InvoiceGeneratorClient() {
                                    <Input type="text" placeholder="Description of service..." {...register(`items.${index}.description`)} className="bg-transparent border-none focus:ring-0 px-0 text-sm font-medium" />
                                 </td>
                                 <td className="px-4 py-4">
-                                   <Input type="number" {...register(`items.${index}.quantity`, { valueAsNumber: true })} className="bg-black/20 border-white/5 text-center h-9 text-xs" />
+                                   <Input type="number" {...register(`items.${index}.quantity`, { valueAsNumber: true })} className="bg-gray-50 border-gray-200 text-center h-9 text-xs" />
                                 </td>
                                 <td className="px-4 py-4">
-                                   <Input type="number" step="0.01" {...register(`items.${index}.unitPrice`, { valueAsNumber: true })} className="bg-black/20 border-white/5 text-right h-9 text-xs font-mono" />
+                                   <Input type="number" step="0.01" {...register(`items.${index}.unitPrice`, { valueAsNumber: true })} className="bg-gray-50 border-gray-200 text-right h-9 text-xs font-mono" />
                                 </td>
                                 <td className="px-8 py-4 text-center">
                                    <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)} className="h-8 w-8 text-white/20 hover:text-red-500 hover:bg-black/40">
@@ -286,10 +286,10 @@ export default function InvoiceGeneratorClient() {
            </Card>
 
            {/* Section 3: Notes */}
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl group hover:border-primary/20 transition-all">
+           <Card className="bg-white border border-gray-200 rounded-3xl group hover:border-primary/20 transition-all">
               <CardContent className="p-8">
-                 <label className="text-[10px] font-black uppercase tracking-widest text-white/30 px-1 mb-3 block">Additional Notes / Terms</label>
-                 <Textarea placeholder="Payment terms, bank details, or thank you message..." {...register('notes')} className="bg-black/20 border-white/5 min-h-[120px] text-sm leading-relaxed" />
+                 <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1 mb-3 block">Additional Notes / Terms</label>
+                 <Textarea placeholder="Payment terms, bank details, or thank you message..." {...register('notes')} className="bg-gray-50 border-gray-200 min-h-[120px] text-sm leading-relaxed" />
               </CardContent>
            </Card>
         </div>
@@ -297,7 +297,7 @@ export default function InvoiceGeneratorClient() {
         {/* Sidebar Controls */}
         <div className="lg:col-span-4 space-y-8">
            {/* Section 4: Branding */}
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+           <Card className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
               <div className="h-1.5 bg-gradient-to-r from-purple-500 to-primary" />
               <CardHeader className="pb-4">
                  <CardTitle className="text-lg">Metadata & Branding</CardTitle>
@@ -306,26 +306,26 @@ export default function InvoiceGeneratorClient() {
                  <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                        <div className="space-y-2">
-                          <label className="text-[10px] font-black uppercase text-white/30">Invoice #</label>
-                          <Input {...register('invoiceNumber')} className="bg-black/20 border-white/5 text-xs font-bold" />
+                          <label className="text-[10px] font-black uppercase text-gray-400">Invoice #</label>
+                          <Input {...register('invoiceNumber')} className="bg-gray-50 border-gray-200 text-xs font-bold" />
                        </div>
                        <div className="space-y-2">
-                          <label className="text-[10px] font-black uppercase text-white/30">Currency Symbol</label>
-                          <Input {...register('currency')} className="bg-black/20 border-white/5 text-xs font-bold text-center" maxLength={3} />
+                          <label className="text-[10px] font-black uppercase text-gray-400">Currency Symbol</label>
+                          <Input {...register('currency')} className="bg-gray-50 border-gray-200 text-xs font-bold text-center" maxLength={3} />
                        </div>
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-white/30">Issue Date</label>
-                       <Input type="date" {...register('date')} className="bg-black/20 border-white/5 text-xs h-10" />
+                       <label className="text-[10px] font-black uppercase text-gray-400">Issue Date</label>
+                       <Input type="date" {...register('date')} className="bg-gray-50 border-gray-200 text-xs h-10" />
                     </div>
                     <div className="space-y-2">
-                       <label className="text-[10px] font-black uppercase text-white/30">Due Date</label>
-                       <Input type="date" {...register('dueDate')} className="bg-black/20 border-white/5 text-xs h-10" />
+                       <label className="text-[10px] font-black uppercase text-gray-400">Due Date</label>
+                       <Input type="date" {...register('dueDate')} className="bg-gray-50 border-gray-200 text-xs h-10" />
                     </div>
                  </div>
 
                  <div className="pt-2">
-                   <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-white/10 rounded-2xl cursor-pointer bg-black/20 hover:bg-black/30 hover:border-primary/50 transition-all overflow-hidden group">
+                   <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-200 rounded-2xl cursor-pointer bg-black/20 hover:bg-black/30 hover:border-primary/50 transition-all overflow-hidden group">
                        {logo ? (
                          <div className="relative w-full h-full flex items-center justify-center p-4 bg-white/5">
                             <img src={logo} alt="logo" className="max-h-full max-w-full object-contain" />
@@ -346,30 +346,30 @@ export default function InvoiceGeneratorClient() {
            </Card>
 
            {/* Section 5: Summary */}
-           <Card className="bg-black/40 backdrop-blur-xl border border-primary/20 rounded-3xl overflow-hidden shadow-2xl relative">
+           <Card className="bg-black/40 backdrop-blur-xl border border-primary/20 rounded-3xl overflow-hidden shadow-sm relative">
               <div className="absolute -right-12 -top-12 w-32 h-32 bg-primary/20 blur-3xl rounded-full" />
               <CardHeader>
                  <CardTitle className="text-xl">Financial Summary</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                  <div className="space-y-3 font-mono">
-                    <div className="flex justify-between text-sm text-white/50">
+                    <div className="flex justify-between text-sm text-gray-400">
                        <span>Subtotal</span>
                        <span>{currency}{subtotal.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm gap-4">
-                       <span className="text-white/50">Tax / VAT (%)</span>
+                       <span className="text-gray-400">Tax / VAT (%)</span>
                        <div className="flex items-center gap-2">
-                          <Input type="number" {...register('tax', { valueAsNumber: true })} className="w-16 h-8 text-center bg-black/20 border-white/5 text-xs" />
-                          <span className="text-white/30 text-xs">%</span>
+                          <Input type="number" {...register('tax', { valueAsNumber: true })} className="w-16 h-8 text-center bg-gray-50 border-gray-200 text-xs" />
+                          <span className="text-gray-400 text-xs">%</span>
                        </div>
                     </div>
                     <div className="flex justify-between text-sm text-emerald-400/80">
                        <span>Tax Amount</span>
                        <span>{currency}{taxAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
                     </div>
-                    <div className="pt-4 border-t border-white/10 flex justify-between items-end">
-                       <span className="text-xs font-black uppercase tracking-widest text-white/30 mb-1">Total Due</span>
+                    <div className="pt-4 border-t border-gray-200 flex justify-between items-end">
+                       <span className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Total Due</span>
                        <span className="text-3xl font-black text-primary drop-shadow-[0_0_15px_rgba(79,70,229,0.3)] tracking-tighter">
                           {currency}{total.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                        </span>
@@ -377,7 +377,7 @@ export default function InvoiceGeneratorClient() {
                  </div>
 
                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <Button type="button" variant="outline" onClick={() => generatePDF('preview')} className="h-14 border-white/10 hover:bg-white/5 text-sm font-bold gap-2">
+                    <Button type="button" variant="outline" onClick={() => generatePDF('preview')} className="h-14 border-gray-200 hover:bg-white/5 text-sm font-bold gap-2">
                        <Eye className="w-4 h-4" /> PREVIEW
                     </Button>
                     <Button onClick={() => generatePDF('download')} className="h-14 bg-primary hover:bg-primary/90 text-sm font-black shadow-lg shadow-primary/20 gap-2">
@@ -402,3 +402,5 @@ export default function InvoiceGeneratorClient() {
     </ToolLayout>
   );
 }
+
+

@@ -235,9 +235,9 @@ export default function CurrencyConverterPage() {
 
   return (
     <div className="container mx-auto py-10 px-4 md:px-6">
-      <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+      <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">Currency Converter</h1>
-        <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+        <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
           Convert between major currencies using live exchange rates.
         </p>
       </div>
@@ -251,7 +251,7 @@ export default function CurrencyConverterPage() {
         </Button>
       </div>
 
-      <Card className="max-w-4xl mx-auto bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+      <Card className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg">
         <CardHeader>
           <div className="flex justify-between items-center">
             <div>
@@ -307,3 +307,5 @@ export default function CurrencyConverterPage() {
     </div>
   );
 }
+
+

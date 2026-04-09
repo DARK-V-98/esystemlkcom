@@ -19,6 +19,8 @@ const CTABanner = () => {
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
+        {/* Neon blue accent orb */}
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[100px]" style={{background:'hsl(200,100%,50%,0.1)'}} />
       </div>
 
       {/* Floating elements */}
@@ -36,9 +38,9 @@ const CTABanner = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/50 bg-primary/10 mb-8 animate-fade-in opacity-0">
-            <Sparkles className="w-4 h-4 text-primary animate-bounce-subtle" />
-            <span className="text-sm font-medium text-primary">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[hsl(200,100%,50%,0.5)] bg-[hsl(200,100%,50%,0.08)] mb-8 animate-fade-in opacity-0" style={{boxShadow:'0 0 16px hsl(200,100%,50%,0.2)'}}>
+            <Sparkles className="w-4 h-4 text-[hsl(200,100%,60%)] animate-bounce-subtle" />
+            <span className="text-sm font-medium text-[hsl(200,100%,70%)]">
               Limited Time Offer
             </span>
           </div>
@@ -50,9 +52,8 @@ const CTABanner = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-accent-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in opacity-0 animation-delay-200">
-            Get a free consultation and 10% discount on your first project.
-            Limited slots available each month!
+          <p className="text-lg md:text-xl text-accent-foreground/90 mb-10 max-w-2xl mx-auto animate-fade-in opacity-0 animation-delay-200">
+            Book a free call this month and get 10% off your first project. Spots fill up fast — we only take on a limited number of new clients each month.
           </p>
 
           {/* CTA Buttons */}

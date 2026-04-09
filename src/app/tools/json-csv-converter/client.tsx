@@ -95,7 +95,7 @@ export default function JsonCsvConverterClient() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Editor */}
         <div className="lg:col-span-5 space-y-6">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group hover:border-primary/30 transition-all flex flex-col h-full">
+           <Card className="bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden hover:border-[hsl(200,100%,50%,0.5)] hover:shadow-[0_0_20px_hsl(200,100%,50%,0.1)] transition-all flex flex-col h-full">
               <CardHeader className="pb-4">
                  <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
@@ -116,11 +116,11 @@ export default function JsonCsvConverterClient() {
                        value={inputText} 
                        onChange={(e) => setInputText(e.target.value)} 
                        placeholder={direction === 'json-to-csv' ? '[ { "key": "value" } ]' : 'id,name,email\n1,John,john@example.com'} 
-                       className="min-h-[400px] font-mono text-sm bg-black/20 border-white/5 focus:border-primary/50 transition-all"
+                       className="min-h-[400px] font-mono text-sm bg-gray-50 border-gray-200 focus:border-primary/50 transition-all"
                     />
                  </div>
                  <div className="grid grid-cols-2 gap-4">
-                    <Button variant="outline" asChild className="h-12 border-white/5 hover:bg-white/5 gap-2 cursor-pointer">
+                    <Button variant="outline" asChild className="h-12 border-gray-200 hover:bg-white/5 gap-2 cursor-pointer">
                        <label className="m-0 cursor-pointer">
                           <Upload className="w-4 h-4" />
                           UPLOAD FILE
@@ -143,7 +143,7 @@ export default function JsonCsvConverterClient() {
 
         {/* Preview Output */}
         <div className="lg:col-span-7 h-full">
-           <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden min-h-[600px] flex flex-col relative group">
+           <Card className="bg-white border border-gray-200 rounded-[2rem] shadow-sm overflow-hidden min-h-[600px] flex flex-col relative group">
               <CardHeader className="flex flex-row items-center justify-between z-10">
                  <div>
                     <CardTitle className="flex items-center gap-2">
@@ -154,11 +154,11 @@ export default function JsonCsvConverterClient() {
                  </div>
                  {outputText && (
                     <div className="flex gap-2">
-                       <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-9 gap-2 items-center bg-black/40 border-white/5 hover:bg-white/5 transition-all">
+                       <Button variant="outline" size="sm" onClick={copyToClipboard} className="h-9 gap-2 items-center bg-black/40 border-gray-200 hover:bg-white/5 transition-all">
                           {isCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-muted-foreground" />}
                           Copy
                        </Button>
-                       <Button variant="outline" size="sm" onClick={handleDownload} className="h-9 gap-2 items-center bg-black/40 border-white/5 hover:bg-white/5 transition-all">
+                       <Button variant="outline" size="sm" onClick={handleDownload} className="h-9 gap-2 items-center bg-black/40 border-gray-200 hover:bg-white/5 transition-all">
                           <FileDown className="w-3 h-3 text-purple-400" />
                           Download
                        </Button>
@@ -166,7 +166,7 @@ export default function JsonCsvConverterClient() {
                  )}
               </CardHeader>
               <CardContent className="flex-grow flex flex-col p-0">
-                 <div className="flex-grow bg-black/40 font-mono text-xs p-8 overflow-auto max-h-[680px] border-t border-white/5">
+                 <div className="flex-grow bg-gray-50 font-mono text-xs p-8 overflow-auto max-h-[680px] border-t border-gray-200">
                     {isProcessing ? (
                        <div className="h-full flex flex-col items-center justify-center space-y-4 opacity-50">
                           <RefreshCw className="w-12 h-12 text-primary animate-spin" />
@@ -196,3 +196,4 @@ export default function JsonCsvConverterClient() {
     </ToolLayout>
   );
 }
+

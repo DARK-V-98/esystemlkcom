@@ -59,9 +59,9 @@ export default function JwtDecoderPage() {
 
   return (
     <div className="container mx-auto py-10 px-4 md:px-6">
-      <div className="bg-black/30 backdrop-blur-lg border border-white/10 shadow-2xl rounded-3xl py-8 text-center mb-10">
+      <div className="bg-white border border-gray-200 shadow-sm rounded-3xl py-8 text-center mb-10">
         <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">JWT Decoder</h1>
-        <p className="text-white/80 md:text-xl mt-4 max-w-3xl mx-auto">
+        <p className="text-gray-600 md:text-xl mt-4 max-w-3xl mx-auto">
           Paste a JSON Web Token to decode and inspect its header and payload.
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function JwtDecoderPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Encoded Token</CardTitle>
             <CardDescription>Paste your JWT here.</CardDescription>
@@ -91,7 +91,7 @@ export default function JwtDecoderPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-black/30 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg">
+        <Card className="bg-white border border-gray-200 rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle>Decoded Output</CardTitle>
             <CardDescription>The decoded header and payload.</CardDescription>
@@ -140,3 +140,5 @@ export default function JwtDecoderPage() {
     </div>
   );
 }
+
+

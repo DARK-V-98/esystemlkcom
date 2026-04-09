@@ -60,7 +60,7 @@ export default function SslCheckerClient() {
       category="Security Tools"
     >
       <div className="max-w-4xl mx-auto space-y-12">
-        <Card className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden group hover:border-primary/20 transition-all p-4 md:p-10">
+        <Card className="bg-white border border-gray-200 rounded-[2.5rem] shadow-sm overflow-hidden group hover:border-primary/20 transition-all p-4 md:p-10">
            <CardContent className="space-y-10">
               <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4">
                  <div className="relative flex-grow">
@@ -72,7 +72,7 @@ export default function SslCheckerClient() {
                       value={domain}
                       onChange={(e) => setDomain(e.target.value)}
                       placeholder="esystemlk.com"
-                      className="h-16 pl-14 text-xl font-black bg-black/20 border-white/5 rounded-2xl focus:ring-primary/50"
+                      className="h-16 pl-14 text-xl font-black bg-gray-50 border-gray-200 rounded-2xl focus:ring-primary/50"
                       required
                    />
                  </div>
@@ -112,10 +112,10 @@ export default function SslCheckerClient() {
                                {result.expires_in_days > 15 ? 'SSL IS HEALTHY' : 'SSL EXPIRES SOON'}
                             </h3>
                             <div className="flex flex-col gap-2">
-                               <p className="flex items-center justify-center md:justify-start gap-2 text-white/50 text-sm">
+                               <p className="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
                                   <Globe className="w-4 h-4" /> Domain: <span className="font-bold text-white">{result.subject.CN}</span>
                                </p>
-                               <p className="flex items-center justify-center md:justify-start gap-2 text-white/50 text-sm">
+                               <p className="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
                                   <ShieldCheck className="w-4 h-4" /> Issuer: <span className="font-bold text-white">{result.issuer.CN}</span>
                                </p>
                             </div>
@@ -128,34 +128,34 @@ export default function SslCheckerClient() {
 
                    {/* Grid Details */}
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <Card className="bg-black/20 border border-white/5 rounded-3xl p-8 space-y-4">
+                      <Card className="bg-gray-50 border border-gray-200 rounded-3xl p-8 space-y-4">
                          <div className="flex items-center gap-3 mb-2 underline underline-offset-8 decoration-primary/30">
                             <Calendar className="w-5 h-5 text-primary" />
                             <h4 className="font-black uppercase tracking-widest text-xs">Validity Period</h4>
                          </div>
                          <div className="grid grid-cols-2 gap-4">
                             <div>
-                               <p className="text-[10px] text-white/30 uppercase font-bold">Valid From</p>
+                               <p className="text-[10px] text-gray-400 uppercase font-bold">Valid From</p>
                                <p className="text-sm font-bold">{new Date(result.valid_from).toLocaleDateString()}</p>
                             </div>
                             <div>
-                               <p className="text-[10px] text-white/30 uppercase font-bold">Valid Until</p>
+                               <p className="text-[10px] text-gray-400 uppercase font-bold">Valid Until</p>
                                <p className="text-sm font-bold text-red-400/80">{new Date(result.valid_to).toLocaleDateString()}</p>
                             </div>
                          </div>
                       </Card>
 
-                      <Card className="bg-black/20 border border-white/5 rounded-3xl p-8 space-y-4">
+                      <Card className="bg-gray-50 border border-gray-200 rounded-3xl p-8 space-y-4">
                          <div className="flex items-center gap-3 mb-2 underline underline-offset-8 decoration-purple-500/30">
                             <Server className="w-5 h-5 text-purple-400" />
                             <h4 className="font-black uppercase tracking-widest text-xs">Subject Info</h4>
                          </div>
                          <div>
-                            <p className="text-[10px] text-white/30 uppercase font-bold">Organization</p>
+                            <p className="text-[10px] text-gray-400 uppercase font-bold">Organization</p>
                             <p className="text-sm font-bold truncate">{result.subject.O || 'N/A'}</p>
                          </div>
                          <div>
-                            <p className="text-[10px] text-white/30 uppercase font-bold">Common Name</p>
+                            <p className="text-[10px] text-gray-400 uppercase font-bold">Common Name</p>
                             <p className="text-sm font-bold truncate">{result.subject.CN}</p>
                          </div>
                       </Card>
@@ -167,23 +167,25 @@ export default function SslCheckerClient() {
 
         {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-            <div className="text-center space-y-4 p-8 bg-white/5 rounded-[2rem] border border-white/5 group transition-all hover:bg-primary/5">
+            <div className="text-center space-y-4 p-8 bg-white/5 rounded-[2rem] border border-gray-200 group transition-all hover:bg-primary/5">
                 <div className="inline-block p-4 bg-primary/10 rounded-2xl group-hover:scale-110 transition-transform"><Lock className="w-8 h-8 text-primary" /></div>
                 <h4 className="text-xl font-bold">Bank-Grade</h4>
-                <p className="text-sm text-white/50">Details including cryptographical strength and issuer chain validation.</p>
+                <p className="text-sm text-gray-400">Details including cryptographical strength and issuer chain validation.</p>
             </div>
-            <div className="text-center space-y-4 p-8 bg-white/5 rounded-[2rem] border border-white/5 group transition-all hover:bg-primary/5">
+            <div className="text-center space-y-4 p-8 bg-white/5 rounded-[2rem] border border-gray-200 group transition-all hover:bg-primary/5">
                 <div className="inline-block p-4 bg-primary/10 rounded-2xl group-hover:scale-110 transition-transform"><Clock className="w-8 h-8 text-primary" /></div>
                 <h4 className="text-xl font-bold">Instant</h4>
-                <p className="text-sm text-white/50">Quick scanning of any public domain over port 443 with SNI support.</p>
+                <p className="text-sm text-gray-400">Quick scanning of any public domain over port 443 with SNI support.</p>
             </div>
-            <div className="text-center space-y-4 p-8 bg-white/5 rounded-[2rem] border border-white/5 group transition-all hover:bg-primary/5">
+            <div className="text-center space-y-4 p-8 bg-white/5 rounded-[2rem] border border-gray-200 group transition-all hover:bg-primary/5">
                 <div className="inline-block p-4 bg-primary/10 rounded-2xl group-hover:scale-110 transition-transform"><CheckCircle2 className="w-8 h-8 text-primary" /></div>
                 <h4 className="text-xl font-bold">Verified</h4>
-                <p className="text-sm text-white/50">Comprehensive sanity checks to protect your visitors and SEO ranking.</p>
+                <p className="text-sm text-gray-400">Comprehensive sanity checks to protect your visitors and SEO ranking.</p>
             </div>
         </div>
       </div>
     </ToolLayout>
   );
 }
+
+

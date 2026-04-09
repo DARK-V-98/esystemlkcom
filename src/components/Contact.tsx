@@ -80,7 +80,7 @@ const Contact = () => {
 
 
   return (
-    <section id="contact" className="py-24 bg-secondary/30 relative overflow-hidden animate-fade-in opacity-0">
+    <section id="contact" className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
 
@@ -93,8 +93,8 @@ const Contact = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in opacity-0 animation-delay-100">
             Let's Build Something <span className="text-gradient">Amazing</span>
           </h2>
-          <p className="text-lg text-muted-foreground animate-fade-in opacity-0 animation-delay-200">
-            Ready to start your project? Contact us today for a free consultation and quote.
+          <p className="text-lg text-gray-600 animate-fade-in opacity-0 animation-delay-200">
+            Drop us a message and we'll get back to you quickly with a free quote.
           </p>
         </div>
 
@@ -106,7 +106,7 @@ const Contact = () => {
                   <CheckCircle2 className="w-10 h-10 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-gray-600 mb-6">
                   Your message has been sent successfully. We'll get back to you soon.
                 </p>
                 <Button
@@ -241,8 +241,8 @@ const Contact = () => {
                 {
                   icon: MapPin,
                   title: "Location",
-                  value: "Sri Lanka",
-                  link: "#",
+                  value: "No 618, 6th Floor, Jana Jaya City Mall, Rajagiriya, Sri Lanka",
+                  link: "https://maps.google.com/?q=Jana+Jaya+City+Mall+Rajagiriya+Sri+Lanka",
                 },
               ].map((item, index) => (
                 <a
@@ -254,12 +254,12 @@ const Contact = () => {
                     <item.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground">{item.title}</div>
+                    <div className="text-sm text-gray-600">{item.title}</div>
                     <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
                       {item.value}
                     </div>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-5 h-5 text-gray-600 ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                 </a>
               ))}
             </div>
@@ -268,9 +268,8 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-4">
                 Ready to Get Started?
               </h3>
-              <p className="text-accent-foreground/80 mb-6">
-                Get a free consultation and detailed quote for your project. 
-                No obligations, just expert advice.
+              <p className="text-accent-foreground/90 mb-6">
+                Send us a message and we'll come back with a clear plan and honest pricing. No pressure, no fluff.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-sm">
@@ -295,3 +294,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+

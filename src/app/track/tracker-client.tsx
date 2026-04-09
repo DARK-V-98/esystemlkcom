@@ -156,7 +156,7 @@ export default function TrackerClient() {
             </CardContent>
         </Card>
         <p className="mt-8 text-muted-foreground/30 font-black text-[10px] uppercase tracking-[0.5em] text-center max-w-sm leading-loose">
-            Enter your unique project key provided by esystemlk to access your real-time development monitor.
+            Enter your unique project key provided by ESYSTEMLK to access your real-time development monitor.
         </p>
       </div>
     );
@@ -339,7 +339,7 @@ export default function TrackerClient() {
                     </p>
                     <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex items-center justify-between">
                          <span className="text-[9px] font-black tracking-widest uppercase opacity-40">Development Partner</span>
-                         <span className="text-[9px] font-black tracking-widest uppercase text-primary">ESystemLk Solutions</span>
+                         <span className="text-[9px] font-black tracking-widest uppercase text-primary">ESYSTEMLK Solutions</span>
                     </div>
                 </div>
             </Card>
