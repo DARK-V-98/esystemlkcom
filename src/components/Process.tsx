@@ -1,60 +1,30 @@
 
 'use client'
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
-  MessageSquare, 
-  FileSearch, 
-  Palette, 
-  Code2, 
-  TestTube, 
-  Rocket,
-  CheckCircle2
+  MessageSquare, FileSearch, Palette, Code2, TestTube, Rocket, CheckCircle2
 } from "lucide-react";
 
 const steps = [
-  {
-    icon: MessageSquare,
-    number: "01",
-    title: "Discovery Call",
-    description: "We talk through what you need, what you're trying to solve, and what success looks like for you. No charge.",
-  },
-  {
-    icon: FileSearch,
-    number: "02",
-    title: "Planning & Proposal",
-    description: "You get a clear plan — what we'll build, how long it takes, and exactly what it costs. No surprises.",
-  },
-  {
-    icon: Palette,
-    number: "03",
-    title: "Design Phase",
-    description: "We show you mockups and keep tweaking until the design feels right. You call the shots.",
-  },
-  {
-    icon: Code2,
-    number: "04",
-    title: "Development",
-    description: "We write clean code and keep you updated as we go. No disappearing acts.",
-  },
-  {
-    icon: TestTube,
-    number: "05",
-    title: "Testing & QA",
-    description: "We test everything on real devices and browsers before handing it over. Bugs get caught here, not after launch.",
-  },
-  {
-    icon: Rocket,
-    number: "06",
-    title: "Launch & Support",
-    description: "We handle the go-live and stick around after. Free maintenance for life — that's our promise.",
-  },
+  { icon: MessageSquare, number: "01", title: "Discovery Call", description: "We talk through what you need, what you're trying to solve, and what success looks like for you. No charge." },
+  { icon: FileSearch, number: "02", title: "Planning & Proposal", description: "You get a clear plan — what we'll build, how long it takes, and exactly what it costs. No surprises." },
+  { icon: Palette, number: "03", title: "Design Phase", description: "We show you mockups and keep tweaking until the design feels right. You call the shots." },
+  { icon: Code2, number: "04", title: "Development", description: "We write clean code and keep you updated as we go. No disappearing acts." },
+  { icon: TestTube, number: "05", title: "Testing & QA", description: "We test everything on real devices and browsers before handing it over. Bugs get caught here, not after launch." },
+  { icon: Rocket, number: "06", title: "Launch & Support", description: "We handle the go-live and stick around after. Free maintenance for life — that's our promise." },
 ];
 
 const Process = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const y1 = useTransform(scrollYProgress, [0, 1], ['-12%', '12%']);
+  const y2 = useTransform(scrollYProgress, [0, 1], ['12%', '-12%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   return (
-    <section className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+    <motion.section ref={ref} style={{ opacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+      <motion.div style={{ y: y1 }} className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <motion.div style={{ y: y2 }} className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -127,7 +97,7 @@ const Process = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

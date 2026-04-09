@@ -1,10 +1,9 @@
 
 'use client'
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HelpCircle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -45,11 +44,16 @@ const faqs = [
 ];
 
 const FAQ = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const y1 = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
+  const y2 = useTransform(scrollYProgress, [0, 1], ['10%', '-10%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+
   return (
-    <section className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+    <motion.section ref={ref} style={{ opacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+      <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -100,7 +104,7 @@ const FAQ = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,26 +1,25 @@
 
+'use client';
+
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Sparkles,
-  Rocket,
-  Phone,
-  CalendarCheck,
-  Lock,
-  Zap,
-  FileText,
-} from "lucide-react";
+import { ArrowRight, Sparkles, Rocket, Phone, CalendarCheck, Lock, Zap, FileText } from "lucide-react";
 import Link from "next/link";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const CTABanner = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-15%', '15%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+
   return (
-    <section className="py-20 bg-accent relative overflow-hidden animate-fade-in opacity-0">
+    <motion.section ref={ref} style={{ opacity }} className="py-20 bg-accent relative overflow-hidden animate-fade-in opacity-0">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
-        {/* Neon blue accent orb */}
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[100px]" style={{background:'hsl(200,100%,50%,0.1)'}} />
+        <motion.div style={{ y: bgY }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse-glow pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[100px] pointer-events-none" style={{background:'hsl(200,100%,50%,0.1)'}} />
       </div>
 
       {/* Floating elements */}
@@ -98,7 +97,7 @@ const CTABanner = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

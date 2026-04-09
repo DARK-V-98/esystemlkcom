@@ -1,11 +1,16 @@
 
 'use client';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
+  const fadeOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
 
   const testimonials = [
     {
@@ -59,9 +64,8 @@ const Testimonials = () => {
   }, [isAnimating]);
 
   return (
-    <section id="testimonials" className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+    <motion.section ref={sectionRef} id="testimonials" style={{ opacity: fadeOpacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+      <motion.div style={{ y: bgY }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Floating quotes */}
       <Quote className="absolute top-20 left-10 w-24 h-24 text-primary/10 animate-float" />
@@ -146,7 +150,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

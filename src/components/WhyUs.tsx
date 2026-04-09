@@ -1,6 +1,8 @@
 
 'use client';
 
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   Shield, 
   Clock, 
@@ -70,8 +72,14 @@ const stats = [
 
 
 const WhyUs = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const y1 = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
+  const y2 = useTransform(scrollYProgress, [0, 1], ['8%', '-8%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.08, 0.92, 1], [0, 1, 1, 0]);
+
   return (
-    <section id="why-us" className="py-24 bg-accent text-accent-foreground relative overflow-hidden animate-fade-in opacity-0">
+    <motion.section ref={ref} id="why-us" style={{ opacity }} className="py-24 bg-accent text-accent-foreground relative overflow-hidden animate-fade-in opacity-0">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -84,8 +92,8 @@ const WhyUs = () => {
       </div>
 
       {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary/10 to-transparent" />
+      <motion.div style={{ y: y1 }} className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
+      <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -154,7 +162,7 @@ const WhyUs = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

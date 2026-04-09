@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Zap, Shield, Rocket, MousePointer2, Layers, Cpu, Server } from "lucide-react";
+import { Rocket, Layers, Cpu, Server, MousePointer2 } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import HeroDrawers from "@/components/HeroDrawers";
 
 const CosmicHero = () => {
   const [mounted, setMounted] = useState(false);
@@ -24,7 +24,7 @@ const CosmicHero = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] text-white"
+      className="relative min-h-screen flex items-center justify-center bg-[#050505] text-white"
     >
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -137,6 +137,16 @@ const CosmicHero = () => {
            <div className="w-24 h-24 border-dashed border border-[hsl(200,100%,50%,0.2)] rounded-full" />
         </motion.div>
       </div>
+
+      {/* 3D Drawers — bottom right */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+        className="absolute bottom-16 right-6 md:right-10 z-20"
+      >
+        <HeroDrawers />
+      </motion.div>
 
       {/* Bottom Glow */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
