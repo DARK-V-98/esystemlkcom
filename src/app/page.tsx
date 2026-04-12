@@ -7,6 +7,7 @@ import CosmicHero from "@/components/CosmicHero";
 import CinematicStory from "@/components/CinematicStory";
 import BusinessBook from "@/components/BusinessBook";
 import CentralHub from "@/components/CentralHub";
+import EBOTSection from "@/components/EBOTSection";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
@@ -23,6 +24,7 @@ export default function Home() {
         <CinematicStory />
         <BusinessBook />
         <CentralHub />
+        <EBOTSection />
         <Services />
         <Process />
         <PortfolioClient />

@@ -121,16 +121,16 @@ export default function TrackerClient() {
                   <Key className="w-10 h-10 text-primary animate-pulse" />
                </div>
                <div className="space-y-1">
-                  <CardTitle className="text-3xl font-black uppercase tracking-tighter italic">Live Monitor Access</CardTitle>
-                  <CardDescription className="uppercase text-[10px] font-black tracking-[0.4em] opacity-40">Development Console</CardDescription>
+                  <CardTitle className="text-3xl font-black uppercase tracking-tighter italic text-white">Live Monitor Access</CardTitle>
+                  <CardDescription className="uppercase text-[10px] font-black tracking-[0.4em] text-primary/80">Development Console</CardDescription>
                </div>
             </CardHeader>
             <CardContent className="px-8 pb-12 space-y-6">
                 <form onSubmit={handleAccess} className="space-y-4">
                     <div className="relative">
-                        <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary opacity-50" />
+                        <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary opacity-70" />
                         <Input 
-                            className="bg-white/5 border-white/5 h-16 pl-12 rounded-2xl text-lg font-black tracking-widest placeholder:opacity-20 placeholder:font-normal focus:bg-white/10 transition-all placeholder:tracking-normal" 
+                            className="bg-white/10 border-white/10 h-16 pl-12 rounded-2xl text-lg font-black tracking-widest placeholder:text-white/30 placeholder:font-normal focus:bg-white/15 transition-all placeholder:tracking-normal text-white" 
                             placeholder="ESL-XXXX-XXXX"
                             value={accessKey}
                             onChange={(e) => setAccessKey(e.target.value.toUpperCase())}
@@ -148,14 +148,14 @@ export default function TrackerClient() {
                         )}
                     </Button>
                 </form>
-                <div className="flex items-center justify-center gap-6 opacity-30 text-[9px] font-black uppercase tracking-widest">
-                    <div className="flex items-center gap-1.5"><ShieldCheck className="w-3 h-3" /> Secure Access</div>
-                    <div className="flex items-center gap-1.5"><Sparkles className="w-3 h-3" /> Real-time</div>
-                    <div className="flex items-center gap-1.5"><Globe className="w-3 h-3" /> Worldwide</div>
+                <div className="flex items-center justify-center gap-6 text-white/60 text-[9px] font-black uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-primary" /> Secure Access</div>
+                    <div className="flex items-center gap-1.5"><Sparkles className="w-3 h-3 text-primary" /> Real-time</div>
+                    <div className="flex items-center gap-1.5"><Globe className="w-3 h-3 text-primary" /> Worldwide</div>
                 </div>
             </CardContent>
         </Card>
-        <p className="mt-8 text-muted-foreground/30 font-black text-[10px] uppercase tracking-[0.5em] text-center max-w-sm leading-loose">
+        <p className="mt-8 text-black/60 font-black text-[10px] uppercase tracking-[0.5em] text-center max-w-sm leading-loose px-4">
             Enter your unique project key provided by ESYSTEMLK to access your real-time development monitor.
         </p>
       </div>
@@ -180,14 +180,14 @@ export default function TrackerClient() {
                         <div className="space-y-1">
                             <Badge className="bg-primary/20 text-primary border-primary/50 text-[10px] font-black tracking-widest mb-2 uppercase">Current Phase</Badge>
                             <h2 className="text-4xl font-black uppercase tracking-tighter flex items-center gap-3">
-                                <Monitor className="w-8 h-8 text-primary opacity-50" />
+                                <Monitor className="w-8 h-8 text-primary opacity-80" />
                                 {projectData?.currentStage}
                             </h2>
-                            <p className="text-muted-foreground text-sm font-medium opacity-70 italic">{getStatusText(projectData!.status)}</p>
+                            <p className="text-muted-foreground text-sm font-medium opacity-90 italic">{getStatusText(projectData!.status)}</p>
                         </div>
-                        <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 bg-white/10 p-4 rounded-2xl border border-white/10 backdrop-blur-sm">
                             <div className="text-center">
-                                <p className="text-[10px] font-black uppercase text-primary/60 tracking-widest mb-1">Access Key</p>
+                                <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Access Key</p>
                                 <code className="text-sm font-black font-mono tracking-widest text-primary">{projectData?.accessKey}</code>
                             </div>
                         </div>
@@ -197,9 +197,9 @@ export default function TrackerClient() {
                      <div className="space-y-6">
                         <div className="flex justify-between items-end px-1">
                             <div className="space-y-1">
-                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground ml-1 mb-2 opacity-50">Overall Project Completion</p>
+                                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground ml-1 mb-2 opacity-80">Overall Project Completion</p>
                                 <p className="text-6xl font-black italic tracking-tighter text-primary">
-                                    {projectData?.progress}<span className="text-2xl opacity-40">%</span>
+                                    {projectData?.progress}<span className="text-2xl opacity-60">%</span>
                                 </p>
                             </div>
                             <div className="flex flex-col items-end gap-2">
@@ -208,10 +208,10 @@ export default function TrackerClient() {
                                     <div className="w-1 h-5 bg-primary/70 rounded-full animate-pulse delay-75" />
                                     <div className="w-1 h-4 bg-primary/40 rounded-full animate-pulse delay-150" />
                                 </div>
-                                <p className="text-[9px] font-black uppercase tracking-widest text-primary/70">Live Connection Secured</p>
+                                <p className="text-[9px] font-black uppercase tracking-widest text-primary">Live Connection Secured</p>
                             </div>
                         </div>
-                        <div className="relative h-4 bg-white/5 rounded-full overflow-hidden border border-white/5 shadow-inner p-1">
+                        <div className="relative h-4 bg-white/5 rounded-full overflow-hidden border border-white/10 shadow-inner p-1">
                             <div 
                                 className="h-full bg-gradient-to-r from-primary/50 via-primary to-primary/50 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(var(--primary),0.8)] relative overflow-hidden" 
                                 style={{ width: `${projectData?.progress}%` }}
@@ -230,18 +230,18 @@ export default function TrackerClient() {
                              className="flex items-center justify-between p-6 bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-2xl transition-all group"
                            >
                               <div className="space-y-1">
-                                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/60">Stage Preview</p>
+                                  <p className="text-[10px] font-black uppercase tracking-widest text-primary">Stage Preview</p>
                                   <p className="font-bold text-sm truncate max-w-[200px]">VISIT LIVE DESIGN SITE</p>
                               </div>
                               <ExternalLink className="w-5 h-5 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                            </a>
                         )}
-                        <div className="p-6 bg-white/5 border border-white/5 rounded-2xl flex items-center justify-between">
+                        <div className="p-6 bg-white/10 border border-white/10 rounded-2xl flex items-center justify-between">
                             <div className="space-y-1">
-                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40">Client Identity</p>
+                                <p className="text-[10px] font-black uppercase tracking-widest opacity-80">Client Identity</p>
                                 <p className="font-bold text-sm">{projectData?.clientName}</p>
                             </div>
-                            <ShieldCheck className="w-5 h-5 opacity-40" />
+                            <ShieldCheck className="w-5 h-5 text-primary opacity-80" />
                         </div>
                      </div>
                 </CardContent>

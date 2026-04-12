@@ -60,7 +60,7 @@ const features = [
 ];
 
 const stats = [
-  { value: "400+", label: "Happy Clients" },
+  { value: "25+", label: "Happy Clients" },
   { value: "25+", label: "Websites" },
   { value: "20+", label: "Software Systems" },
   { value: "5+", label: "Web Apps" },

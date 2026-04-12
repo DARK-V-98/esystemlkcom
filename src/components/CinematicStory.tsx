@@ -81,8 +81,7 @@ function NetworkDiagram() {
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto"
-      style={{ width: 320, height: 320 }}
+      className="relative mx-auto w-full max-w-[280px] sm:max-w-[320px] aspect-square"
     >
       <motion.img
         src="/p.jpg"
@@ -102,15 +101,15 @@ const SCENES = [
     id: 0,
     duration: 4000,
     render: () => (
-      <div className="flex flex-col items-center gap-6 text-center px-4">
+      <div className="flex flex-col items-center gap-4 md:gap-6 text-center px-4">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
+          className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border"
           style={{ borderColor: '#ff003c60', background: '#ff003c10', boxShadow: '0 0 20px #ff003c30' }}>
-          <span className="w-2 h-2 rounded-full animate-ping" style={{ background: '#ff003c' }} />
-          <span className="text-xs font-black tracking-[0.3em] uppercase" style={{ color: '#ff003c' }}>THE QUESTION</span>
+          <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-ping" style={{ background: '#ff003c' }} />
+          <span className="text-[10px] md:text-xs font-black tracking-[0.3em] uppercase" style={{ color: '#ff003c' }}>THE QUESTION</span>
         </motion.div>
         <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-black leading-tight max-w-3xl uppercase tracking-tight">
+          className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight max-w-3xl uppercase tracking-tight">
           <span style={{ color: '#fff' }}>ARE YOU READY TO</span><br />
           <span style={{ color: '#ff003c', textShadow: '0 0 30px #ff003c' }}>BUILD YOUR BUSINESS</span><br />
           <span style={{ color: '#00eaff', textShadow: '0 0 30px #00eaff' }}>ONLINE PRESENCE?</span>
@@ -122,16 +121,16 @@ const SCENES = [
     id: 1,
     duration: 4500,
     render: () => (
-      <div className="flex flex-col items-center gap-8 text-center px-4">
+      <div className="flex flex-col items-center gap-6 md:gap-8 text-center px-6">
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-          className="text-xl md:text-2xl font-bold max-w-2xl leading-relaxed uppercase tracking-wide" style={{ color: '#ffffff80' }}>
+          className="text-lg md:text-2xl font-bold max-w-2xl leading-relaxed uppercase tracking-wide" style={{ color: '#ffffff80' }}>
           WITH OVER{' '}
           <span className="font-black" style={{ color: '#00eaff', textShadow: '0 0 15px #00eaff' }}>6 YEARS OF EXPERIENCE</span>
           {' '}AND A{' '}
           <span className="font-black" style={{ color: '#ff003c', textShadow: '0 0 15px #ff003c' }}>99% SUCCESS RATE</span>,
-          <br />WE HELP BUSINESSES GROW THEIR DIGITAL PRESENCE.
+          <br className="hidden md:block" /> WE HELP BUSINESSES GROW THEIR DIGITAL PRESENCE.
         </motion.p>
-        <div className="flex gap-6">
+        <div className="flex gap-4 md:gap-6">
           <NeonIcon Icon={CheckCircle2} color="#00eaff" delay={0.3} />
           <NeonIcon Icon={TrendingUp}   color="#ff003c" delay={0.5} />
           <NeonIcon Icon={Cpu}          color="#00eaff" delay={0.7} />
@@ -143,20 +142,20 @@ const SCENES = [
     id: 2,
     duration: 4500,
     render: () => (
-      <div className="flex flex-col items-center gap-6 text-center px-4">
+      <div className="flex flex-col items-center gap-4 md:gap-6 text-center px-4">
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-          className="text-2xl md:text-4xl font-black uppercase tracking-tight" style={{ color: '#ffffff50' }}>
+          className="text-xl md:text-4xl font-black uppercase tracking-tight" style={{ color: '#ffffff50' }}>
           WE DON'T JUST BUILD WEBSITES
         </motion.p>
         <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-          className="h-0.5 w-48 origin-left"
+          className="h-0.5 w-32 md:w-48 origin-left"
           style={{ background: 'linear-gradient(90deg,#ff003c,#00eaff)', boxShadow: '0 0 12px #00eaff' }} />
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-3xl md:text-5xl font-black uppercase tracking-tight"
+          className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight"
           style={{ color: '#00eaff', textShadow: '0 0 30px #00eaff' }}>
           WE BUILD COMPLETE<br />DIGITAL ECOSYSTEMS
         </motion.p>
-        <div className="flex gap-5 mt-2">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-2">
           <NeonIcon Icon={Globe}   color="#00eaff" delay={0.8}  />
           <NeonIcon Icon={Cloud}   color="#ff003c" delay={0.95} />
           <NeonIcon Icon={Server}  color="#00eaff" delay={1.1}  />
@@ -171,12 +170,12 @@ const SCENES = [
     render: () => (
       <div className="flex flex-col items-center gap-4 text-center px-4">
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-          className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+          className="text-xl sm:text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight">
           <span style={{ color: '#fff' }}>FROM MODERN WEBSITES</span><br />
           <span style={{ color: '#ff003c', textShadow: '0 0 20px #ff003c' }}>TO FULLY CONNECTED</span><br />
           <span style={{ color: '#00eaff', textShadow: '0 0 20px #00eaff' }}>OFFICE SYSTEMS</span>
         </motion.p>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }} className="w-full">
           <NetworkDiagram />
         </motion.div>
       </div>
@@ -186,9 +185,9 @@ const SCENES = [
     id: 4,
     duration: 4000,
     render: () => (
-      <div className="flex flex-col items-center gap-8 text-center px-4">
+      <div className="flex flex-col items-center gap-6 md:gap-8 text-center px-4">
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-tight max-w-3xl">
+          className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight leading-tight max-w-3xl">
           <span style={{ color: '#ffffff70' }}>POWER YOUR ENTIRE BUSINESS</span><br />
           <span style={{ color: '#ff003c', textShadow: '0 0 30px #ff003c' }}>WITH ONE SMART</span><br />
           <span style={{ color: '#00eaff', textShadow: '0 0 30px #00eaff' }}>TECHNOLOGY HUB</span>
@@ -196,10 +195,10 @@ const SCENES = [
         <motion.div
           animate={{ scale: [1, 1.1, 1], boxShadow: ['0 0 30px #ff003c40', '0 0 60px #ff003c80', '0 0 30px #ff003c40'] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-20 h-20 rounded-full flex items-center justify-center"
+          className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center"
           style={{ background: '#ff003c15', border: '2px solid #ff003c' }}
         >
-          <Rocket className="w-9 h-9" style={{ color: '#ff003c', filter: 'drop-shadow(0 0 10px #ff003c)' }} />
+          <Rocket className="w-7 h-7 md:w-9 md:h-9" style={{ color: '#ff003c', filter: 'drop-shadow(0 0 10px #ff003c)' }} />
         </motion.div>
       </div>
     ),
@@ -208,19 +207,19 @@ const SCENES = [
     id: 5,
     duration: 5000,
     render: () => (
-      <div className="flex flex-col items-center gap-8 text-center px-4">
+      <div className="flex flex-col items-center gap-6 md:gap-8 text-center px-6">
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}
-          className="text-sm font-black tracking-[0.4em] uppercase" style={{ color: '#ffffff30' }}>
+          className="text-[10px] md:text-sm font-black tracking-[0.4em] uppercase" style={{ color: '#ffffff30' }}>
           THE FUTURE STARTS NOW
         </motion.p>
         <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-3xl md:text-5xl font-black uppercase tracking-tight" style={{ color: '#fff' }}>
+          className="text-2xl md:text-5xl font-black uppercase tracking-tight" style={{ color: '#fff' }}>
           READY TO GET STARTED?
         </motion.h3>
         <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.5 }}
-          whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
           <Link href="#contact"
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-black text-lg tracking-widest uppercase"
+            className="inline-flex items-center justify-center gap-3 px-6 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-black text-sm md:text-lg tracking-widest uppercase w-full sm:w-auto text-center"
             style={{
               background: 'linear-gradient(135deg,#ff003c,#cc0030)',
               color: '#fff',
@@ -228,11 +227,11 @@ const SCENES = [
               border: '1px solid #ff003c80',
             }}>
             START BUILDING YOUR DIGITAL FUTURE
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </Link>
         </motion.div>
         <motion.p animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity }}
-          className="text-sm tracking-widest uppercase font-bold" style={{ color: '#00eaff80' }}>
+          className="text-xs md:text-sm tracking-widest uppercase font-bold" style={{ color: '#00eaff80' }}>
           FREE CONSULTATION · NO COMMITMENT
         </motion.p>
       </div>

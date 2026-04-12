@@ -142,7 +142,7 @@ function HubDiagram() {
   const RADIUS = 110;
 
   return (
-    <div className="relative flex items-center justify-center" style={{ width: 300, height: 300 }}>
+    <div className="relative flex items-center justify-center scale-90 sm:scale-100" style={{ width: 300, height: 300 }}>
       {/* Orbit ring */}
       <div
         className="absolute rounded-full"
@@ -312,7 +312,7 @@ const CARDS: CardProps[] = [
 ];
 
 const STATS = [
-  { value: '400+', label: 'Businesses Connected', color: '#ff003c' },
+  { value: '25+', label: 'Businesses Connected', color: '#ff003c' },
   { value: '1',    label: 'Central Hub',           color: '#00eaff' },
   { value: '6+',   label: 'Years Experience',       color: '#ff003c' },
 ];

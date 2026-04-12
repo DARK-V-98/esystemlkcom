@@ -101,10 +101,10 @@ const PAGES = [
   {
     id: 9, tag: 'GET STARTED', tagColor: '#ff003c',
     title: 'READY TO BUILD\nYOUR DIGITAL FUTURE?',
-    subtitle: 'WE\'VE HELPED 400+ BUSINESSES GO DIGITAL. YOU\'RE NEXT.',
+    subtitle: 'WE\'VE HELPED 25+ BUSINESSES GO DIGITAL. YOU\'RE NEXT.',
     body: 'From a simple business website to a full enterprise system — we handle everything. Free consultation, transparent pricing, and lifetime maintenance included. No hidden fees, no surprises.',
     icon: Star, iconColor: '#ff003c',
-    stat: { value: '400+', label: 'BUSINESSES TRANSFORMED DIGITALLY' },
+    stat: { value: '25+', label: 'BUSINESSES TRANSFORMED DIGITALLY' },
     bg: 'from-red-50 to-white', accent: '#ff003c',
     cta: true,
   },

@@ -68,10 +68,10 @@ const CosmicHero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.95]"
+            className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-[0.95]"
           >
              <span className="text-shimmer block">BUILDING</span> 
-             THE FUTURISTIC <br/> 
+             THE FUTURISTIC <br className="hidden sm:block" /> 
              <span className="text-primary italic">ECOSYSTEM.</span>
           </motion.h1>
 
@@ -80,7 +80,7 @@ const CosmicHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl md:text-2xl text-zinc-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-lg md:text-2xl text-zinc-300 mb-8 md:mb-12 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
           >
             We take your toughest problems and turn them into software that actually works — clean backends, fast frontends, and everything in between.
           </motion.p>
@@ -90,15 +90,15 @@ const CosmicHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 px-6 sm:px-0"
           >
-            <Button asChild variant="hero" size="xl" className="rounded-2xl px-12 neon-glow group">
+            <Button asChild variant="hero" size="xl" className="rounded-2xl px-12 neon-glow group w-full sm:w-auto">
               <Link href="#contact" className="gap-3">
                 Deploy Your Vision 
                 <Rocket className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
             </Button>
-            <Button asChild variant="heroOutline" size="xl" className="rounded-2xl px-12 border-white/20 text-white hover:bg-white/10 transition-colors">
+            <Button asChild variant="heroOutline" size="xl" className="rounded-2xl px-12 border-white/20 text-white hover:bg-white/10 transition-colors w-full sm:w-auto">
               <Link href="#services" className="gap-3">
                 <Layers className="w-5 h-5" />
                 Our Stack
@@ -111,7 +111,7 @@ const CosmicHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="mt-24 pt-12 border-t border-[hsl(200,100%,50%,0.15)] flex flex-wrap justify-center gap-12 text-[hsl(200,100%,70%)] uppercase tracking-[0.2em] text-[10px] font-bold"
+            className="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-[hsl(200,100%,50%,0.15)] flex flex-wrap justify-center gap-6 md:gap-12 text-[hsl(200,100%,70%)] uppercase tracking-[0.2em] text-[10px] font-bold"
           >
             <div className="flex items-center gap-2">
               <Cpu className="w-4 h-4 text-[hsl(200,100%,50%)]" style={{filter:'drop-shadow(0 0 6px hsl(200,100%,50%))'}} /> Cloud Native
