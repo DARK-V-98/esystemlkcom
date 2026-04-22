@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowUpRight, Smartphone, GraduationCap, Globe, Users, Wallet, Bot, Code2, Layers, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Smartphone, GraduationCap, Globe, Users, Wallet, Bot, Code2, Layers, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
