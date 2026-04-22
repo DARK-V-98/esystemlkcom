@@ -68,11 +68,12 @@ const CosmicHero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-[0.95]"
+            className="text-3xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter leading-[0.95] break-words"
           >
              <span className="text-shimmer block">BUILDING</span> 
-             THE FUTURISTIC <br className="hidden sm:block" /> 
-             <span className="text-primary italic">ECOSYSTEM.</span>
+             <span className="block sm:inline">THE FUTURISTIC</span> 
+             <br className="hidden sm:block" /> 
+             <span className="text-primary italic block sm:inline">ECOSYSTEM.</span>
           </motion.h1>
 
           {/* Subtitle */}
