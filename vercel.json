@@ -1,6 +1,19 @@
 {
   "framework": null,
   "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "NITRO_PRESET=vercel npm run build",
-  "outputDirectory": ".vercel/output"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [{ "key": "Content-Type", "value": "application/xml" }]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+    }
+  ]
 }
