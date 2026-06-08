@@ -52,7 +52,11 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-         red: {
+        blue: {
+          light: 'hsl(var(--blue-light))',
+          dark:  'hsl(var(--blue-dark))',
+        },
+        red: {
           dark: 'hsl(var(--red-dark))',
           glow: 'hsl(var(--red-glow))',
         }

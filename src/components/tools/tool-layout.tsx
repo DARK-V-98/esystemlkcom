@@ -15,7 +15,7 @@ interface ToolLayoutProps {
 
 export function ToolLayout({ title, description, children, category }: ToolLayoutProps) {
   return (
-    <div className="min-h-screen pb-20 bg-white text-black">
+    <div className="min-h-screen pb-20 bg-background text-foreground">
       {/* Background Decorative Elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[hsl(200,100%,50%,0.06)] blur-[120px] rounded-full" />
@@ -48,7 +48,7 @@ export function ToolLayout({ title, description, children, category }: ToolLayou
             <h1 className="relative text-4xl md:text-6xl font-bold tracking-tight text-black mb-6">
               {title}
             </h1>
-            <p className="relative text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="relative text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               {description}
             </p>
           </div>

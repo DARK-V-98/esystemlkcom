@@ -14,7 +14,7 @@ const PARTICLES = Array.from({ length: 35 }, (_, i) => ({
   x: Math.random() * 100,
   y: Math.random() * 100,
   size: Math.random() * 3 + 2,
-  color: i % 2 === 0 ? '#ff003c' : '#00eaff',
+  color: i % 2 === 0 ? '#3b82f6' : '#00eaff',
   dur: Math.random() * 5 + 4,
   delay: Math.random() * 4,
 }));
@@ -46,13 +46,13 @@ function TechGrid() {
         <rect width="100%" height="100%" fill="url(#cg)" />
       </svg>
       <svg className="absolute inset-0 w-full h-full opacity-[0.07]">
-        <motion.line x1="0" y1="35%" x2="100%" y2="35%" stroke="#ff003c" strokeWidth="0.6" strokeDasharray="10 20"
+        <motion.line x1="0" y1="35%" x2="100%" y2="35%" stroke="#3b82f6" strokeWidth="0.6" strokeDasharray="10 20"
           animate={{ strokeDashoffset: [0, -300] }} transition={{ duration: 7, repeat: Infinity, ease: 'linear' }} />
         <motion.line x1="0" y1="65%" x2="100%" y2="65%" stroke="#00eaff" strokeWidth="0.6" strokeDasharray="10 20"
           animate={{ strokeDashoffset: [0, -300] }} transition={{ duration: 9, repeat: Infinity, ease: 'linear' }} />
         <motion.line x1="25%" y1="0" x2="25%" y2="100%" stroke="#00eaff" strokeWidth="0.6" strokeDasharray="10 20"
           animate={{ strokeDashoffset: [0, -300] }} transition={{ duration: 11, repeat: Infinity, ease: 'linear' }} />
-        <motion.line x1="75%" y1="0" x2="75%" y2="100%" stroke="#ff003c" strokeWidth="0.6" strokeDasharray="10 20"
+        <motion.line x1="75%" y1="0" x2="75%" y2="100%" stroke="#3b82f6" strokeWidth="0.6" strokeDasharray="10 20"
           animate={{ strokeDashoffset: [0, -300] }} transition={{ duration: 8, repeat: Infinity, ease: 'linear' }} />
       </svg>
     </div>
@@ -89,7 +89,7 @@ function NetworkDiagram() {
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         className="w-full h-full object-contain"
-        style={{ filter: 'drop-shadow(0 0 16px #00eaff30) drop-shadow(0 0 30px #ff003c15)' }}
+        style={{ filter: 'drop-shadow(0 0 16px #00eaff30) drop-shadow(0 0 30px #3b82f615)' }}
       />
     </motion.div>
   );
@@ -104,14 +104,14 @@ const SCENES = [
       <div className="flex flex-col items-center gap-4 md:gap-6 text-center px-4">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border"
-          style={{ borderColor: '#ff003c60', background: '#ff003c10', boxShadow: '0 0 20px #ff003c30' }}>
-          <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-ping" style={{ background: '#ff003c' }} />
-          <span className="text-[10px] md:text-xs font-black tracking-[0.3em] uppercase" style={{ color: '#ff003c' }}>THE QUESTION</span>
+          style={{ borderColor: '#3b82f660', background: '#3b82f610', boxShadow: '0 0 20px #3b82f630' }}>
+          <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-ping" style={{ background: '#3b82f6' }} />
+          <span className="text-[10px] md:text-xs font-black tracking-[0.3em] uppercase" style={{ color: '#3b82f6' }}>THE QUESTION</span>
         </motion.div>
         <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight max-w-3xl uppercase tracking-tight">
           <span style={{ color: '#fff' }}>ARE YOU READY TO</span><br />
-          <span style={{ color: '#ff003c', textShadow: '0 0 30px #ff003c' }}>BUILD YOUR BUSINESS</span><br />
+          <span style={{ color: '#3b82f6', textShadow: '0 0 30px #3b82f6' }}>BUILD YOUR BUSINESS</span><br />
           <span style={{ color: '#00eaff', textShadow: '0 0 30px #00eaff' }}>ONLINE PRESENCE?</span>
         </motion.h2>
       </div>
@@ -127,12 +127,12 @@ const SCENES = [
           WITH OVER{' '}
           <span className="font-black" style={{ color: '#00eaff', textShadow: '0 0 15px #00eaff' }}>6 YEARS OF EXPERIENCE</span>
           {' '}AND A{' '}
-          <span className="font-black" style={{ color: '#ff003c', textShadow: '0 0 15px #ff003c' }}>99% SUCCESS RATE</span>,
+          <span className="font-black" style={{ color: '#3b82f6', textShadow: '0 0 15px #3b82f6' }}>99% SUCCESS RATE</span>,
           <br className="hidden md:block" /> WE HELP BUSINESSES GROW THEIR DIGITAL PRESENCE.
         </motion.p>
         <div className="flex gap-4 md:gap-6">
           <NeonIcon Icon={CheckCircle2} color="#00eaff" delay={0.3} />
-          <NeonIcon Icon={TrendingUp}   color="#ff003c" delay={0.5} />
+          <NeonIcon Icon={TrendingUp}   color="#3b82f6" delay={0.5} />
           <NeonIcon Icon={Cpu}          color="#00eaff" delay={0.7} />
         </div>
       </div>
@@ -149,7 +149,7 @@ const SCENES = [
         </motion.p>
         <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
           className="h-0.5 w-32 md:w-48 origin-left"
-          style={{ background: 'linear-gradient(90deg,#ff003c,#00eaff)', boxShadow: '0 0 12px #00eaff' }} />
+          style={{ background: 'linear-gradient(90deg,#3b82f6,#00eaff)', boxShadow: '0 0 12px #00eaff' }} />
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}
           className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight"
           style={{ color: '#00eaff', textShadow: '0 0 30px #00eaff' }}>
@@ -157,9 +157,9 @@ const SCENES = [
         </motion.p>
         <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-2">
           <NeonIcon Icon={Globe}   color="#00eaff" delay={0.8}  />
-          <NeonIcon Icon={Cloud}   color="#ff003c" delay={0.95} />
+          <NeonIcon Icon={Cloud}   color="#3b82f6" delay={0.95} />
           <NeonIcon Icon={Server}  color="#00eaff" delay={1.1}  />
-          <NeonIcon Icon={Network} color="#ff003c" delay={1.25} />
+          <NeonIcon Icon={Network} color="#3b82f6" delay={1.25} />
         </div>
       </div>
     ),
@@ -172,7 +172,7 @@ const SCENES = [
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
           className="text-xl sm:text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight">
           <span style={{ color: '#fff' }}>FROM MODERN WEBSITES</span><br />
-          <span style={{ color: '#ff003c', textShadow: '0 0 20px #ff003c' }}>TO FULLY CONNECTED</span><br />
+          <span style={{ color: '#3b82f6', textShadow: '0 0 20px #3b82f6' }}>TO FULLY CONNECTED</span><br />
           <span style={{ color: '#00eaff', textShadow: '0 0 20px #00eaff' }}>OFFICE SYSTEMS</span>
         </motion.p>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }} className="w-full">
@@ -189,16 +189,16 @@ const SCENES = [
         <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
           className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight leading-tight max-w-3xl">
           <span style={{ color: '#ffffff70' }}>POWER YOUR ENTIRE BUSINESS</span><br />
-          <span style={{ color: '#ff003c', textShadow: '0 0 30px #ff003c' }}>WITH ONE SMART</span><br />
+          <span style={{ color: '#3b82f6', textShadow: '0 0 30px #3b82f6' }}>WITH ONE SMART</span><br />
           <span style={{ color: '#00eaff', textShadow: '0 0 30px #00eaff' }}>TECHNOLOGY HUB</span>
         </motion.p>
         <motion.div
-          animate={{ scale: [1, 1.1, 1], boxShadow: ['0 0 30px #ff003c40', '0 0 60px #ff003c80', '0 0 30px #ff003c40'] }}
+          animate={{ scale: [1, 1.1, 1], boxShadow: ['0 0 30px #3b82f640', '0 0 60px #3b82f680', '0 0 30px #3b82f640'] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center"
-          style={{ background: '#ff003c15', border: '2px solid #ff003c' }}
+          style={{ background: '#3b82f615', border: '2px solid #3b82f6' }}
         >
-          <Rocket className="w-7 h-7 md:w-9 md:h-9" style={{ color: '#ff003c', filter: 'drop-shadow(0 0 10px #ff003c)' }} />
+          <Rocket className="w-7 h-7 md:w-9 md:h-9" style={{ color: '#3b82f6', filter: 'drop-shadow(0 0 10px #3b82f6)' }} />
         </motion.div>
       </div>
     ),
@@ -221,10 +221,10 @@ const SCENES = [
           <Link href="#contact"
             className="inline-flex items-center justify-center gap-3 px-6 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-black text-sm md:text-lg tracking-widest uppercase w-full sm:w-auto text-center"
             style={{
-              background: 'linear-gradient(135deg,#ff003c,#cc0030)',
+              background: 'linear-gradient(135deg,#3b82f6,#1d4ed8)',
               color: '#fff',
-              boxShadow: '0 0 30px #ff003c60, 0 0 60px #ff003c30',
-              border: '1px solid #ff003c80',
+              boxShadow: '0 0 30px #3b82f660, 0 0 60px #3b82f630',
+              border: '1px solid #3b82f680',
             }}>
             START BUILDING YOUR DIGITAL FUTURE
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
@@ -248,8 +248,8 @@ function Dots({ current, total, onDot }: { current: number; total: number; onDot
           className="rounded-full transition-all duration-300"
           style={{
             width: i === current ? 28 : 8, height: 8,
-            background: i === current ? '#ff003c' : '#ffffff30',
-            boxShadow: i === current ? '0 0 10px #ff003c' : 'none',
+            background: i === current ? '#3b82f6' : '#ffffff30',
+            boxShadow: i === current ? '0 0 10px #3b82f6' : 'none',
           }} />
       ))}
     </div>
@@ -274,10 +274,10 @@ export default function CinematicStory() {
   }, [scene]);
 
   return (
-    <section className="relative bg-black overflow-hidden" style={{ minHeight: '100vh' }}>
+    <section className="relative overflow-hidden" style={{ minHeight: '100vh', background: 'linear-gradient(145deg, #0a1628 0%, #0d1f3c 60%, #0f2450 100%)' }}>
       <Particles />
       <TechGrid />
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[150px] pointer-events-none" style={{ background: '#ff003c0d' }} />
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[150px] pointer-events-none" style={{ background: '#3b82f60d' }} />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[150px] pointer-events-none" style={{ background: '#00eaff0a' }} />
 
       <div className="relative z-10 flex items-center justify-center min-h-screen pb-20">
@@ -296,7 +296,7 @@ export default function CinematicStory() {
       {/* Progress bar */}
       <motion.div key={`bar-${scene}`}
         className="absolute bottom-0 left-0 h-0.5 z-20"
-        style={{ background: 'linear-gradient(90deg,#ff003c,#00eaff)', boxShadow: '0 0 8px #00eaff' }}
+        style={{ background: 'linear-gradient(90deg,#3b82f6,#00eaff)', boxShadow: '0 0 8px #00eaff' }}
         initial={{ width: '0%' }}
         animate={{ width: '100%' }}
         transition={{ duration: SCENES[scene].duration / 1000, ease: 'linear' }}

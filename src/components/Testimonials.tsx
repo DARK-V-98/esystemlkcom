@@ -64,7 +64,7 @@ const Testimonials = () => {
   }, [isAnimating]);
 
   return (
-    <motion.section ref={sectionRef} id="testimonials" style={{ opacity: fadeOpacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+    <motion.section ref={sectionRef} id="testimonials" style={{ opacity: fadeOpacity }} className="py-24 bg-gradient-to-b from-secondary/30 to-background text-foreground relative overflow-hidden animate-fade-in opacity-0">
       <motion.div style={{ y: bgY }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Floating quotes */}
@@ -80,7 +80,7 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             What Our <span className="text-gradient">Clients Say</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Real feedback from real clients who trusted us with their digital projects.
           </p>
         </div>
@@ -109,7 +109,7 @@ const Testimonials = () => {
                   </p>
                   <div>
                     <h4 className="text-xl font-semibold">{testimonials[currentIndex].name}</h4>
-                    <p className="text-gray-600">{testimonials[currentIndex].role}</p>
+                    <p className="text-muted-foreground">{testimonials[currentIndex].role}</p>
                   </div>
               </div>
             </div>
