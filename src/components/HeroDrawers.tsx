@@ -128,8 +128,8 @@ export default function HeroDrawers() {
       sublabel: '+94 76 571 1396',
       icon: <Phone className="w-4 h-4" />,
       href: 'tel:+94765711396',
-      color: '#ff003c',
-      glowColor: '#ff003c',
+      color: '#3b82f6',
+      glowColor: '#3b82f6',
     },
     {
       position: 2,

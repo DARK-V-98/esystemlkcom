@@ -10,13 +10,13 @@ import {
 
 const PAGES = [
   {
-    id: 0, tag: 'INTRODUCTION', tagColor: '#ff003c',
+    id: 0, tag: 'INTRODUCTION', tagColor: '#3b82f6',
     title: 'WHY YOUR BUSINESS\nNEEDS A DIGITAL PRESENCE',
     subtitle: 'IN 2025, IF YOU\'RE NOT ONLINE — YOU DON\'T EXIST TO MOST CUSTOMERS.',
     body: 'Over 80% of customers search online before making a purchase decision. Whether you run a small tea shop or a large corporation, your digital presence is your first impression.',
-    icon: Globe, iconColor: '#ff003c',
+    icon: Globe, iconColor: '#3b82f6',
     stat: { value: '80%', label: 'OF CUSTOMERS SEARCH ONLINE FIRST' },
-    bg: 'from-red-50 to-white', accent: '#ff003c',
+    bg: 'from-blue-50 to-white', accent: '#3b82f6',
   },
   {
     id: 1, tag: 'SMALL BUSINESS', tagColor: '#16a34a',
@@ -79,44 +79,44 @@ const PAGES = [
     points: ['LIVE SALES & REVENUE DASHBOARD', 'CUSTOMER BEHAVIOUR ANALYTICS', 'STAFF PERFORMANCE TRACKING', 'AUTOMATED MONTHLY REPORTS'],
   },
   {
-    id: 7, tag: 'ALL BUSINESSES', tagColor: '#ff003c',
+    id: 7, tag: 'ALL BUSINESSES', tagColor: '#3b82f6',
     title: 'SECURITY &\nTRUST MATTER',
     subtitle: 'YOUR CUSTOMERS TRUST YOU WITH THEIR DATA.',
     body: 'SSL certificates, secure payment processing, and regular security audits protect your business and your customers. A secure website also ranks higher on Google.',
-    icon: Shield, iconColor: '#ff003c',
+    icon: Shield, iconColor: '#3b82f6',
     stat: { value: '85%', label: 'OF USERS ABANDON UNSECURED WEBSITES' },
-    bg: 'from-red-50 to-white', accent: '#ff003c',
+    bg: 'from-blue-50 to-white', accent: '#3b82f6',
     points: ['SSL & HTTPS ON ALL PAGES', 'SECURE PAYMENT PROCESSING', 'REGULAR SECURITY AUDITS', 'DATA BACKUP & RECOVERY'],
   },
   {
-    id: 8, tag: 'ALL BUSINESSES', tagColor: '#ff003c',
+    id: 8, tag: 'ALL BUSINESSES', tagColor: '#3b82f6',
     title: 'MOBILE FIRST\nIS NOT OPTIONAL',
     subtitle: '70% OF YOUR CUSTOMERS ARE ON THEIR PHONES.',
     body: 'If your website doesn\'t work perfectly on mobile, you\'re losing customers every day. We build every site mobile-first — fast loading, easy navigation, and thumb-friendly layouts.',
-    icon: Smartphone, iconColor: '#ff003c',
+    icon: Smartphone, iconColor: '#3b82f6',
     stat: { value: '70%', label: 'OF WEB TRAFFIC COMES FROM MOBILE DEVICES' },
-    bg: 'from-red-50 to-white', accent: '#ff003c',
+    bg: 'from-blue-50 to-white', accent: '#3b82f6',
     points: ['MOBILE-FIRST RESPONSIVE DESIGN', 'FAST LOADING ON 4G/3G', 'CLICK-TO-CALL & WHATSAPP BUTTONS', 'APP-LIKE PROGRESSIVE WEB APP'],
   },
   {
-    id: 9, tag: 'GET STARTED', tagColor: '#ff003c',
+    id: 9, tag: 'GET STARTED', tagColor: '#3b82f6',
     title: 'READY TO BUILD\nYOUR DIGITAL FUTURE?',
     subtitle: 'WE\'VE HELPED 25+ BUSINESSES GO DIGITAL. YOU\'RE NEXT.',
     body: 'From a simple business website to a full enterprise system — we handle everything. Free consultation, transparent pricing, and lifetime maintenance included. No hidden fees, no surprises.',
-    icon: Star, iconColor: '#ff003c',
+    icon: Star, iconColor: '#3b82f6',
     stat: { value: '25+', label: 'BUSINESSES TRANSFORMED DIGITALLY' },
-    bg: 'from-red-50 to-white', accent: '#ff003c',
+    bg: 'from-blue-50 to-white', accent: '#3b82f6',
     cta: true,
   },
 ];
 
 const CHAPTERS = [
-  { label: 'INTRO',      pages: [0],    color: '#ff003c' },
+  { label: 'INTRO',      pages: [0],    color: '#3b82f6' },
   { label: 'SMALL',      pages: [1, 2], color: '#16a34a' },
   { label: 'MID-LEVEL',  pages: [3, 4], color: '#2563eb' },
   { label: 'ENTERPRISE', pages: [5, 6], color: '#7c3aed' },
-  { label: 'ESSENTIALS', pages: [7, 8], color: '#ff003c' },
-  { label: 'START NOW',  pages: [9],    color: '#ff003c' },
+  { label: 'ESSENTIALS', pages: [7, 8], color: '#3b82f6' },
+  { label: 'START NOW',  pages: [9],    color: '#3b82f6' },
 ];
 
 export default function BusinessBook() {
@@ -156,7 +156,7 @@ export default function BusinessBook() {
         </div>
         <h2 className="text-2xl md:text-5xl font-black text-black tracking-tight leading-tight">
           WHY EVERY BUSINESS NEEDS<br />
-          <span style={{ color: '#ff003c' }}>A DIGITAL SYSTEM</span>
+          <span style={{ color: '#3b82f6' }}>A DIGITAL SYSTEM</span>
         </h2>
         <p className="text-gray-500 mt-3 text-sm md:text-lg max-w-2xl mx-auto font-semibold uppercase tracking-wide">
           FROM SMALL SHOPS TO LARGE ENTERPRISES — HERE'S WHAT YOU'RE MISSING
@@ -222,7 +222,7 @@ export default function BusinessBook() {
                       {current.subtitle}
                     </p>
 
-                    <p className="text-gray-600 leading-relaxed text-xs md:text-base mb-4 md:mb-6">
+                    <p className="text-muted-foreground leading-relaxed text-xs md:text-base mb-4 md:mb-6">
                       {current.body}
                     </p>
 
@@ -233,7 +233,7 @@ export default function BusinessBook() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3 + i * 0.08 }}
-                            className="flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-700">
+                            className="flex items-center gap-2 text-xs md:text-sm font-semibold text-foreground/70">
                             <ChevronRight className="w-3 h-3 md:w-4 md:h-4 shrink-0" style={{ color: current.accent }} />
                             {pt}
                           </motion.li>

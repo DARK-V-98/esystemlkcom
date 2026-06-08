@@ -201,10 +201,10 @@ const Pricing = () => {
   const renderPackage = (pkg: any, index: number) => (
       <div
         key={index}
-        className={`relative bg-card rounded-2xl p-6 border-2 flex flex-col transition-all duration-300 hover:-translate-y-2 ${
+        className={`relative rounded-2xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-2 ${
           pkg.popular
-            ? "border-primary shadow-red-lg"
-            : "border-border hover:border-primary/50"
+            ? "glass border-2 border-primary/60 shadow-[0_8px_40px_rgba(59,130,246,0.20)]"
+            : "glass-card border border-border/60 hover:border-primary/40 hover:shadow-[0_8px_32px_rgba(59,130,246,0.10)]"
         }`}
       >
         {pkg.popular && (
@@ -254,9 +254,9 @@ const Pricing = () => {
   )
 
   return (
-    <section id="pricing" className="py-24 bg-background relative overflow-hidden animate-fade-in opacity-0">
+    <section id="pricing" className="py-24 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden animate-fade-in opacity-0">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/4 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

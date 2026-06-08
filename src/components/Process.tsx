@@ -22,7 +22,7 @@ const Process = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], ['12%', '-12%']);
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   return (
-    <motion.section ref={ref} style={{ opacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+    <motion.section ref={ref} style={{ opacity }} className="py-24 bg-gradient-to-b from-secondary/25 to-background text-foreground relative overflow-hidden animate-fade-in opacity-0">
       <motion.div style={{ y: y1 }} className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <motion.div style={{ y: y2 }} className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 
@@ -36,7 +36,7 @@ const Process = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in opacity-0 animation-delay-100">
             How We Build Your Project
           </h2>
-          <p className="text-lg text-gray-600 animate-fade-in opacity-0 animation-delay-200">
+          <p className="text-lg text-muted-foreground animate-fade-in opacity-0 animation-delay-200">
             A straightforward process with no guesswork — you always know where things stand.
           </p>
         </div>
@@ -70,7 +70,7 @@ const Process = () => {
                   <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>

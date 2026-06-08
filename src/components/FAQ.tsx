@@ -51,7 +51,7 @@ const FAQ = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
 
   return (
-    <motion.section ref={ref} style={{ opacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+    <motion.section ref={ref} style={{ opacity }} className="py-24 bg-gradient-to-b from-background to-secondary/25 text-foreground relative overflow-hidden animate-fade-in opacity-0">
       <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
 
@@ -65,7 +65,7 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in opacity-0 animation-delay-100">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600 animate-fade-in opacity-0 animation-delay-200">
+          <p className="text-lg text-muted-foreground animate-fade-in opacity-0 animation-delay-200">
             Common questions we get asked. If yours isn't here, just message us.
           </p>
         </div>
@@ -82,7 +82,7 @@ const FAQ = () => {
                 <AccordionTrigger className="text-left font-semibold hover:text-primary transition-colors py-6 [&[data-state=open]>svg]:text-primary">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pb-6 leading-relaxed">
+                <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -95,7 +95,7 @@ const FAQ = () => {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 rounded-2xl bg-card border border-border">
             <div className="text-center sm:text-left">
               <h3 className="font-bold text-foreground mb-1">Still have questions?</h3>
-              <p className="text-sm text-gray-600">Can't find what you're looking for? Let's chat!</p>
+              <p className="text-sm text-muted-foreground">Can't find what you're looking for? Let's chat!</p>
             </div>
             <Button variant="hero" className="gap-2">
               <MessageCircle className="w-5 h-5" />

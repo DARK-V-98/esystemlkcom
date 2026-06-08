@@ -28,7 +28,7 @@ function ParallaxOrbs() {
   return (
     <div ref={ref} className="absolute inset-0 pointer-events-none overflow-hidden">
       <motion.div
-        style={{ y: y1, background: 'radial-gradient(circle, #ff003c 0%, transparent 70%)', filter: 'blur(80px)' }}
+        style={{ y: y1, background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)', filter: 'blur(80px)' }}
         className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full"
         animate={{ opacity: [0.08, 0.18, 0.08] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
@@ -40,7 +40,7 @@ function ParallaxOrbs() {
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
       <motion.div
-        style={{ y: y3, background: 'radial-gradient(circle, #ff003c 0%, transparent 70%)', filter: 'blur(120px)' }}
+        style={{ y: y3, background: 'radial-gradient(circle, #3b82f6 0%, transparent 70%)', filter: 'blur(120px)' }}
         className="absolute top-[40%] left-[40%] w-[400px] h-[400px] rounded-full"
         animate={{ opacity: [0.04, 0.1, 0.04] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
@@ -133,9 +133,9 @@ function FeatureCard({ icon: Icon, title, desc, color, delay }: CardProps) {
 /* ─── Orbiting hub diagram ─── */
 const ORBIT_ICONS = [
   { Icon: Globe,      color: '#00eaff', angle: 0   },
-  { Icon: Smartphone, color: '#ff003c', angle: 90  },
+  { Icon: Smartphone, color: '#3b82f6', angle: 90  },
   { Icon: Monitor,    color: '#00eaff', angle: 180 },
-  { Icon: Zap,        color: '#ff003c', angle: 270 },
+  { Icon: Zap,        color: '#3b82f6', angle: 270 },
 ];
 
 function HubDiagram() {
@@ -160,9 +160,9 @@ function HubDiagram() {
       <motion.div
         animate={{
           boxShadow: [
-            '0 0 20px #ff003c40, 0 0 40px #ff003c20',
-            '0 0 40px #ff003c80, 0 0 80px #ff003c40',
-            '0 0 20px #ff003c40, 0 0 40px #ff003c20',
+            '0 0 20px #3b82f640, 0 0 40px #3b82f620',
+            '0 0 40px #3b82f680, 0 0 80px #3b82f640',
+            '0 0 20px #3b82f640, 0 0 40px #3b82f620',
           ],
         }}
         transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -170,18 +170,18 @@ function HubDiagram() {
         style={{
           width: 100,
           height: 100,
-          background: 'radial-gradient(circle, #1a0008 0%, #050505 100%)',
-          border: '2px solid #ff003c80',
+          background: 'radial-gradient(circle, #0a1628 0%, #061022 100%)',
+          border: '2px solid #3b82f680',
         }}
       >
-        <span className="text-[9px] font-black tracking-[0.2em] text-center leading-tight uppercase" style={{ color: '#ff003c' }}>
+        <span className="text-[9px] font-black tracking-[0.2em] text-center leading-tight uppercase" style={{ color: '#3b82f6' }}>
           ESYSTEM<br />LK
         </span>
         <motion.div
           className="absolute inset-0 rounded-full"
           animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0, 0.4] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: 'easeOut' }}
-          style={{ border: '1px solid #ff003c60' }}
+          style={{ border: '1px solid #3b82f660' }}
         />
       </motion.div>
 
@@ -306,15 +306,15 @@ function StatItem({ value, label, color }: { value: string; label: string; color
 /* ─── Main section ─── */
 const CARDS: CardProps[] = [
   { icon: Globe,           title: 'WEBSITES',        desc: 'All your websites live and monitored in one place',          color: '#00eaff', delay: 0.1 },
-  { icon: Smartphone,      title: 'MOBILE APPS',     desc: 'Your apps, updates, and analytics — all here',              color: '#ff003c', delay: 0.2 },
+  { icon: Smartphone,      title: 'MOBILE APPS',     desc: 'Your apps, updates, and analytics — all here',              color: '#3b82f6', delay: 0.2 },
   { icon: Monitor,         title: 'SOFTWARE SYSTEMS', desc: 'POS, HRM, ERP — managed from one dashboard',               color: '#00eaff', delay: 0.3 },
-  { icon: LayoutDashboard, title: 'ONE DASHBOARD',   desc: 'Login once. Control everything.',                           color: '#ff003c', delay: 0.4 },
+  { icon: LayoutDashboard, title: 'ONE DASHBOARD',   desc: 'Login once. Control everything.',                           color: '#3b82f6', delay: 0.4 },
 ];
 
 const STATS = [
-  { value: '25+', label: 'Businesses Connected', color: '#ff003c' },
+  { value: '25+', label: 'Businesses Connected', color: '#3b82f6' },
   { value: '1',    label: 'Central Hub',           color: '#00eaff' },
-  { value: '6+',   label: 'Years Experience',       color: '#ff003c' },
+  { value: '6+',   label: 'Years Experience',       color: '#3b82f6' },
 ];
 
 export default function CentralHub() {
@@ -325,7 +325,7 @@ export default function CentralHub() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: '#050505', minHeight: '100vh' }}
+      style={{ background: 'linear-gradient(160deg, #0a1628 0%, #0d1f3c 50%, #0f2450 100%)', minHeight: '100vh' }}
     >
       <ParallaxOrbs />
 
@@ -350,18 +350,18 @@ export default function CentralHub() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full"
           style={{
-            background: 'rgba(255,0,60,0.08)',
-            border: '1px solid rgba(255,0,60,0.4)',
-            boxShadow: '0 0 24px rgba(255,0,60,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(59,130,246,0.4)',
+            boxShadow: '0 0 24px rgba(59,130,246,0.2)',
           }}
         >
           <motion.span
             className="w-2.5 h-2.5 rounded-full"
-            style={{ background: '#ff003c', boxShadow: '0 0 8px #ff003c' }}
+            style={{ background: '#3b82f6', boxShadow: '0 0 8px #3b82f6' }}
             animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
             transition={{ duration: 1.4, repeat: Infinity }}
           />
-          <span className="text-xs font-black tracking-[0.35em] uppercase" style={{ color: '#ff003c' }}>
+          <span className="text-xs font-black tracking-[0.35em] uppercase" style={{ color: '#3b82f6' }}>
             🇱🇰 FIRST IN SRI LANKA
           </span>
         </motion.div>
@@ -433,19 +433,19 @@ export default function CentralHub() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-black text-sm md:text-base tracking-[0.15em] uppercase text-white"
             style={{
-              background: 'linear-gradient(135deg, #ff003c, #cc0030)',
-              border: '1px solid rgba(255,0,60,0.6)',
-              boxShadow: '0 0 30px rgba(255,0,60,0.4), 0 0 60px rgba(255,0,60,0.15)',
+              background: 'linear-gradient(135deg, hsl(213,94%,52%), hsl(221,83%,32%))',
+              border: '1px solid rgba(59,130,246,0.5)',
+              boxShadow: '0 0 30px rgba(59,130,246,0.35), 0 0 60px rgba(59,130,246,0.15)',
             }}
             animate={{
               boxShadow: [
-                '0 0 30px rgba(255,0,60,0.4), 0 0 60px rgba(255,0,60,0.15)',
-                '0 0 50px rgba(255,0,60,0.7), 0 0 90px rgba(255,0,60,0.3)',
-                '0 0 30px rgba(255,0,60,0.4), 0 0 60px rgba(255,0,60,0.15)',
+                '0 0 30px rgba(59,130,246,0.35), 0 0 60px rgba(59,130,246,0.15)',
+                '0 0 50px rgba(59,130,246,0.60), 0 0 90px rgba(59,130,246,0.28)',
+                '0 0 30px rgba(59,130,246,0.35), 0 0 60px rgba(59,130,246,0.15)',
               ],
             }}
             transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-            whileHover={{ scale: 1.04, boxShadow: '0 0 60px rgba(255,0,60,0.8), 0 0 100px rgba(255,0,60,0.4)' }}
+            whileHover={{ scale: 1.04, boxShadow: '0 0 60px rgba(59,130,246,0.70), 0 0 100px rgba(59,130,246,0.35)' }}
             whileTap={{ scale: 0.97 }}
           >
             ACCESS YOUR HUB

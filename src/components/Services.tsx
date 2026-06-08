@@ -89,10 +89,10 @@ const Services = () => {
   ];
 
   return (
-    <motion.section ref={ref} id="services" style={{ opacity }} className="py-24 bg-white text-black relative overflow-hidden animate-fade-in opacity-0">
+    <motion.section ref={ref} id="services" style={{ opacity }} className="py-24 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden animate-fade-in opacity-0">
       {/* Parallax background orbs */}
-      <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" />
+      <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-96 h-96 bg-primary/6 rounded-full blur-3xl pointer-events-none" />
+      <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-80 h-80 bg-primary/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -103,7 +103,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Complete <span className="text-gradient">Digital Solutions</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             From small business sites to full enterprise systems — we get it done right, every time.
           </p>
         </div>
@@ -114,7 +114,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="group bg-card rounded-2xl p-6 shadow-card border border-border/50 hover:border-primary/30 hover:-translate-y-1 transition-transform duration-300 cursor-pointer"
+                className="group glass-card rounded-2xl p-6 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_8px_32px_rgba(59,130,246,0.14)] transition-all duration-300 cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -123,7 +123,7 @@ const Services = () => {
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4">
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

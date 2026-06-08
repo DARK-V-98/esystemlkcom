@@ -57,11 +57,11 @@ export default function EBOTSection() {
   ];
 
   return (
-    <section className="relative w-full py-24 overflow-hidden bg-black text-white">
+    <section className="relative w-full py-24 overflow-hidden text-white" style={{ background: 'linear-gradient(145deg, #0a1628 0%, #0d1f3c 60%, #0f2450 100%)' }}>
       {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/20 rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400/8 rounded-full blur-[120px]" />
       </div>
 
       <div className="container relative mx-auto px-4 md:px-6 z-10">
@@ -73,7 +73,7 @@ export default function EBOTSection() {
           className="flex flex-col items-center text-center space-y-6 md:space-y-8 mb-12 md:mb-16"
         >
           <motion.div variants={itemVariants}>
-            <Badge variant="outline" className="px-3 py-1 md:px-4 md:py-1.5 border-blue-500/50 text-blue-400 bg-blue-500/10 backdrop-blur-md rounded-full mb-4 md:mb-6">
+            <Badge variant="outline" className="px-3 py-1 md:px-4 md:py-1.5 border-blue-400/40 text-blue-300 bg-blue-500/10 backdrop-blur-md rounded-full mb-4 md:mb-6">
               <Sparkles className="w-3 h-3 md:w-4 md:h-4 mr-2" /> New Release: EBOT 2.1
             </Badge>
             <h2 className="font-headline text-3xl md:text-6xl font-bold tracking-tighter mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-purple-500">
@@ -85,10 +85,10 @@ export default function EBOTSection() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto px-6 sm:px-0">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all hover:scale-105 w-full sm:w-auto">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_0_24px_hsl(213,94%,52%,0.4)] transition-all hover:scale-105 w-full sm:w-auto neon-glow">
               Get Started with EBOT
             </Button>
-            <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/5 text-white rounded-full px-8 py-6 text-lg font-medium backdrop-blur-md transition-all hover:scale-105 w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/8 text-white rounded-full px-8 py-6 text-lg font-medium backdrop-blur-md transition-all hover:scale-105 w-full sm:w-auto">
               Watch Demo
             </Button>
           </motion.div>
@@ -107,13 +107,13 @@ export default function EBOTSection() {
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
-              <Card className="h-full bg-white/5 border-white/10 backdrop-blur-xl hover:bg-white/10 transition-colors rounded-3xl overflow-hidden group">
+              <Card className="h-full bg-white/5 border-blue-400/15 backdrop-blur-xl hover:bg-white/8 hover:border-primary/30 transition-colors rounded-3xl overflow-hidden group">
                 <CardContent className="p-8 flex flex-col items-center text-center">
-                  <div className="p-4 rounded-2xl bg-black/40 mb-6 border border-white/5 group-hover:border-blue-500/30 transition-colors shadow-inner">
+                  <div className="p-4 rounded-2xl bg-white/5 mb-6 border border-white/8 group-hover:border-primary/30 transition-colors shadow-inner">
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">{feature.title}</h3>
-                  <p className="text-gray-400 text-lg leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors">{feature.title}</h3>
+                  <p className="text-blue-100/60 text-lg leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
