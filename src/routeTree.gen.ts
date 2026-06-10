@@ -9,9 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ToolsIndexRouteImport } from './routes/tools/index'
+import { Route as ToolsWordCounterRouteImport } from './routes/tools/word-counter'
+import { Route as ToolsQrGeneratorRouteImport } from './routes/tools/qr-generator'
+import { Route as ToolsPdfWatermarkRouteImport } from './routes/tools/pdf-watermark'
+import { Route as ToolsPasswordGeneratorRouteImport } from './routes/tools/password-generator'
+import { Route as ToolsImageResizerRouteImport } from './routes/tools/image-resizer'
+import { Route as ToolsImageCropperRouteImport } from './routes/tools/image-cropper'
+import { Route as ToolsImageCompressorRouteImport } from './routes/tools/image-compressor'
+import { Route as ToolsHashGeneratorRouteImport } from './routes/tools/hash-generator'
+import { Route as ToolsFileEncryptRouteImport } from './routes/tools/file-encrypt'
+import { Route as ToolsBase64RouteImport } from './routes/tools/base64'
 
+const ToolsRoute = ToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -22,35 +39,175 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsIndexRoute = ToolsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsWordCounterRoute = ToolsWordCounterRouteImport.update({
+  id: '/word-counter',
+  path: '/word-counter',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsQrGeneratorRoute = ToolsQrGeneratorRouteImport.update({
+  id: '/qr-generator',
+  path: '/qr-generator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsPdfWatermarkRoute = ToolsPdfWatermarkRouteImport.update({
+  id: '/pdf-watermark',
+  path: '/pdf-watermark',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsPasswordGeneratorRoute = ToolsPasswordGeneratorRouteImport.update({
+  id: '/password-generator',
+  path: '/password-generator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsImageResizerRoute = ToolsImageResizerRouteImport.update({
+  id: '/image-resizer',
+  path: '/image-resizer',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsImageCropperRoute = ToolsImageCropperRouteImport.update({
+  id: '/image-cropper',
+  path: '/image-cropper',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsImageCompressorRoute = ToolsImageCompressorRouteImport.update({
+  id: '/image-compressor',
+  path: '/image-compressor',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsHashGeneratorRoute = ToolsHashGeneratorRouteImport.update({
+  id: '/hash-generator',
+  path: '/hash-generator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsFileEncryptRoute = ToolsFileEncryptRouteImport.update({
+  id: '/file-encrypt',
+  path: '/file-encrypt',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsBase64Route = ToolsBase64RouteImport.update({
+  id: '/base64',
+  path: '/base64',
+  getParentRoute: () => ToolsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects': typeof ProjectsRoute
+  '/tools': typeof ToolsRouteWithChildren
+  '/tools/base64': typeof ToolsBase64Route
+  '/tools/file-encrypt': typeof ToolsFileEncryptRoute
+  '/tools/hash-generator': typeof ToolsHashGeneratorRoute
+  '/tools/image-compressor': typeof ToolsImageCompressorRoute
+  '/tools/image-cropper': typeof ToolsImageCropperRoute
+  '/tools/image-resizer': typeof ToolsImageResizerRoute
+  '/tools/password-generator': typeof ToolsPasswordGeneratorRoute
+  '/tools/pdf-watermark': typeof ToolsPdfWatermarkRoute
+  '/tools/qr-generator': typeof ToolsQrGeneratorRoute
+  '/tools/word-counter': typeof ToolsWordCounterRoute
+  '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects': typeof ProjectsRoute
+  '/tools/base64': typeof ToolsBase64Route
+  '/tools/file-encrypt': typeof ToolsFileEncryptRoute
+  '/tools/hash-generator': typeof ToolsHashGeneratorRoute
+  '/tools/image-compressor': typeof ToolsImageCompressorRoute
+  '/tools/image-cropper': typeof ToolsImageCropperRoute
+  '/tools/image-resizer': typeof ToolsImageResizerRoute
+  '/tools/password-generator': typeof ToolsPasswordGeneratorRoute
+  '/tools/pdf-watermark': typeof ToolsPdfWatermarkRoute
+  '/tools/qr-generator': typeof ToolsQrGeneratorRoute
+  '/tools/word-counter': typeof ToolsWordCounterRoute
+  '/tools': typeof ToolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/projects': typeof ProjectsRoute
+  '/tools': typeof ToolsRouteWithChildren
+  '/tools/base64': typeof ToolsBase64Route
+  '/tools/file-encrypt': typeof ToolsFileEncryptRoute
+  '/tools/hash-generator': typeof ToolsHashGeneratorRoute
+  '/tools/image-compressor': typeof ToolsImageCompressorRoute
+  '/tools/image-cropper': typeof ToolsImageCropperRoute
+  '/tools/image-resizer': typeof ToolsImageResizerRoute
+  '/tools/password-generator': typeof ToolsPasswordGeneratorRoute
+  '/tools/pdf-watermark': typeof ToolsPdfWatermarkRoute
+  '/tools/qr-generator': typeof ToolsQrGeneratorRoute
+  '/tools/word-counter': typeof ToolsWordCounterRoute
+  '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects'
+  fullPaths:
+    | '/'
+    | '/projects'
+    | '/tools'
+    | '/tools/base64'
+    | '/tools/file-encrypt'
+    | '/tools/hash-generator'
+    | '/tools/image-compressor'
+    | '/tools/image-cropper'
+    | '/tools/image-resizer'
+    | '/tools/password-generator'
+    | '/tools/pdf-watermark'
+    | '/tools/qr-generator'
+    | '/tools/word-counter'
+    | '/tools/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects'
-  id: '__root__' | '/' | '/projects'
+  to:
+    | '/'
+    | '/projects'
+    | '/tools/base64'
+    | '/tools/file-encrypt'
+    | '/tools/hash-generator'
+    | '/tools/image-compressor'
+    | '/tools/image-cropper'
+    | '/tools/image-resizer'
+    | '/tools/password-generator'
+    | '/tools/pdf-watermark'
+    | '/tools/qr-generator'
+    | '/tools/word-counter'
+    | '/tools'
+  id:
+    | '__root__'
+    | '/'
+    | '/projects'
+    | '/tools'
+    | '/tools/base64'
+    | '/tools/file-encrypt'
+    | '/tools/hash-generator'
+    | '/tools/image-compressor'
+    | '/tools/image-cropper'
+    | '/tools/image-resizer'
+    | '/tools/password-generator'
+    | '/tools/pdf-watermark'
+    | '/tools/qr-generator'
+    | '/tools/word-counter'
+    | '/tools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProjectsRoute: typeof ProjectsRoute
+  ToolsRoute: typeof ToolsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tools': {
+      id: '/tools'
+      path: '/tools'
+      fullPath: '/tools'
+      preLoaderRoute: typeof ToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -65,12 +222,120 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/': {
+      id: '/tools/'
+      path: '/'
+      fullPath: '/tools/'
+      preLoaderRoute: typeof ToolsIndexRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/word-counter': {
+      id: '/tools/word-counter'
+      path: '/word-counter'
+      fullPath: '/tools/word-counter'
+      preLoaderRoute: typeof ToolsWordCounterRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/qr-generator': {
+      id: '/tools/qr-generator'
+      path: '/qr-generator'
+      fullPath: '/tools/qr-generator'
+      preLoaderRoute: typeof ToolsQrGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/pdf-watermark': {
+      id: '/tools/pdf-watermark'
+      path: '/pdf-watermark'
+      fullPath: '/tools/pdf-watermark'
+      preLoaderRoute: typeof ToolsPdfWatermarkRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/password-generator': {
+      id: '/tools/password-generator'
+      path: '/password-generator'
+      fullPath: '/tools/password-generator'
+      preLoaderRoute: typeof ToolsPasswordGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/image-resizer': {
+      id: '/tools/image-resizer'
+      path: '/image-resizer'
+      fullPath: '/tools/image-resizer'
+      preLoaderRoute: typeof ToolsImageResizerRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/image-cropper': {
+      id: '/tools/image-cropper'
+      path: '/image-cropper'
+      fullPath: '/tools/image-cropper'
+      preLoaderRoute: typeof ToolsImageCropperRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/image-compressor': {
+      id: '/tools/image-compressor'
+      path: '/image-compressor'
+      fullPath: '/tools/image-compressor'
+      preLoaderRoute: typeof ToolsImageCompressorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/hash-generator': {
+      id: '/tools/hash-generator'
+      path: '/hash-generator'
+      fullPath: '/tools/hash-generator'
+      preLoaderRoute: typeof ToolsHashGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/file-encrypt': {
+      id: '/tools/file-encrypt'
+      path: '/file-encrypt'
+      fullPath: '/tools/file-encrypt'
+      preLoaderRoute: typeof ToolsFileEncryptRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/base64': {
+      id: '/tools/base64'
+      path: '/base64'
+      fullPath: '/tools/base64'
+      preLoaderRoute: typeof ToolsBase64RouteImport
+      parentRoute: typeof ToolsRoute
+    }
   }
 }
+
+interface ToolsRouteChildren {
+  ToolsBase64Route: typeof ToolsBase64Route
+  ToolsFileEncryptRoute: typeof ToolsFileEncryptRoute
+  ToolsHashGeneratorRoute: typeof ToolsHashGeneratorRoute
+  ToolsImageCompressorRoute: typeof ToolsImageCompressorRoute
+  ToolsImageCropperRoute: typeof ToolsImageCropperRoute
+  ToolsImageResizerRoute: typeof ToolsImageResizerRoute
+  ToolsPasswordGeneratorRoute: typeof ToolsPasswordGeneratorRoute
+  ToolsPdfWatermarkRoute: typeof ToolsPdfWatermarkRoute
+  ToolsQrGeneratorRoute: typeof ToolsQrGeneratorRoute
+  ToolsWordCounterRoute: typeof ToolsWordCounterRoute
+  ToolsIndexRoute: typeof ToolsIndexRoute
+}
+
+const ToolsRouteChildren: ToolsRouteChildren = {
+  ToolsBase64Route: ToolsBase64Route,
+  ToolsFileEncryptRoute: ToolsFileEncryptRoute,
+  ToolsHashGeneratorRoute: ToolsHashGeneratorRoute,
+  ToolsImageCompressorRoute: ToolsImageCompressorRoute,
+  ToolsImageCropperRoute: ToolsImageCropperRoute,
+  ToolsImageResizerRoute: ToolsImageResizerRoute,
+  ToolsPasswordGeneratorRoute: ToolsPasswordGeneratorRoute,
+  ToolsPdfWatermarkRoute: ToolsPdfWatermarkRoute,
+  ToolsQrGeneratorRoute: ToolsQrGeneratorRoute,
+  ToolsWordCounterRoute: ToolsWordCounterRoute,
+  ToolsIndexRoute: ToolsIndexRoute,
+}
+
+const ToolsRouteWithChildren = ToolsRoute._addFileChildren(ToolsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsRoute: ProjectsRoute,
+  ToolsRoute: ToolsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
