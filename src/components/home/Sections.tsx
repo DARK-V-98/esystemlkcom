@@ -7,6 +7,7 @@ import {
   Infinity as InfinityIcon, Zap, Clock, BadgeCheck, Cpu, UserCheck,
   RefreshCw, Users, FileText, ArrowLeftRight, Plug, ImageIcon, Lock,
   Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Plus, Minus,
+  Scissors, Grid, Key, Code2, Type, Hash,
 } from "lucide-react";
 import { Section, SectionHeader, FadeIn, CountUp } from "./Section";
 import { PROJECTS } from "@/data/projects";
@@ -378,36 +379,41 @@ export function Process() {
 
 /* ============ 8. Free Tools ============ */
 const TOOLS = [
-  { i: FileText, t: "Invoice Generator", d: "Create professional PDF invoices" },
-  { i: ArrowLeftRight, t: "Currency Converter", d: "Live exchange rates" },
-  { i: Plug, t: "API Tester", d: "Browser-based API client" },
-  { i: ImageIcon, t: "Image Compressor", d: "Adjustable quality compression" },
-  { i: Lock, t: "SSL Checker", d: "Certificate expiry & issuer details" },
+  { i: Scissors, t: "Image Cropper", d: "Crop or circle-crop any image", href: "/tools/image-cropper" },
+  { i: ImageIcon, t: "Image Compressor", d: "Reduce file size with quality slider", href: "/tools/image-compressor" },
+  { i: ArrowLeftRight, t: "Image Resizer", d: "Resize to exact pixel dimensions", href: "/tools/image-resizer" },
+  { i: FileText, t: "PDF Watermark", d: "Add text watermark to any PDF", href: "/tools/pdf-watermark" },
+  { i: Lock, t: "File Encrypt / Decrypt", d: "AES-256 browser-based encryption", href: "/tools/file-encrypt" },
+  { i: Grid, t: "QR Code Generator", d: "Generate QR for any URL or text", href: "/tools/qr-generator" },
+  { i: Key, t: "Password Generator", d: "Cryptographically secure passwords", href: "/tools/password-generator" },
+  { i: Code2, t: "Base64 Encoder", d: "Encode or decode Base64 text/files", href: "/tools/base64" },
+  { i: Type, t: "Word Counter", d: "Words, chars, reading time & more", href: "/tools/word-counter" },
+  { i: Hash, t: "Hash Generator", d: "SHA-256 / SHA-512 from text or file", href: "/tools/hash-generator" },
 ];
 
 export function FreeTools() {
   return (
     <Section id="tools">
       <SectionHeader
-        badge="Free Developer Tools"
-        title={<>A suite of <span className="gradient-hero-text">powerful, secure tools</span></>}
-        subtitle="Free browser-based utilities — no uploads, no waiting."
+        badge="Free Browser Tools"
+        title={<>Useful tools, <span className="gradient-hero-text">completely free</span></>}
+        subtitle="All run in your browser — nothing is uploaded to any server."
       />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-        {TOOLS.map((t, i) => (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+        {TOOLS.slice(0, 5).map((t, i) => (
           <FadeIn key={t.t} delay={i * 0.05}>
-            <div className="card-neon rounded-2xl p-5 h-full flex flex-col">
+            <a href={t.href} className="card-neon rounded-2xl p-5 h-full flex flex-col group hover:border-neon/60 transition-colors">
               <span className="icon-circle"><t.i className="w-5 h-5" /></span>
               <h3 className="mt-3 font-display font-bold text-foreground">{t.t}</h3>
               <p className="text-sm text-text-secondary mt-1">{t.d}</p>
-              <a href="#contact" className="mt-4 text-neon font-semibold text-sm inline-flex items-center gap-1">Request Access <ArrowRight className="w-4 h-4" /></a>
-            </div>
+              <span className="mt-4 text-neon font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">Use Tool <ArrowRight className="w-4 h-4" /></span>
+            </a>
           </FadeIn>
         ))}
       </div>
       <div className="text-center mt-10">
-        <a href="#contact" className="btn-outline-neon rounded-lg px-6 py-3 font-semibold inline-flex items-center gap-2">
-          Request Access to All Tools <ArrowRight className="w-4 h-4" />
+        <a href="/tools" className="btn-primary rounded-lg px-6 py-3 font-semibold inline-flex items-center gap-2">
+          See All 10 Free Tools <ArrowRight className="w-4 h-4" />
         </a>
       </div>
     </Section>
