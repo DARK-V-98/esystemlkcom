@@ -422,17 +422,25 @@ export function FreeTools() {
 
 /* ============ 9. Pricing ============ */
 const SOFTWARE_TIERS = [
-  { t: "Web Package", price: { usd: 299, lkr: 89000 }, blurb: "Perfect for small businesses and personal websites", popular: false,
-    features: ["Responsive Design", "Up to 5 Pages", "Contact Form", "Social Media Integration", "Basic SEO", "Mobile Friendly", "Free Domain Setup", "Lifetime Free Maintenance"], cta: "Get Started" },
-  { t: "Web App", price: { usd: 899, lkr: 269000 }, blurb: "Custom web applications with dashboards", popular: true,
+  { t: "Starter Website", price: { usd: 155, lkr: 35000 }, blurb: "Simple landing page for personal brands", popular: false,
+    features: ["Responsive Design", "Single Page Website", "Contact Form", "Mobile Friendly", "Basic SEO", "Lifetime Free Maintenance"], cta: "Get Started" },
+  { t: "Business Website", price: { usd: 210, lkr: 48000 }, blurb: "Perfect for small businesses", popular: false,
+    features: ["Responsive Design", "Up to 5 Pages", "Contact Form", "Social Media Integration", "Basic SEO", "Free Domain Setup", "Lifetime Free Maintenance"], cta: "Get Started" },
+  { t: "Pro Website", price: { usd: 240, lkr: 55000 }, blurb: "More pages, more polish, better SEO", popular: false,
+    features: ["Everything in Business Website", "Up to 10 Pages", "Advanced SEO", "Google Analytics Setup", "Speed Optimization", "Lifetime Free Maintenance"], cta: "Get Started" },
+  { t: "E-Commerce Website", price: { usd: 350, lkr: 80000 }, blurb: "Sell online with payments built in", popular: false,
+    features: ["Online Store", "Payment Gateway Integration", "Product Management", "Order Management", "Inventory Tracking", "Lifetime Free Maintenance"], cta: "Get Started" },
+  { t: "Web App", price: { usd: 520, lkr: 120000 }, blurb: "Custom web applications with dashboards", popular: true,
     features: ["Custom Web Application", "User Authentication", "Admin Dashboard", "Database Integration", "API Development", "Real-time Features", "Lifetime Free Maintenance"], cta: "Get Started" },
-  { t: "Software System", price: { usd: 1999, lkr: 599000 }, blurb: "Full software systems for growing teams", popular: false,
+  { t: "Software System", price: { usd: 1130, lkr: 260000 }, blurb: "Full software systems for growing teams", popular: false,
     features: ["Everything in Web App", "Full System Dev", "Multi-user Support", "Advanced Security", "Custom Integrations", "Data Analytics", "Priority Support", "Lifetime Free Maintenance"], cta: "Get Started" },
-  { t: "Enterprise Pack", price: { usd: 4999, lkr: 1499000 }, blurb: "Dedicated team and full SLA", popular: false,
+  { t: "Enterprise Pack", price: { usd: 1520, lkr: 350000 }, blurb: "Dedicated team and full SLA", popular: false,
     features: ["Everything in Software System", "Dedicated Team", "CI/CD & DevOps", "SLA", "On-premise Option", "Scalability Architecture", "24/7 Support"], cta: "Contact Us" },
 ];
 
 const LOGO_TIERS = [
+  { t: "Basic Logo", price: { usd: 20, lkr: 5000 }, blurb: "Budget-friendly starter logo", popular: false,
+    features: ["1 Simple Logo Concept", "PNG Files", "1 Revision", "Fast Delivery"] },
   { t: "Logo Only", price: { usd: 49, lkr: 14500 }, blurb: "Single concept, final files", popular: false,
     features: ["1 Logo Concept", "Vector Files", "PNG / SVG / PDF", "Quick Delivery"] },
   { t: "Normal Logo Pack", price: { usd: 99, lkr: 29500 }, blurb: "3 concepts + brand colors", popular: false,
@@ -474,7 +482,7 @@ function PricingCard({ tier, currency }: { tier: any; currency: "usd" | "lkr" })
 }
 
 export function Pricing() {
-  const [cur, setCur] = useState<"usd" | "lkr">("usd");
+  const [cur, setCur] = useState<"usd" | "lkr">("lkr");
   return (
     <Section alt id="pricing">
       <SectionHeader
@@ -484,7 +492,7 @@ export function Pricing() {
       />
       <div className="flex justify-center mb-10">
         <div className="inline-flex bg-white border border-neon/30 rounded-full p-1">
-          {(["usd", "lkr"] as const).map((c) => (
+          {(["lkr", "usd"] as const).map((c) => (
             <button
               key={c}
               onClick={() => setCur(c)}
