@@ -875,8 +875,9 @@ export function Footer() {
         <div className="border-t border-neon/20 mt-12 pt-6 flex flex-wrap items-center justify-between gap-4 text-sm text-white/60">
           <div>© 2020–2026 Developed and Powered by <span className="text-neon font-semibold">ESYSTEMLK</span></div>
           <div className="flex gap-5">
-            <a className="hover:text-neon transition">Privacy Policy</a>
-            <a className="hover:text-neon transition">Terms of Service</a>
+            <a href="/privacy-policy" className="hover:text-neon transition">Privacy Policy</a>
+            <a href="/terms" className="hover:text-neon transition">Terms &amp; Conditions</a>
+            <a href="/refund-policy" className="hover:text-neon transition">Refund Policy</a>
           </div>
         </div>
       </div>
