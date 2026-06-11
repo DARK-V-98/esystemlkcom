@@ -833,8 +833,12 @@ export function Footer() {
               We build websites, web apps and software — maintained for life. Based in Sri Lanka, serving globally.
             </p>
             <div className="flex gap-3 mt-5">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-neon hover:border-neon hover:shadow-[0_0_20px_rgba(0,191,255,0.5)] transition">
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/esystemlk/", label: "Facebook" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/vishwa-vidarshana-4ab102410/", label: "LinkedIn" },
+                { Icon: Instagram, href: "https://www.instagram.com/esystemlk.dev/", label: "Instagram" },
+              ].map(({ Icon, href, label }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-neon hover:border-neon hover:shadow-[0_0_20px_rgba(0,191,255,0.5)] transition">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
