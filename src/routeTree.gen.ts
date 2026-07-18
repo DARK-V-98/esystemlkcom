@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as StoreRouteImport } from './routes/store'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -35,6 +36,11 @@ const ToolsRoute = ToolsRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoreRoute = StoreRouteImport.update({
+  id: '/store',
+  path: '/store',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RefundPolicyRoute = RefundPolicyRouteImport.update({
@@ -118,6 +124,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/store': typeof StoreRoute
   '/terms': typeof TermsRoute
   '/tools': typeof ToolsRouteWithChildren
   '/tools/base64': typeof ToolsBase64Route
@@ -137,6 +144,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/store': typeof StoreRoute
   '/terms': typeof TermsRoute
   '/tools/base64': typeof ToolsBase64Route
   '/tools/file-encrypt': typeof ToolsFileEncryptRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/refund-policy': typeof RefundPolicyRoute
+  '/store': typeof StoreRoute
   '/terms': typeof TermsRoute
   '/tools': typeof ToolsRouteWithChildren
   '/tools/base64': typeof ToolsBase64Route
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/projects'
     | '/refund-policy'
+    | '/store'
     | '/terms'
     | '/tools'
     | '/tools/base64'
@@ -196,6 +206,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/projects'
     | '/refund-policy'
+    | '/store'
     | '/terms'
     | '/tools/base64'
     | '/tools/file-encrypt'
@@ -214,6 +225,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/projects'
     | '/refund-policy'
+    | '/store'
     | '/terms'
     | '/tools'
     | '/tools/base64'
@@ -234,6 +246,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProjectsRoute: typeof ProjectsRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
+  StoreRoute: typeof StoreRoute
   TermsRoute: typeof TermsRoute
   ToolsRoute: typeof ToolsRouteWithChildren
 }
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/store': {
+      id: '/store'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/refund-policy': {
@@ -397,6 +417,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProjectsRoute: ProjectsRoute,
   RefundPolicyRoute: RefundPolicyRoute,
+  StoreRoute: StoreRoute,
   TermsRoute: TermsRoute,
   ToolsRoute: ToolsRouteWithChildren,
 }
