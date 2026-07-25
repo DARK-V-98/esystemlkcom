@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ToolLayout, ToolBtn, UploadArea } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Copy } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/hash-generator")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/hash-generator" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/hash-generator" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["hash-generator"].faq) },
+    ],
   }),
   component: HashGeneratorPage,
 });
@@ -77,7 +82,11 @@ function HashGeneratorPage() {
   };
 
   return (
-    <ToolLayout title="Hash Generator" description="Generate SHA-256, SHA-512, SHA-384 and SHA-1 hashes from text or any file.">
+    <ToolLayout
+      title="Hash Generator"
+      description="Generate SHA-256, SHA-512, SHA-384 and SHA-1 hashes from text or any file."
+      article={<ToolArticle title="Hash Generator" data={TOOL_ARTICLES["hash-generator"]} />}
+    >
       <div className="space-y-6">
         {/* Tab */}
         <div className="flex gap-3">

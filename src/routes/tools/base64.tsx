@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ToolLayout, ToolBtn } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Copy } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/base64")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/base64" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/base64" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES.base64.faq) },
+    ],
   }),
   component: Base64Page,
 });
@@ -74,7 +79,11 @@ function Base64Page() {
   };
 
   return (
-    <ToolLayout title="Base64 Encoder / Decoder" description="Encode or decode Base64 strings. Also encode files to Base64 data URLs.">
+    <ToolLayout
+      title="Base64 Encoder / Decoder"
+      description="Encode or decode Base64 strings. Also encode files to Base64 data URLs."
+      article={<ToolArticle title="Base64 Encoder / Decoder" data={TOOL_ARTICLES.base64} />}
+    >
       <div className="space-y-6">
         {/* Tab */}
         <div className="flex gap-3">

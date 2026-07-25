@@ -6,10 +6,13 @@ export function ToolLayout({
   title,
   description,
   children,
+  article,
 }: {
   title: string;
   description: string;
   children: React.ReactNode;
+  /** Optional long-form content rendered below the tool (SEO / AdSense value). */
+  article?: React.ReactNode;
 }) {
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -29,6 +32,7 @@ export function ToolLayout({
             <p className="mt-2 text-text-secondary max-w-2xl">{description}</p>
           </div>
           <div className="card-neon rounded-2xl p-6 lg:p-8">{children}</div>
+          {article}
         </div>
       </main>
       <Footer />

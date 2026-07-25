@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ToolLayout, ToolBtn } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Download } from "lucide-react";
 import QRCode from "qrcode";
 
@@ -25,7 +27,10 @@ export const Route = createFileRoute("/tools/qr-generator")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/qr-generator" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/qr-generator" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["qr-generator"].faq) },
+    ],
   }),
   component: QrGeneratorPage,
 });
@@ -71,6 +76,7 @@ function QrGeneratorPage() {
     <ToolLayout
       title="QR Code Generator"
       description="Generate a QR code for any URL, text, email or phone number. Download as PNG, no watermark."
+      article={<ToolArticle title="QR Code Generator" data={TOOL_ARTICLES["qr-generator"]} />}
     >
       <div className="space-y-6">
         <div className="flex flex-wrap gap-2">

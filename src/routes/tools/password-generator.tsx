@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
 import { ToolLayout, ToolBtn } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Copy, RefreshCw } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/password-generator")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/password-generator" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/password-generator" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["password-generator"].faq) },
+    ],
   }),
   component: PasswordGeneratorPage,
 });
@@ -88,7 +93,11 @@ function PasswordGeneratorPage() {
   const str = password ? strength(password) : null;
 
   return (
-    <ToolLayout title="Password Generator" description="Generate cryptographically secure passwords using your browser's built-in crypto API.">
+    <ToolLayout
+      title="Password Generator"
+      description="Generate cryptographically secure passwords using your browser's built-in crypto API."
+      article={<ToolArticle title="Password Generator" data={TOOL_ARTICLES["password-generator"]} />}
+    >
       <div className="space-y-6">
         <div>
           <label className="text-sm text-text-secondary block mb-1">Length: <strong>{length}</strong></label>

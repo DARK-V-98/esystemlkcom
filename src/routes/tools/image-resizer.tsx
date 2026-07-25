@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
 import { ToolLayout, ToolBtn, UploadArea } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Download } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/image-resizer")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/image-resizer" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/image-resizer" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["image-resizer"].faq) },
+    ],
   }),
   component: ImageResizerPage,
 });
@@ -81,7 +86,11 @@ function ImageResizerPage() {
   };
 
   return (
-    <ToolLayout title="Image Resizer" description="Resize any image to exact pixel dimensions. Optionally lock aspect ratio.">
+    <ToolLayout
+      title="Image Resizer"
+      description="Resize any image to exact pixel dimensions. Optionally lock aspect ratio."
+      article={<ToolArticle title="Image Resizer" data={TOOL_ARTICLES["image-resizer"]} />}
+    >
       <div className="space-y-6">
         <UploadArea label="Click or drop an image" accept="image/*" onChange={onFile} file={file} />
         {file && (

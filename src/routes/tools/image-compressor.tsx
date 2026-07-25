@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
 import { ToolLayout, ToolBtn, UploadArea } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Download } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/image-compressor")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/image-compressor" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/image-compressor" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["image-compressor"].faq) },
+    ],
   }),
   component: ImageCompressorPage,
 });
@@ -82,6 +87,7 @@ function ImageCompressorPage() {
     <ToolLayout
       title="Image Compressor"
       description="Reduce image file size by adjusting quality. Preview the result before downloading."
+      article={<ToolArticle title="Image Compressor" data={TOOL_ARTICLES["image-compressor"]} />}
     >
       <div className="space-y-6">
         <UploadArea label="Click or drop an image (JPG, PNG, WebP)" accept="image/*" onChange={onFile} file={file} />

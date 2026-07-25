@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ToolLayout, ToolBtn, UploadArea } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Download } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/pdf-watermark")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/pdf-watermark" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/pdf-watermark" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["pdf-watermark"].faq) },
+    ],
   }),
   component: PdfWatermarkPage,
 });
@@ -90,6 +95,7 @@ function PdfWatermarkPage() {
     <ToolLayout
       title="PDF Watermark"
       description="Add a custom text watermark to every page of your PDF. Runs in your browser — nothing is uploaded."
+      article={<ToolArticle title="PDF Watermark" data={TOOL_ARTICLES["pdf-watermark"]} />}
     >
       <div className="space-y-6">
         <UploadArea label="Click or drop a PDF file" accept=".pdf" onChange={(f) => { setFile(f); setDone(false); setResultBytes(null); }} file={file} />

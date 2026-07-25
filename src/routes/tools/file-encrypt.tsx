@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ToolLayout, ToolBtn, UploadArea } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 import { Lock, Unlock, Download } from "lucide-react";
 
 const LD = JSON.stringify({
@@ -24,7 +26,10 @@ export const Route = createFileRoute("/tools/file-encrypt")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/file-encrypt" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/file-encrypt" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["file-encrypt"].faq) },
+    ],
   }),
   component: FileEncryptPage,
 });
@@ -109,6 +114,7 @@ function FileEncryptPage() {
     <ToolLayout
       title="File Encrypt / Decrypt"
       description="AES-256-GCM encryption — the same standard used by banks. Your file never leaves your device."
+      article={<ToolArticle title="File Encrypt / Decrypt" data={TOOL_ARTICLES["file-encrypt"]} />}
     >
       <div className="space-y-6">
         {/* Mode */}

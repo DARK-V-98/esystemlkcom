@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import { ToolLayout } from "@/components/tools/ToolLayout";
+import { ToolArticle, toolFaqLd } from "@/components/tools/ToolArticle";
+import { TOOL_ARTICLES } from "@/data/toolArticles";
 
 const LD = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,7 +25,10 @@ export const Route = createFileRoute("/tools/word-counter")({
       { property: "og:url", content: "https://www.esystemlk.com/tools/word-counter" },
     ],
     links: [{ rel: "canonical", href: "https://www.esystemlk.com/tools/word-counter" }],
-    scripts: [{ type: "application/ld+json", children: LD }],
+    scripts: [
+      { type: "application/ld+json", children: LD },
+      { type: "application/ld+json", children: toolFaqLd(TOOL_ARTICLES["word-counter"].faq) },
+    ],
   }),
   component: WordCounterPage,
 });
@@ -59,7 +64,11 @@ function WordCounterPage() {
   ];
 
   return (
-    <ToolLayout title="Word Counter" description="Paste or type any text — get live word count, character count, reading time and top words.">
+    <ToolLayout
+      title="Word Counter"
+      description="Paste or type any text — get live word count, character count, reading time and top words."
+      article={<ToolArticle title="Word Counter" data={TOOL_ARTICLES["word-counter"]} />}
+    >
       <div className="space-y-6">
         <div>
           <label className="text-sm text-text-secondary block mb-1">Your text</label>

@@ -4,6 +4,10 @@ import { Footer } from "@/components/home/Sections";
 import {
   Crop, FileImage, Minimize2, FileText, Lock, QrCode,
   KeyRound, Code2, AlignLeft, Hash, ArrowRight,
+  Braces, Link2, Fingerprint, Clock,
+  CaseSensitive, Pilcrow, Link, GitCompare,
+  Percent, Cake, Scale, Landmark,
+  Pipette, Blend, Palette, Contrast,
 } from "lucide-react";
 
 const TOOLS = [
@@ -56,6 +60,86 @@ const TOOLS = [
     icon: Hash, title: "Hash Generator", slug: "hash-generator",
     desc: "Generate SHA-256 or SHA-512 hash of any text or file.",
     tags: ["Security", "Developer", "Free"],
+  },
+  {
+    icon: Braces, title: "JSON Formatter / Validator", slug: "json-formatter",
+    desc: "Beautify, minify and validate JSON. Find syntax errors instantly.",
+    tags: ["Developer", "Free"],
+  },
+  {
+    icon: Link2, title: "URL Encoder / Decoder", slug: "url-encoder",
+    desc: "Percent-encode or decode URLs and query-string values.",
+    tags: ["Developer", "Free"],
+  },
+  {
+    icon: Fingerprint, title: "UUID Generator", slug: "uuid-generator",
+    desc: "Generate secure random v4 UUIDs, one or many at a time.",
+    tags: ["Developer", "Free"],
+  },
+  {
+    icon: Clock, title: "Unix Timestamp Converter", slug: "timestamp-converter",
+    desc: "Convert Unix timestamps to dates and back, in seconds or ms.",
+    tags: ["Developer", "Free"],
+  },
+  {
+    icon: CaseSensitive, title: "Case Converter", slug: "case-converter",
+    desc: "Convert text to UPPER, lower, Title, camelCase, snake_case and more.",
+    tags: ["Writing", "Free"],
+  },
+  {
+    icon: Pilcrow, title: "Lorem Ipsum Generator", slug: "lorem-ipsum",
+    desc: "Generate placeholder text by paragraphs, sentences or words.",
+    tags: ["Writing", "Design", "Free"],
+  },
+  {
+    icon: Link, title: "URL Slug Generator", slug: "slug-generator",
+    desc: "Turn any title into a clean, SEO-friendly URL slug.",
+    tags: ["Writing", "Developer", "Free"],
+  },
+  {
+    icon: GitCompare, title: "Text Diff Checker", slug: "text-diff",
+    desc: "Compare two texts and highlight what was added or removed.",
+    tags: ["Writing", "Developer", "Free"],
+  },
+  {
+    icon: Percent, title: "Percentage Calculator", slug: "percentage-calculator",
+    desc: "Percentage of a number, percent change and more — calculated live.",
+    tags: ["Calculator", "Free"],
+  },
+  {
+    icon: Cake, title: "Age Calculator", slug: "age-calculator",
+    desc: "Exact age in years, months and days, plus total days lived.",
+    tags: ["Calculator", "Free"],
+  },
+  {
+    icon: Scale, title: "BMI Calculator", slug: "bmi-calculator",
+    desc: "Body Mass Index in metric or imperial units, with category.",
+    tags: ["Calculator", "Health", "Free"],
+  },
+  {
+    icon: Landmark, title: "Loan / EMI Calculator", slug: "loan-calculator",
+    desc: "Monthly repayment, total interest and total cost of a loan.",
+    tags: ["Calculator", "Finance", "Free"],
+  },
+  {
+    icon: Pipette, title: "Color Converter", slug: "color-converter",
+    desc: "Convert colors between HEX, RGB and HSL, and pick visually.",
+    tags: ["Design", "Developer", "Free"],
+  },
+  {
+    icon: Blend, title: "CSS Gradient Generator", slug: "gradient-generator",
+    desc: "Design a linear gradient and copy the ready-to-use CSS.",
+    tags: ["Design", "Developer", "Free"],
+  },
+  {
+    icon: Palette, title: "Color Palette Generator", slug: "color-palette",
+    desc: "Generate a harmonious palette from a base color.",
+    tags: ["Design", "Free"],
+  },
+  {
+    icon: Contrast, title: "Color Contrast Checker", slug: "contrast-checker",
+    desc: "Check text/background contrast against WCAG AA and AAA.",
+    tags: ["Design", "Accessibility", "Free"],
   },
 ];
 
