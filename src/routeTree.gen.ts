@@ -9,69 +9,49 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ToolsRouteImport } from './routes/tools'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as StoreRouteImport } from './routes/store'
-import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ToolsIndexRouteImport } from './routes/tools/index'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as StoreRouteImport } from './routes/store'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as MirraIndexRouteImport } from './routes/mirra/index'
-import { Route as ToolsWordCounterRouteImport } from './routes/tools/word-counter'
-import { Route as ToolsUuidGeneratorRouteImport } from './routes/tools/uuid-generator'
-import { Route as ToolsUrlEncoderRouteImport } from './routes/tools/url-encoder'
-import { Route as ToolsTimestampConverterRouteImport } from './routes/tools/timestamp-converter'
-import { Route as ToolsTextDiffRouteImport } from './routes/tools/text-diff'
-import { Route as ToolsSlugGeneratorRouteImport } from './routes/tools/slug-generator'
-import { Route as ToolsQrGeneratorRouteImport } from './routes/tools/qr-generator'
-import { Route as ToolsPercentageCalculatorRouteImport } from './routes/tools/percentage-calculator'
-import { Route as ToolsPdfWatermarkRouteImport } from './routes/tools/pdf-watermark'
-import { Route as ToolsPasswordGeneratorRouteImport } from './routes/tools/password-generator'
-import { Route as ToolsLoremIpsumRouteImport } from './routes/tools/lorem-ipsum'
-import { Route as ToolsLoanCalculatorRouteImport } from './routes/tools/loan-calculator'
-import { Route as ToolsJsonFormatterRouteImport } from './routes/tools/json-formatter'
-import { Route as ToolsImageResizerRouteImport } from './routes/tools/image-resizer'
-import { Route as ToolsImageCropperRouteImport } from './routes/tools/image-cropper'
-import { Route as ToolsImageCompressorRouteImport } from './routes/tools/image-compressor'
-import { Route as ToolsHashGeneratorRouteImport } from './routes/tools/hash-generator'
-import { Route as ToolsGradientGeneratorRouteImport } from './routes/tools/gradient-generator'
-import { Route as ToolsFileEncryptRouteImport } from './routes/tools/file-encrypt'
-import { Route as ToolsContrastCheckerRouteImport } from './routes/tools/contrast-checker'
-import { Route as ToolsColorPaletteRouteImport } from './routes/tools/color-palette'
-import { Route as ToolsColorConverterRouteImport } from './routes/tools/color-converter'
-import { Route as ToolsCaseConverterRouteImport } from './routes/tools/case-converter'
-import { Route as ToolsBmiCalculatorRouteImport } from './routes/tools/bmi-calculator'
-import { Route as ToolsBase64RouteImport } from './routes/tools/base64'
-import { Route as ToolsAgeCalculatorRouteImport } from './routes/tools/age-calculator'
-import { Route as MirraOrderRouteImport } from './routes/mirra/order'
-import { Route as MirraBuyRouteImport } from './routes/mirra/buy'
 import { Route as MirraAdminRouteImport } from './routes/mirra/admin'
+import { Route as MirraBuyRouteImport } from './routes/mirra/buy'
+import { Route as MirraOrderRouteImport } from './routes/mirra/order'
+import { Route as ToolsIndexRouteImport } from './routes/tools/index'
+import { Route as ToolsAgeCalculatorRouteImport } from './routes/tools/age-calculator'
+import { Route as ToolsBase64RouteImport } from './routes/tools/base64'
+import { Route as ToolsBmiCalculatorRouteImport } from './routes/tools/bmi-calculator'
+import { Route as ToolsCaseConverterRouteImport } from './routes/tools/case-converter'
+import { Route as ToolsColorConverterRouteImport } from './routes/tools/color-converter'
+import { Route as ToolsColorPaletteRouteImport } from './routes/tools/color-palette'
+import { Route as ToolsContrastCheckerRouteImport } from './routes/tools/contrast-checker'
+import { Route as ToolsFileEncryptRouteImport } from './routes/tools/file-encrypt'
+import { Route as ToolsGradientGeneratorRouteImport } from './routes/tools/gradient-generator'
+import { Route as ToolsHashGeneratorRouteImport } from './routes/tools/hash-generator'
+import { Route as ToolsImageCompressorRouteImport } from './routes/tools/image-compressor'
+import { Route as ToolsImageCropperRouteImport } from './routes/tools/image-cropper'
+import { Route as ToolsImageResizerRouteImport } from './routes/tools/image-resizer'
+import { Route as ToolsJsonFormatterRouteImport } from './routes/tools/json-formatter'
+import { Route as ToolsLoanCalculatorRouteImport } from './routes/tools/loan-calculator'
+import { Route as ToolsLoremIpsumRouteImport } from './routes/tools/lorem-ipsum'
+import { Route as ToolsPasswordGeneratorRouteImport } from './routes/tools/password-generator'
+import { Route as ToolsPdfWatermarkRouteImport } from './routes/tools/pdf-watermark'
+import { Route as ToolsPercentageCalculatorRouteImport } from './routes/tools/percentage-calculator'
+import { Route as ToolsQrGeneratorRouteImport } from './routes/tools/qr-generator'
+import { Route as ToolsSlugGeneratorRouteImport } from './routes/tools/slug-generator'
+import { Route as ToolsTextDiffRouteImport } from './routes/tools/text-diff'
+import { Route as ToolsTimestampConverterRouteImport } from './routes/tools/timestamp-converter'
+import { Route as ToolsUrlEncoderRouteImport } from './routes/tools/url-encoder'
+import { Route as ToolsUuidGeneratorRouteImport } from './routes/tools/uuid-generator'
+import { Route as ToolsWordCounterRouteImport } from './routes/tools/word-counter'
 import { Route as ApiMirraSplatRouteImport } from './routes/api/mirra/$'
 
-const ToolsRoute = ToolsRouteImport.update({
-  id: '/tools',
-  path: '/tools',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoreRoute = StoreRouteImport.update({
-  id: '/store',
-  path: '/store',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RefundPolicyRoute = RefundPolicyRouteImport.update({
-  id: '/refund-policy',
-  path: '/refund-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -79,9 +59,49 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoreRoute = StoreRouteImport.update({
+  id: '/store',
+  path: '/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsRoute = ToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirraIndexRoute = MirraIndexRouteImport.update({
+  id: '/mirra/',
+  path: '/mirra/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirraAdminRoute = MirraAdminRouteImport.update({
+  id: '/mirra/admin',
+  path: '/mirra/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirraBuyRoute = MirraBuyRouteImport.update({
+  id: '/mirra/buy',
+  path: '/mirra/buy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirraOrderRoute = MirraOrderRouteImport.update({
+  id: '/mirra/order',
+  path: '/mirra/order',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsIndexRoute = ToolsIndexRouteImport.update({
@@ -89,44 +109,94 @@ const ToolsIndexRoute = ToolsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ToolsRoute,
 } as any)
-const MirraIndexRoute = MirraIndexRouteImport.update({
-  id: '/mirra/',
-  path: '/mirra/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ToolsWordCounterRoute = ToolsWordCounterRouteImport.update({
-  id: '/word-counter',
-  path: '/word-counter',
+const ToolsAgeCalculatorRoute = ToolsAgeCalculatorRouteImport.update({
+  id: '/age-calculator',
+  path: '/age-calculator',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsUuidGeneratorRoute = ToolsUuidGeneratorRouteImport.update({
-  id: '/uuid-generator',
-  path: '/uuid-generator',
+const ToolsBase64Route = ToolsBase64RouteImport.update({
+  id: '/base64',
+  path: '/base64',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsUrlEncoderRoute = ToolsUrlEncoderRouteImport.update({
-  id: '/url-encoder',
-  path: '/url-encoder',
+const ToolsBmiCalculatorRoute = ToolsBmiCalculatorRouteImport.update({
+  id: '/bmi-calculator',
+  path: '/bmi-calculator',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsTimestampConverterRoute = ToolsTimestampConverterRouteImport.update({
-  id: '/timestamp-converter',
-  path: '/timestamp-converter',
+const ToolsCaseConverterRoute = ToolsCaseConverterRouteImport.update({
+  id: '/case-converter',
+  path: '/case-converter',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsTextDiffRoute = ToolsTextDiffRouteImport.update({
-  id: '/text-diff',
-  path: '/text-diff',
+const ToolsColorConverterRoute = ToolsColorConverterRouteImport.update({
+  id: '/color-converter',
+  path: '/color-converter',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsSlugGeneratorRoute = ToolsSlugGeneratorRouteImport.update({
-  id: '/slug-generator',
-  path: '/slug-generator',
+const ToolsColorPaletteRoute = ToolsColorPaletteRouteImport.update({
+  id: '/color-palette',
+  path: '/color-palette',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsQrGeneratorRoute = ToolsQrGeneratorRouteImport.update({
-  id: '/qr-generator',
-  path: '/qr-generator',
+const ToolsContrastCheckerRoute = ToolsContrastCheckerRouteImport.update({
+  id: '/contrast-checker',
+  path: '/contrast-checker',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsFileEncryptRoute = ToolsFileEncryptRouteImport.update({
+  id: '/file-encrypt',
+  path: '/file-encrypt',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsGradientGeneratorRoute = ToolsGradientGeneratorRouteImport.update({
+  id: '/gradient-generator',
+  path: '/gradient-generator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsHashGeneratorRoute = ToolsHashGeneratorRouteImport.update({
+  id: '/hash-generator',
+  path: '/hash-generator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsImageCompressorRoute = ToolsImageCompressorRouteImport.update({
+  id: '/image-compressor',
+  path: '/image-compressor',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsImageCropperRoute = ToolsImageCropperRouteImport.update({
+  id: '/image-cropper',
+  path: '/image-cropper',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsImageResizerRoute = ToolsImageResizerRouteImport.update({
+  id: '/image-resizer',
+  path: '/image-resizer',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsJsonFormatterRoute = ToolsJsonFormatterRouteImport.update({
+  id: '/json-formatter',
+  path: '/json-formatter',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsLoanCalculatorRoute = ToolsLoanCalculatorRouteImport.update({
+  id: '/loan-calculator',
+  path: '/loan-calculator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsLoremIpsumRoute = ToolsLoremIpsumRouteImport.update({
+  id: '/lorem-ipsum',
+  path: '/lorem-ipsum',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsPasswordGeneratorRoute = ToolsPasswordGeneratorRouteImport.update({
+  id: '/password-generator',
+  path: '/password-generator',
+  getParentRoute: () => ToolsRoute,
+} as any)
+const ToolsPdfWatermarkRoute = ToolsPdfWatermarkRouteImport.update({
+  id: '/pdf-watermark',
+  path: '/pdf-watermark',
   getParentRoute: () => ToolsRoute,
 } as any)
 const ToolsPercentageCalculatorRoute =
@@ -135,110 +205,40 @@ const ToolsPercentageCalculatorRoute =
     path: '/percentage-calculator',
     getParentRoute: () => ToolsRoute,
   } as any)
-const ToolsPdfWatermarkRoute = ToolsPdfWatermarkRouteImport.update({
-  id: '/pdf-watermark',
-  path: '/pdf-watermark',
+const ToolsQrGeneratorRoute = ToolsQrGeneratorRouteImport.update({
+  id: '/qr-generator',
+  path: '/qr-generator',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsPasswordGeneratorRoute = ToolsPasswordGeneratorRouteImport.update({
-  id: '/password-generator',
-  path: '/password-generator',
+const ToolsSlugGeneratorRoute = ToolsSlugGeneratorRouteImport.update({
+  id: '/slug-generator',
+  path: '/slug-generator',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsLoremIpsumRoute = ToolsLoremIpsumRouteImport.update({
-  id: '/lorem-ipsum',
-  path: '/lorem-ipsum',
+const ToolsTextDiffRoute = ToolsTextDiffRouteImport.update({
+  id: '/text-diff',
+  path: '/text-diff',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsLoanCalculatorRoute = ToolsLoanCalculatorRouteImport.update({
-  id: '/loan-calculator',
-  path: '/loan-calculator',
+const ToolsTimestampConverterRoute = ToolsTimestampConverterRouteImport.update({
+  id: '/timestamp-converter',
+  path: '/timestamp-converter',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsJsonFormatterRoute = ToolsJsonFormatterRouteImport.update({
-  id: '/json-formatter',
-  path: '/json-formatter',
+const ToolsUrlEncoderRoute = ToolsUrlEncoderRouteImport.update({
+  id: '/url-encoder',
+  path: '/url-encoder',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsImageResizerRoute = ToolsImageResizerRouteImport.update({
-  id: '/image-resizer',
-  path: '/image-resizer',
+const ToolsUuidGeneratorRoute = ToolsUuidGeneratorRouteImport.update({
+  id: '/uuid-generator',
+  path: '/uuid-generator',
   getParentRoute: () => ToolsRoute,
 } as any)
-const ToolsImageCropperRoute = ToolsImageCropperRouteImport.update({
-  id: '/image-cropper',
-  path: '/image-cropper',
+const ToolsWordCounterRoute = ToolsWordCounterRouteImport.update({
+  id: '/word-counter',
+  path: '/word-counter',
   getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsImageCompressorRoute = ToolsImageCompressorRouteImport.update({
-  id: '/image-compressor',
-  path: '/image-compressor',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsHashGeneratorRoute = ToolsHashGeneratorRouteImport.update({
-  id: '/hash-generator',
-  path: '/hash-generator',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsGradientGeneratorRoute = ToolsGradientGeneratorRouteImport.update({
-  id: '/gradient-generator',
-  path: '/gradient-generator',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsFileEncryptRoute = ToolsFileEncryptRouteImport.update({
-  id: '/file-encrypt',
-  path: '/file-encrypt',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsContrastCheckerRoute = ToolsContrastCheckerRouteImport.update({
-  id: '/contrast-checker',
-  path: '/contrast-checker',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsColorPaletteRoute = ToolsColorPaletteRouteImport.update({
-  id: '/color-palette',
-  path: '/color-palette',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsColorConverterRoute = ToolsColorConverterRouteImport.update({
-  id: '/color-converter',
-  path: '/color-converter',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsCaseConverterRoute = ToolsCaseConverterRouteImport.update({
-  id: '/case-converter',
-  path: '/case-converter',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsBmiCalculatorRoute = ToolsBmiCalculatorRouteImport.update({
-  id: '/bmi-calculator',
-  path: '/bmi-calculator',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsBase64Route = ToolsBase64RouteImport.update({
-  id: '/base64',
-  path: '/base64',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const ToolsAgeCalculatorRoute = ToolsAgeCalculatorRouteImport.update({
-  id: '/age-calculator',
-  path: '/age-calculator',
-  getParentRoute: () => ToolsRoute,
-} as any)
-const MirraOrderRoute = MirraOrderRouteImport.update({
-  id: '/mirra/order',
-  path: '/mirra/order',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MirraBuyRoute = MirraBuyRouteImport.update({
-  id: '/mirra/buy',
-  path: '/mirra/buy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MirraAdminRoute = MirraAdminRouteImport.update({
-  id: '/mirra/admin',
-  path: '/mirra/admin',
-  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiMirraSplatRoute = ApiMirraSplatRouteImport.update({
   id: '/api/mirra/$',
@@ -511,39 +511,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tools': {
-      id: '/tools'
-      path: '/tools'
-      fullPath: '/tools'
-      preLoaderRoute: typeof ToolsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/store': {
-      id: '/store'
-      path: '/store'
-      fullPath: '/store'
-      preLoaderRoute: typeof StoreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/refund-policy': {
-      id: '/refund-policy'
-      path: '/refund-policy'
-      fullPath: '/refund-policy'
-      preLoaderRoute: typeof RefundPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -553,19 +525,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tools/': {
-      id: '/tools/'
-      path: '/'
-      fullPath: '/tools/'
-      preLoaderRoute: typeof ToolsIndexRouteImport
-      parentRoute: typeof ToolsRoute
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/store': {
+      id: '/store'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools': {
+      id: '/tools'
+      path: '/tools'
+      fullPath: '/tools'
+      preLoaderRoute: typeof ToolsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/mirra/': {
       id: '/mirra/'
@@ -574,193 +567,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MirraIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tools/word-counter': {
-      id: '/tools/word-counter'
-      path: '/word-counter'
-      fullPath: '/tools/word-counter'
-      preLoaderRoute: typeof ToolsWordCounterRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/uuid-generator': {
-      id: '/tools/uuid-generator'
-      path: '/uuid-generator'
-      fullPath: '/tools/uuid-generator'
-      preLoaderRoute: typeof ToolsUuidGeneratorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/url-encoder': {
-      id: '/tools/url-encoder'
-      path: '/url-encoder'
-      fullPath: '/tools/url-encoder'
-      preLoaderRoute: typeof ToolsUrlEncoderRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/timestamp-converter': {
-      id: '/tools/timestamp-converter'
-      path: '/timestamp-converter'
-      fullPath: '/tools/timestamp-converter'
-      preLoaderRoute: typeof ToolsTimestampConverterRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/text-diff': {
-      id: '/tools/text-diff'
-      path: '/text-diff'
-      fullPath: '/tools/text-diff'
-      preLoaderRoute: typeof ToolsTextDiffRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/slug-generator': {
-      id: '/tools/slug-generator'
-      path: '/slug-generator'
-      fullPath: '/tools/slug-generator'
-      preLoaderRoute: typeof ToolsSlugGeneratorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/qr-generator': {
-      id: '/tools/qr-generator'
-      path: '/qr-generator'
-      fullPath: '/tools/qr-generator'
-      preLoaderRoute: typeof ToolsQrGeneratorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/percentage-calculator': {
-      id: '/tools/percentage-calculator'
-      path: '/percentage-calculator'
-      fullPath: '/tools/percentage-calculator'
-      preLoaderRoute: typeof ToolsPercentageCalculatorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/pdf-watermark': {
-      id: '/tools/pdf-watermark'
-      path: '/pdf-watermark'
-      fullPath: '/tools/pdf-watermark'
-      preLoaderRoute: typeof ToolsPdfWatermarkRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/password-generator': {
-      id: '/tools/password-generator'
-      path: '/password-generator'
-      fullPath: '/tools/password-generator'
-      preLoaderRoute: typeof ToolsPasswordGeneratorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/lorem-ipsum': {
-      id: '/tools/lorem-ipsum'
-      path: '/lorem-ipsum'
-      fullPath: '/tools/lorem-ipsum'
-      preLoaderRoute: typeof ToolsLoremIpsumRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/loan-calculator': {
-      id: '/tools/loan-calculator'
-      path: '/loan-calculator'
-      fullPath: '/tools/loan-calculator'
-      preLoaderRoute: typeof ToolsLoanCalculatorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/json-formatter': {
-      id: '/tools/json-formatter'
-      path: '/json-formatter'
-      fullPath: '/tools/json-formatter'
-      preLoaderRoute: typeof ToolsJsonFormatterRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/image-resizer': {
-      id: '/tools/image-resizer'
-      path: '/image-resizer'
-      fullPath: '/tools/image-resizer'
-      preLoaderRoute: typeof ToolsImageResizerRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/image-cropper': {
-      id: '/tools/image-cropper'
-      path: '/image-cropper'
-      fullPath: '/tools/image-cropper'
-      preLoaderRoute: typeof ToolsImageCropperRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/image-compressor': {
-      id: '/tools/image-compressor'
-      path: '/image-compressor'
-      fullPath: '/tools/image-compressor'
-      preLoaderRoute: typeof ToolsImageCompressorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/hash-generator': {
-      id: '/tools/hash-generator'
-      path: '/hash-generator'
-      fullPath: '/tools/hash-generator'
-      preLoaderRoute: typeof ToolsHashGeneratorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/gradient-generator': {
-      id: '/tools/gradient-generator'
-      path: '/gradient-generator'
-      fullPath: '/tools/gradient-generator'
-      preLoaderRoute: typeof ToolsGradientGeneratorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/file-encrypt': {
-      id: '/tools/file-encrypt'
-      path: '/file-encrypt'
-      fullPath: '/tools/file-encrypt'
-      preLoaderRoute: typeof ToolsFileEncryptRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/contrast-checker': {
-      id: '/tools/contrast-checker'
-      path: '/contrast-checker'
-      fullPath: '/tools/contrast-checker'
-      preLoaderRoute: typeof ToolsContrastCheckerRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/color-palette': {
-      id: '/tools/color-palette'
-      path: '/color-palette'
-      fullPath: '/tools/color-palette'
-      preLoaderRoute: typeof ToolsColorPaletteRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/color-converter': {
-      id: '/tools/color-converter'
-      path: '/color-converter'
-      fullPath: '/tools/color-converter'
-      preLoaderRoute: typeof ToolsColorConverterRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/case-converter': {
-      id: '/tools/case-converter'
-      path: '/case-converter'
-      fullPath: '/tools/case-converter'
-      preLoaderRoute: typeof ToolsCaseConverterRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/bmi-calculator': {
-      id: '/tools/bmi-calculator'
-      path: '/bmi-calculator'
-      fullPath: '/tools/bmi-calculator'
-      preLoaderRoute: typeof ToolsBmiCalculatorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/base64': {
-      id: '/tools/base64'
-      path: '/base64'
-      fullPath: '/tools/base64'
-      preLoaderRoute: typeof ToolsBase64RouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/tools/age-calculator': {
-      id: '/tools/age-calculator'
-      path: '/age-calculator'
-      fullPath: '/tools/age-calculator'
-      preLoaderRoute: typeof ToolsAgeCalculatorRouteImport
-      parentRoute: typeof ToolsRoute
-    }
-    '/mirra/order': {
-      id: '/mirra/order'
-      path: '/mirra/order'
-      fullPath: '/mirra/order'
-      preLoaderRoute: typeof MirraOrderRouteImport
+    '/mirra/admin': {
+      id: '/mirra/admin'
+      path: '/mirra/admin'
+      fullPath: '/mirra/admin'
+      preLoaderRoute: typeof MirraAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mirra/buy': {
@@ -770,12 +581,201 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MirraBuyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/mirra/admin': {
-      id: '/mirra/admin'
-      path: '/mirra/admin'
-      fullPath: '/mirra/admin'
-      preLoaderRoute: typeof MirraAdminRouteImport
+    '/mirra/order': {
+      id: '/mirra/order'
+      path: '/mirra/order'
+      fullPath: '/mirra/order'
+      preLoaderRoute: typeof MirraOrderRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/tools/': {
+      id: '/tools/'
+      path: '/'
+      fullPath: '/tools/'
+      preLoaderRoute: typeof ToolsIndexRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/age-calculator': {
+      id: '/tools/age-calculator'
+      path: '/age-calculator'
+      fullPath: '/tools/age-calculator'
+      preLoaderRoute: typeof ToolsAgeCalculatorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/base64': {
+      id: '/tools/base64'
+      path: '/base64'
+      fullPath: '/tools/base64'
+      preLoaderRoute: typeof ToolsBase64RouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/bmi-calculator': {
+      id: '/tools/bmi-calculator'
+      path: '/bmi-calculator'
+      fullPath: '/tools/bmi-calculator'
+      preLoaderRoute: typeof ToolsBmiCalculatorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/case-converter': {
+      id: '/tools/case-converter'
+      path: '/case-converter'
+      fullPath: '/tools/case-converter'
+      preLoaderRoute: typeof ToolsCaseConverterRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/color-converter': {
+      id: '/tools/color-converter'
+      path: '/color-converter'
+      fullPath: '/tools/color-converter'
+      preLoaderRoute: typeof ToolsColorConverterRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/color-palette': {
+      id: '/tools/color-palette'
+      path: '/color-palette'
+      fullPath: '/tools/color-palette'
+      preLoaderRoute: typeof ToolsColorPaletteRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/contrast-checker': {
+      id: '/tools/contrast-checker'
+      path: '/contrast-checker'
+      fullPath: '/tools/contrast-checker'
+      preLoaderRoute: typeof ToolsContrastCheckerRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/file-encrypt': {
+      id: '/tools/file-encrypt'
+      path: '/file-encrypt'
+      fullPath: '/tools/file-encrypt'
+      preLoaderRoute: typeof ToolsFileEncryptRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/gradient-generator': {
+      id: '/tools/gradient-generator'
+      path: '/gradient-generator'
+      fullPath: '/tools/gradient-generator'
+      preLoaderRoute: typeof ToolsGradientGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/hash-generator': {
+      id: '/tools/hash-generator'
+      path: '/hash-generator'
+      fullPath: '/tools/hash-generator'
+      preLoaderRoute: typeof ToolsHashGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/image-compressor': {
+      id: '/tools/image-compressor'
+      path: '/image-compressor'
+      fullPath: '/tools/image-compressor'
+      preLoaderRoute: typeof ToolsImageCompressorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/image-cropper': {
+      id: '/tools/image-cropper'
+      path: '/image-cropper'
+      fullPath: '/tools/image-cropper'
+      preLoaderRoute: typeof ToolsImageCropperRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/image-resizer': {
+      id: '/tools/image-resizer'
+      path: '/image-resizer'
+      fullPath: '/tools/image-resizer'
+      preLoaderRoute: typeof ToolsImageResizerRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/json-formatter': {
+      id: '/tools/json-formatter'
+      path: '/json-formatter'
+      fullPath: '/tools/json-formatter'
+      preLoaderRoute: typeof ToolsJsonFormatterRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/loan-calculator': {
+      id: '/tools/loan-calculator'
+      path: '/loan-calculator'
+      fullPath: '/tools/loan-calculator'
+      preLoaderRoute: typeof ToolsLoanCalculatorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/lorem-ipsum': {
+      id: '/tools/lorem-ipsum'
+      path: '/lorem-ipsum'
+      fullPath: '/tools/lorem-ipsum'
+      preLoaderRoute: typeof ToolsLoremIpsumRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/password-generator': {
+      id: '/tools/password-generator'
+      path: '/password-generator'
+      fullPath: '/tools/password-generator'
+      preLoaderRoute: typeof ToolsPasswordGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/pdf-watermark': {
+      id: '/tools/pdf-watermark'
+      path: '/pdf-watermark'
+      fullPath: '/tools/pdf-watermark'
+      preLoaderRoute: typeof ToolsPdfWatermarkRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/percentage-calculator': {
+      id: '/tools/percentage-calculator'
+      path: '/percentage-calculator'
+      fullPath: '/tools/percentage-calculator'
+      preLoaderRoute: typeof ToolsPercentageCalculatorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/qr-generator': {
+      id: '/tools/qr-generator'
+      path: '/qr-generator'
+      fullPath: '/tools/qr-generator'
+      preLoaderRoute: typeof ToolsQrGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/slug-generator': {
+      id: '/tools/slug-generator'
+      path: '/slug-generator'
+      fullPath: '/tools/slug-generator'
+      preLoaderRoute: typeof ToolsSlugGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/text-diff': {
+      id: '/tools/text-diff'
+      path: '/text-diff'
+      fullPath: '/tools/text-diff'
+      preLoaderRoute: typeof ToolsTextDiffRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/timestamp-converter': {
+      id: '/tools/timestamp-converter'
+      path: '/timestamp-converter'
+      fullPath: '/tools/timestamp-converter'
+      preLoaderRoute: typeof ToolsTimestampConverterRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/url-encoder': {
+      id: '/tools/url-encoder'
+      path: '/url-encoder'
+      fullPath: '/tools/url-encoder'
+      preLoaderRoute: typeof ToolsUrlEncoderRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/uuid-generator': {
+      id: '/tools/uuid-generator'
+      path: '/uuid-generator'
+      fullPath: '/tools/uuid-generator'
+      preLoaderRoute: typeof ToolsUuidGeneratorRouteImport
+      parentRoute: typeof ToolsRoute
+    }
+    '/tools/word-counter': {
+      id: '/tools/word-counter'
+      path: '/word-counter'
+      fullPath: '/tools/word-counter'
+      preLoaderRoute: typeof ToolsWordCounterRouteImport
+      parentRoute: typeof ToolsRoute
     }
     '/api/mirra/$': {
       id: '/api/mirra/$'
