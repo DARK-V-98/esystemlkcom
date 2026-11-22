@@ -46,10 +46,40 @@ export type StoreItem = {
 };
 
 /** The product shown in the large hero slot at the top of /store. */
-export const FEATURED_ID = "crosscore";
+export const FEATURED_ID = "mirra";
 
 export const STORE_ITEMS: StoreItem[] = [
   /* ─────────────── SOFTWARE ─────────────── */
+  {
+    id: "mirra",
+    category: "software",
+    name: "MIRRA",
+    tagline: "Android screen mirroring for streamers — USB & Wi-Fi",
+    description:
+      "MIRRA shows your Android phone on your PC over USB or Wi-Fi, with mouse and keyboard control. Built for streamers: up to 4K and 144 fps, a clean OBS output window, recording and key mapping for mobile games.",
+    tags: ["Streaming", "Mirroring", "Windows"],
+    downloadUrl: "/api/mirra/download",
+    premiumUrl: "/mirra#pricing",
+    price: "Free",
+    premiumPrice: "From Rs 1,500",
+    platforms: ["Windows 10 / 11", "Android 5+"],
+    version: "v1.2.0",
+    image: "/mirra/icon.png",
+    features: [
+      "USB and Wi-Fi mirroring",
+      "720p at 30 fps",
+      "Mouse and keyboard control",
+      "Full screen and clean view",
+      "Nothing else to install",
+    ],
+    premiumFeatures: [
+      "1080p, 2K and 4K up to 144 fps",
+      "No watermark",
+      "Stream output window for OBS",
+      "Recording to MP4",
+      "Key mapping for mobile games",
+    ],
+  },
   {
     id: "crosscore",
     category: "software",

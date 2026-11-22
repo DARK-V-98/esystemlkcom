@@ -17,6 +17,7 @@ import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsIndexRouteImport } from './routes/tools/index'
+import { Route as MirraIndexRouteImport } from './routes/mirra/index'
 import { Route as ToolsWordCounterRouteImport } from './routes/tools/word-counter'
 import { Route as ToolsUuidGeneratorRouteImport } from './routes/tools/uuid-generator'
 import { Route as ToolsUrlEncoderRouteImport } from './routes/tools/url-encoder'
@@ -43,6 +44,10 @@ import { Route as ToolsCaseConverterRouteImport } from './routes/tools/case-conv
 import { Route as ToolsBmiCalculatorRouteImport } from './routes/tools/bmi-calculator'
 import { Route as ToolsBase64RouteImport } from './routes/tools/base64'
 import { Route as ToolsAgeCalculatorRouteImport } from './routes/tools/age-calculator'
+import { Route as MirraOrderRouteImport } from './routes/mirra/order'
+import { Route as MirraBuyRouteImport } from './routes/mirra/buy'
+import { Route as MirraAdminRouteImport } from './routes/mirra/admin'
+import { Route as ApiMirraSplatRouteImport } from './routes/api/mirra/$'
 
 const ToolsRoute = ToolsRouteImport.update({
   id: '/tools',
@@ -83,6 +88,11 @@ const ToolsIndexRoute = ToolsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ToolsRoute,
+} as any)
+const MirraIndexRoute = MirraIndexRouteImport.update({
+  id: '/mirra/',
+  path: '/mirra/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsWordCounterRoute = ToolsWordCounterRouteImport.update({
   id: '/word-counter',
@@ -215,6 +225,26 @@ const ToolsAgeCalculatorRoute = ToolsAgeCalculatorRouteImport.update({
   path: '/age-calculator',
   getParentRoute: () => ToolsRoute,
 } as any)
+const MirraOrderRoute = MirraOrderRouteImport.update({
+  id: '/mirra/order',
+  path: '/mirra/order',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirraBuyRoute = MirraBuyRouteImport.update({
+  id: '/mirra/buy',
+  path: '/mirra/buy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirraAdminRoute = MirraAdminRouteImport.update({
+  id: '/mirra/admin',
+  path: '/mirra/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMirraSplatRoute = ApiMirraSplatRouteImport.update({
+  id: '/api/mirra/$',
+  path: '/api/mirra/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -224,6 +254,9 @@ export interface FileRoutesByFullPath {
   '/store': typeof StoreRoute
   '/terms': typeof TermsRoute
   '/tools': typeof ToolsRouteWithChildren
+  '/mirra/admin': typeof MirraAdminRoute
+  '/mirra/buy': typeof MirraBuyRoute
+  '/mirra/order': typeof MirraOrderRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
   '/tools/base64': typeof ToolsBase64Route
   '/tools/bmi-calculator': typeof ToolsBmiCalculatorRoute
@@ -250,7 +283,9 @@ export interface FileRoutesByFullPath {
   '/tools/url-encoder': typeof ToolsUrlEncoderRoute
   '/tools/uuid-generator': typeof ToolsUuidGeneratorRoute
   '/tools/word-counter': typeof ToolsWordCounterRoute
+  '/mirra/': typeof MirraIndexRoute
   '/tools/': typeof ToolsIndexRoute
+  '/api/mirra/$': typeof ApiMirraSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -259,6 +294,9 @@ export interface FileRoutesByTo {
   '/refund-policy': typeof RefundPolicyRoute
   '/store': typeof StoreRoute
   '/terms': typeof TermsRoute
+  '/mirra/admin': typeof MirraAdminRoute
+  '/mirra/buy': typeof MirraBuyRoute
+  '/mirra/order': typeof MirraOrderRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
   '/tools/base64': typeof ToolsBase64Route
   '/tools/bmi-calculator': typeof ToolsBmiCalculatorRoute
@@ -285,7 +323,9 @@ export interface FileRoutesByTo {
   '/tools/url-encoder': typeof ToolsUrlEncoderRoute
   '/tools/uuid-generator': typeof ToolsUuidGeneratorRoute
   '/tools/word-counter': typeof ToolsWordCounterRoute
+  '/mirra': typeof MirraIndexRoute
   '/tools': typeof ToolsIndexRoute
+  '/api/mirra/$': typeof ApiMirraSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -296,6 +336,9 @@ export interface FileRoutesById {
   '/store': typeof StoreRoute
   '/terms': typeof TermsRoute
   '/tools': typeof ToolsRouteWithChildren
+  '/mirra/admin': typeof MirraAdminRoute
+  '/mirra/buy': typeof MirraBuyRoute
+  '/mirra/order': typeof MirraOrderRoute
   '/tools/age-calculator': typeof ToolsAgeCalculatorRoute
   '/tools/base64': typeof ToolsBase64Route
   '/tools/bmi-calculator': typeof ToolsBmiCalculatorRoute
@@ -322,7 +365,9 @@ export interface FileRoutesById {
   '/tools/url-encoder': typeof ToolsUrlEncoderRoute
   '/tools/uuid-generator': typeof ToolsUuidGeneratorRoute
   '/tools/word-counter': typeof ToolsWordCounterRoute
+  '/mirra/': typeof MirraIndexRoute
   '/tools/': typeof ToolsIndexRoute
+  '/api/mirra/$': typeof ApiMirraSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -334,6 +379,9 @@ export interface FileRouteTypes {
     | '/store'
     | '/terms'
     | '/tools'
+    | '/mirra/admin'
+    | '/mirra/buy'
+    | '/mirra/order'
     | '/tools/age-calculator'
     | '/tools/base64'
     | '/tools/bmi-calculator'
@@ -360,7 +408,9 @@ export interface FileRouteTypes {
     | '/tools/url-encoder'
     | '/tools/uuid-generator'
     | '/tools/word-counter'
+    | '/mirra/'
     | '/tools/'
+    | '/api/mirra/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -369,6 +419,9 @@ export interface FileRouteTypes {
     | '/refund-policy'
     | '/store'
     | '/terms'
+    | '/mirra/admin'
+    | '/mirra/buy'
+    | '/mirra/order'
     | '/tools/age-calculator'
     | '/tools/base64'
     | '/tools/bmi-calculator'
@@ -395,7 +448,9 @@ export interface FileRouteTypes {
     | '/tools/url-encoder'
     | '/tools/uuid-generator'
     | '/tools/word-counter'
+    | '/mirra'
     | '/tools'
+    | '/api/mirra/$'
   id:
     | '__root__'
     | '/'
@@ -405,6 +460,9 @@ export interface FileRouteTypes {
     | '/store'
     | '/terms'
     | '/tools'
+    | '/mirra/admin'
+    | '/mirra/buy'
+    | '/mirra/order'
     | '/tools/age-calculator'
     | '/tools/base64'
     | '/tools/bmi-calculator'
@@ -431,7 +489,9 @@ export interface FileRouteTypes {
     | '/tools/url-encoder'
     | '/tools/uuid-generator'
     | '/tools/word-counter'
+    | '/mirra/'
     | '/tools/'
+    | '/api/mirra/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -442,6 +502,11 @@ export interface RootRouteChildren {
   StoreRoute: typeof StoreRoute
   TermsRoute: typeof TermsRoute
   ToolsRoute: typeof ToolsRouteWithChildren
+  MirraAdminRoute: typeof MirraAdminRoute
+  MirraBuyRoute: typeof MirraBuyRoute
+  MirraOrderRoute: typeof MirraOrderRoute
+  MirraIndexRoute: typeof MirraIndexRoute
+  ApiMirraSplatRoute: typeof ApiMirraSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -501,6 +566,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/tools/'
       preLoaderRoute: typeof ToolsIndexRouteImport
       parentRoute: typeof ToolsRoute
+    }
+    '/mirra/': {
+      id: '/mirra/'
+      path: '/mirra'
+      fullPath: '/mirra/'
+      preLoaderRoute: typeof MirraIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/tools/word-counter': {
       id: '/tools/word-counter'
@@ -684,6 +756,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsAgeCalculatorRouteImport
       parentRoute: typeof ToolsRoute
     }
+    '/mirra/order': {
+      id: '/mirra/order'
+      path: '/mirra/order'
+      fullPath: '/mirra/order'
+      preLoaderRoute: typeof MirraOrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mirra/buy': {
+      id: '/mirra/buy'
+      path: '/mirra/buy'
+      fullPath: '/mirra/buy'
+      preLoaderRoute: typeof MirraBuyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mirra/admin': {
+      id: '/mirra/admin'
+      path: '/mirra/admin'
+      fullPath: '/mirra/admin'
+      preLoaderRoute: typeof MirraAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mirra/$': {
+      id: '/api/mirra/$'
+      path: '/api/mirra/$'
+      fullPath: '/api/mirra/$'
+      preLoaderRoute: typeof ApiMirraSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -757,6 +857,11 @@ const rootRouteChildren: RootRouteChildren = {
   StoreRoute: StoreRoute,
   TermsRoute: TermsRoute,
   ToolsRoute: ToolsRouteWithChildren,
+  MirraAdminRoute: MirraAdminRoute,
+  MirraBuyRoute: MirraBuyRoute,
+  MirraOrderRoute: MirraOrderRoute,
+  MirraIndexRoute: MirraIndexRoute,
+  ApiMirraSplatRoute: ApiMirraSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

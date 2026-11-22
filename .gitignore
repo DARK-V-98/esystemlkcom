@@ -30,3 +30,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# MIRRA store
+.vercel/
+.mirra-dev-db/
+.env.mirra.local
